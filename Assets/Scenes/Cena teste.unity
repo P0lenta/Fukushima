@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraMove
   _player: {fileID: 1434294006}
+  _isParkourLevel: 0
   _turnSpeed: 5
   _wallCheckDistance: 3
   _wallLayer:
@@ -1340,7 +1341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   _speed: 10
-  _jumpForce: 10
+  _jumpForce: 8
   _crouchmultiplyer: 0.5
   _rotationSpeed: 720
   _fallMultiplyer: 2.5

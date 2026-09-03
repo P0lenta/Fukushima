@@ -3,6 +3,7 @@ using UnityEngine;
 public class CameraMove : MonoBehaviour
 {
     public Transform _player;
+    public bool _isParkourLevel = false;
     public float _turnSpeed;
     public float _wallCheckDistance = 3f;
     public LayerMask _wallLayer;
@@ -22,8 +23,19 @@ public class CameraMove : MonoBehaviour
 
         CheckWalls();
 
-        Vector3 _cameraPosition = new Vector3
-        (_player.position.x + _offset.x, _player.position.y + _offset.y, transform.position.z);
+        Vector3 _cameraPosition;
+
+        if (_isParkourLevel)
+        {
+            _cameraPosition = new Vector3
+            (_player.position.x + _offset.x, _player.position.y + _offset.y, transform.position.z);
+        }
+
+        else
+        {
+            _cameraPosition = new Vector3
+            (_player.position.x + _offset.x, transform.position.y, transform.position.z);
+        }
 
         float _moveDirection = _cameraPosition.x - transform.position.x;
 
