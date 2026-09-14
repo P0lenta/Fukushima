@@ -28,7 +28,7 @@ public class CameraMove : MonoBehaviour
         if (_isParkourLevel)
         {
             _cameraPosition = new Vector3
-            (_player.position.x + _offset.x, _player.position.y + _offset.y, transform.position.z);
+            (_player.position.x + _offset.x, _player.position.y + _offset.y, _player.position.z + _offset.z);
         }
 
         else
