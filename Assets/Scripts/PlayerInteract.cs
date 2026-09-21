@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -12,10 +13,10 @@ public class PlayerInteract : MonoBehaviour
 
     void Update()
     {
-        CheckInteractable();
+        ChecarInteracao();
     }
 
-    void CheckInteractable()
+    void ChecarInteracao()
     {
         Vector3 _direction = transform.forward;
 
@@ -25,16 +26,32 @@ public class PlayerInteract : MonoBehaviour
         {
             if (_hit.collider.TryGetComponent<IInteractable>(out IInteractable _interactableObject))
             {
-                _currentInteractable = _interactableObject;
                 Debug.DrawRay(rayOrigin.position, _direction * _interactRange, Color.green);
+                
+                if (_currentInteractable != _interactableObject)
+                {
+                    if (_currentInteractable != null) _currentInteractable.OnLoseFocus();
+
+                    _currentInteractable = _interactableObject;
+                    _currentInteractable.OnFocus();
+                }
                 return;
             }
         }
 
-        _currentInteractable = null;
-
-
+        if (_currentInteractable != null)
+        {
+            _currentInteractable.OnLoseFocus();
+            _currentInteractable = null;
+        }
     }
 
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (!context.started) return;
+
+        if (_currentInteractable != null) _currentInteractable.Interact();
+    }
+    
 
 }
