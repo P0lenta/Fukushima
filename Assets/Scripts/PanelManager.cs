@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PanelManager : MonoBehaviour
 {
@@ -19,7 +20,8 @@ public class PanelManager : MonoBehaviour
     public void ToggleMenu()
     {
         _menuOpen = !_menuOpen;
-        _canvasPause.SetActive(_initialPanel);
+
+        _canvasPause.SetActive(_menuOpen);
 
         if (_menuOpen)
         {
@@ -37,6 +39,13 @@ public class PanelManager : MonoBehaviour
         {
             _panel.SetActive(_panel == _desiredPanel);
         }
+
+        if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
+    }
+
+    public void VoltarProInicio()
+    {
+        AbrirPainel(_initialPanel);
     }
 
     public void TravarJogo(bool _travar)
