@@ -19,10 +19,15 @@ public class PlayerMovement : MonoBehaviour
     public Collider _col;                 
     public LayerMask _floorLayers; 
     public Animator _moveAnimation;
+
+
     private Vector3 _moveInput;
     private Vector2 _input;
     private float _currentMagnitude;
     private bool _isJumpPressed;
+
+    private Rigidbody _currentPlatformRb;
+    private Vector3 _lastPlatformPosition;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -43,12 +48,52 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 _targetVelocity = new Vector3(_moveInput.x, _rig.linearVelocity.y,_moveInput.z);
-        _rig.linearVelocity = _targetVelocity;
+        ChecarPlataforma();
+
+        Vector3 _platformVelocity = Vector3.zero;
+
+        if (_currentPlatformRb != null)
+        {
+            _platformVelocity = (_currentPlatformRb.position - _lastPlatformPosition) / Time.fixedDeltaTime;
+
+            if (_platformVelocity.magnitude > _speed * 2f) _platformVelocity = Vector3.zero;
+        }
+
+        float _targetY = _rig.linearVelocity.y;
+        
+        if (_currentPlatformRb != null && !_isJumpPressed && _rig.linearVelocity.y <= 0.1f)
+        {
+            if (_platformVelocity.y < 0) _targetY = _platformVelocity.y;
+        } 
+
+        _rig.linearVelocity = new Vector3(_moveInput.x + _platformVelocity.x, _targetY, _moveInput.z + _platformVelocity.z);
 
         ApplyJumpGravity();
 
         RotateCharacter();
+
+        if (_currentPlatformRb != null)
+        {
+            _lastPlatformPosition = _currentPlatformRb.position;
+        }
+    }
+
+    private void ChecarPlataforma()
+    {
+        if (Physics.Raycast(_col.bounds.center, Vector3.down, out RaycastHit _hit, _col.bounds.extents.y *1.2f, _floorLayers, QueryTriggerInteraction.Ignore))
+        {
+            Rigidbody _platformRb = _hit.collider.GetComponentInParent<Rigidbody>();
+            if (_platformRb != null && _platformRb != _rig)
+            {
+                if (_currentPlatformRb != _platformRb)
+                {
+                    _currentPlatformRb = _platformRb;
+                    _lastPlatformPosition = _platformRb.position;
+                }
+                return;
+            }
+        }
+        _currentPlatformRb = null;
     }
 
     public void StopMovement()
@@ -84,11 +129,6 @@ public class PlayerMovement : MonoBehaviour
         {
             _rig.linearVelocity += Vector3.up * Physics.gravity.y * (_jumpMultiplyer - 1) * Time.deltaTime;
         }
-    }
-
-    public void OnCrounch(InputAction.CallbackContext context)
-    {
-        
     }
 
     void RotateCharacter()

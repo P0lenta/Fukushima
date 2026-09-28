@@ -22,7 +22,7 @@ public class PlayerInteract : MonoBehaviour
 
         Debug.DrawRay(rayOrigin.position, _direction * _interactRange, Color.red);
 
-        if (Physics.Raycast(rayOrigin.position, _direction, out RaycastHit _hit, _interactRange, _interactLayer))
+        if (Physics.Raycast(rayOrigin.position, _direction, out RaycastHit _hit, _interactRange, _interactLayer, QueryTriggerInteraction.Collide))
         {
             if (_hit.collider.TryGetComponent<IInteractable>(out IInteractable _interactableObject))
             {

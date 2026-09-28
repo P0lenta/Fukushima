@@ -14,7 +14,6 @@ public class WaypointPlatform : MonoBehaviour
 
     [Header("Configurações")]
     public float _moveSpeed = 5f;
-    public float _initialMoveSpeed;
 
     private enum _eixo { None, X, Y, Z }
 
@@ -23,20 +22,26 @@ public class WaypointPlatform : MonoBehaviour
 
     private Transform[] _waypointCurrent;
     private int _currentTarget = 0;
+    private Rigidbody _rb;
 
     private void Start() 
     {
-        _initialMoveSpeed = _moveSpeed;
-        UpdateCurrentDirection();
+        _rb = GetComponent<Rigidbody>();
+
+        AtualizarDirecao();
     }
 
     private void Update() 
     {
-        UpdateCurrentDirection();
-        MovePlatform();
+        AtualizarDirecao();
     }
 
-    private void UpdateCurrentDirection()
+    private void FixedUpdate()
+    {
+        MoverPlataforma();
+    }
+
+    private void AtualizarDirecao()
     {
         if (_moveToX) _eixoDesired = _eixo.X;
         else if (_moveToY) _eixoDesired = _eixo.Y;
@@ -48,17 +53,18 @@ public class WaypointPlatform : MonoBehaviour
         if (_moveToZ) {_moveToX = false; _moveToY = false;}
     }
 
-    private void MovePlatform()
+    private void MoverPlataforma()
     {
         if (_eixoActual == _eixo.None && _eixoDesired != _eixo.None)
         {
-            StartCycle(_eixoDesired);
+            ComecarMover(_eixoDesired);
         }
 
             if (_eixoActual != _eixo.None && _waypointCurrent != null && _waypointCurrent.Length >= 2)
             {
-                transform.position = Vector3.MoveTowards(
-                    transform.position, _waypointCurrent[_currentTarget].position, _moveSpeed * Time.deltaTime);
+                Vector3 _nextPosition = Vector3.MoveTowards(_rb.position, _waypointCurrent[_currentTarget].position, _moveSpeed * Time.fixedDeltaTime);
+
+                _rb.MovePosition(_nextPosition);
 
                 if (Vector3.Distance(transform.position, _waypointCurrent[_currentTarget].position) <= 0.01f)
                 {
@@ -74,7 +80,7 @@ public class WaypointPlatform : MonoBehaviour
                         }
                         else
                         {
-                            StartCycle(_eixoDesired);
+                            ComecarMover(_eixoDesired);
                         }
                     }
                     else
@@ -86,7 +92,7 @@ public class WaypointPlatform : MonoBehaviour
         
     }
 
-    private void StartCycle(_eixo _newEixo)
+    private void ComecarMover(_eixo _newEixo)
     {
         _eixoActual = _newEixo;
 
