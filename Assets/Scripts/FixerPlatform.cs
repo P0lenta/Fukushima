@@ -1,40 +1,55 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FixerPlatform : MonoBehaviour
 {
+    [Header("Configurações")]
+    public LayerMask _floorLayers;
 
+    private Collider _col;
+    private Rigidbody _currentPlatformRb;
+    private Vector3 _lastPlatformPosition;
 
-    private void OnTriggerEnter(Collider _other)
+    public Vector3 _platformGetVelocity { get; private set; }
+
+    private void Start() 
     {
-        Transform _playerTransform = ObterTransformPlayer(_other);
+        _col = GetComponent<Collider>();
+    }
 
-        if(_playerTransform != null)
+    private void FixedUpdate()
+    {
+        ChecarPlataforma();
+
+        if (_currentPlatformRb != null)
         {
-            _playerTransform.SetParent(transform);
+            _platformGetVelocity = (_currentPlatformRb.position - _lastPlatformPosition) / Time.fixedDeltaTime;
+
+            if (_platformGetVelocity.magnitude > 20f) 
+                _platformGetVelocity = Vector3.zero;
+
+            _lastPlatformPosition = _currentPlatformRb.position;
+        }
+        else
+        {
+            _platformGetVelocity = Vector3.zero;
         }
     }
 
-    private void OnTriggerExit(Collider _other)
+    private void ChecarPlataforma()
     {
-        Transform _playerTransform = ObterTransformPlayer(_other);
-
-        if(_playerTransform != null)
+        if (Physics.Raycast(_col.bounds.center, Vector3.down, out RaycastHit _hit, _col.bounds.extents.y * 1.2f, _floorLayers, QueryTriggerInteraction.Ignore))
         {
-            _playerTransform.SetParent(null);
+            Rigidbody _platformRb = _hit.collider.GetComponentInParent<Rigidbody>();
+            if (_platformRb != null)
+            {       
+                if (_currentPlatformRb != _platformRb)
+                {
+                    _currentPlatformRb = _platformRb;
+                    _lastPlatformPosition = _platformRb.position;
+                }
+                return;
+            }
         }
+        _currentPlatformRb = null;
     }
-
-    private Transform ObterTransformPlayer(Collider _col)
-    {
-        if (_col.CompareTag("Player")) return _col.transform;
-        
-        Transform _parent = _col.transform.GetComponentInParent<Transform>();
-
-        if (_parent != null && _parent.CompareTag("Player")) return _parent;
-        
-        return null;
-    }
-
-
 }

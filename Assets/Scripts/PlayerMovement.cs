@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public Collider _col;                 
     public LayerMask _floorLayers; 
     public Animator _moveAnimation;
+    public FixerPlatform _fixerPlatform;
 
 
     private Vector3 _moveInput;
@@ -48,23 +49,11 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        ChecarPlataforma();
-
-        Vector3 _platformVelocity = Vector3.zero;
-
-        if (_currentPlatformRb != null)
-        {
-            _platformVelocity = (_currentPlatformRb.position - _lastPlatformPosition) / Time.fixedDeltaTime;
-
-            if (_platformVelocity.magnitude > _speed * 2f) _platformVelocity = Vector3.zero;
-        }
+        Vector3 _platformVelocity = _fixerPlatform != null ? _fixerPlatform._platformGetVelocity : Vector3.zero;
 
         float _targetY = _rig.linearVelocity.y;
-        
-        if (_currentPlatformRb != null && !_isJumpPressed && _rig.linearVelocity.y <= 0.1f)
-        {
-            if (_platformVelocity.y < 0) _targetY = _platformVelocity.y;
-        } 
+
+        if (_platformVelocity.y < 0 && !_isJumpPressed && _rig.linearVelocity.y <= 0.01f) _targetY = _platformVelocity.y;
 
         _rig.linearVelocity = new Vector3(_moveInput.x + _platformVelocity.x, _targetY, _moveInput.z + _platformVelocity.z);
 
@@ -76,24 +65,6 @@ public class PlayerMovement : MonoBehaviour
         {
             _lastPlatformPosition = _currentPlatformRb.position;
         }
-    }
-
-    private void ChecarPlataforma()
-    {
-        if (Physics.Raycast(_col.bounds.center, Vector3.down, out RaycastHit _hit, _col.bounds.extents.y *1.2f, _floorLayers, QueryTriggerInteraction.Ignore))
-        {
-            Rigidbody _platformRb = _hit.collider.GetComponentInParent<Rigidbody>();
-            if (_platformRb != null && _platformRb != _rig)
-            {
-                if (_currentPlatformRb != _platformRb)
-                {
-                    _currentPlatformRb = _platformRb;
-                    _lastPlatformPosition = _platformRb.position;
-                }
-                return;
-            }
-        }
-        _currentPlatformRb = null;
     }
 
     public void StopMovement()
