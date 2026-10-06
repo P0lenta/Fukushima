@@ -4424,6 +4424,7 @@ GameObject:
   - component: {fileID: 1596305506}
   - component: {fileID: 1596305505}
   - component: {fileID: 1596305504}
+  - component: {fileID: 1596305508}
   m_Layer: 6
   m_Name: Card
   m_TagString: Untagged
@@ -4483,6 +4484,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1596305508}
+        m_TargetAssemblyTypeName: DialogueConditionSetter, Assembly-CSharp
+        m_MethodName: UnlockCondition
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4597,6 +4610,19 @@ Transform:
   - {fileID: 1394755043}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1596305508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596305503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1c9e80593558345982bd77587f2561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueConditionSetter
+  _conditionKey: "Tem o cart\xE3o de acesso"
 --- !u!1 &1597677308
 GameObject:
   m_ObjectHideFlags: 0
@@ -5249,6 +5275,8 @@ GameObject:
   - component: {fileID: 1977238272}
   - component: {fileID: 1977238271}
   - component: {fileID: 1977238275}
+  - component: {fileID: 1977238278}
+  - component: {fileID: 1977238277}
   - component: {fileID: 1977238276}
   m_Layer: 6
   m_Name: Door
@@ -5378,6 +5406,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1977238278}
+        m_TargetAssemblyTypeName: DialogueInteractable, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onFocus:
     m_PersistentCalls:
       m_Calls:
@@ -5385,6 +5425,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
         m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: FocusIn
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1977238277}
+        m_TargetAssemblyTypeName: DialogueCondition, Assembly-CSharp
+        m_MethodName: CheckCondition
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5422,6 +5474,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Door
   _doorRenderer: {fileID: 1977238272}
   _materialAberta: {fileID: 2100000, guid: 12fb4646e3a652e3eaa4cecd046bc0f2, type: 2}
+--- !u!114 &1977238277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977238270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a979c0d569193c34c87133877c18eebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueCondition
+  _conditionalDialogue: {fileID: 11400000, guid: f134dfc66c1a9cd4b89c3cb05403b4f6, type: 2}
+  _conditionKey: "Tem o cart\xE3o de acesso"
+--- !u!114 &1977238278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977238270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bb1468ea829c9d458006416d4de3963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteractable
+  _currentDialogue: {fileID: 11400000, guid: 973d4cf1c579d2f4fa94362bec3e3a40, type: 2}
 --- !u!1 &1987153649
 GameObject:
   m_ObjectHideFlags: 0
