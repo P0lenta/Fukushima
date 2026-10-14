@@ -10,6 +10,9 @@ public class PanelManager : MonoBehaviour
     public GameObject[] _panels;
     public GameObject _initialPanel;
 
+    [Header("Menu Principal ou In-game")]
+    public bool _isMainMenu = false;
+
     private bool _menuOpen = false;
 
     private void Start() 
@@ -25,12 +28,12 @@ public class PanelManager : MonoBehaviour
 
         if (_menuOpen)
         {
+            if (!_isMainMenu) TravarJogo(true);
             AbrirPainel(_initialPanel);
-            TravarJogo(true);
         }
             else
             {
-                TravarJogo(false);
+                if (!_isMainMenu) TravarJogo(false);
             }
     }
     public void AbrirPainel(GameObject _desiredPanel)

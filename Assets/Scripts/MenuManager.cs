@@ -25,7 +25,7 @@ public class MenuManager : MonoBehaviour
 
     public void Config()
     {
-        if (_panelManager != null && _painelConfig != null) _panelManager.AbrirPainel(_painelConfig);
+        if (_panelManager != null && _painelConfig != null) _panelManager.ToggleMenu();
     }
 
     public void Sair()
