@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class PanelManager : MonoBehaviour
 {
@@ -57,5 +58,10 @@ public class PanelManager : MonoBehaviour
         Cursor.visible = _travar;
 
         Time.timeScale = _travar ? 0f : 1f;
+    }
+
+    public void IrParaCena(string _cena)
+    {
+        SceneManager.LoadScene(_cena);
     }
 }
