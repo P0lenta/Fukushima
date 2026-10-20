@@ -20,7 +20,7 @@ public class MenuManager : MonoBehaviour
 
     public void Jogar()
     {
-        SceneManager.LoadScene(_sceneName);
+        SceneChanger.Instance.ChangeScene("NomeDaSuaCena");
     }
 
     public void Config()

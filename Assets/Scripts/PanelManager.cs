@@ -19,6 +19,25 @@ public class PanelManager : MonoBehaviour
     private void Start() 
     {
         if (_canvasPause != null) _canvasPause.SetActive(false);
+
+        foreach (GameObject _panel in _panels)
+        {
+            if (_panel != null) _panel.SetActive(false);
+        }
+
+        _menuOpen = false;  
+
+        if (!_isMainMenu)
+        {
+            TravarJogo(false);
+        }
+
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Time.timeScale = 1f;
+        }
     }
 
     public void ToggleMenu()
@@ -62,6 +81,7 @@ public class PanelManager : MonoBehaviour
 
     public void IrParaCena(string _cena)
     {
-        SceneManager.LoadScene(_cena);
+        Time.timeScale = 1f;
+        SceneChanger.Instance.ChangeScene(_cena);
     }
 }
