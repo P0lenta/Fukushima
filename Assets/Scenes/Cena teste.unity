@@ -2397,6 +2397,7 @@ GameObject:
   - component: {fileID: 1596305505}
   - component: {fileID: 1596305504}
   - component: {fileID: 1596305508}
+  - component: {fileID: 1596305509}
   m_Layer: 6
   m_Name: Card
   m_TagString: Untagged
@@ -2595,6 +2596,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueConditionSetter
   _conditionKey: "Tem o cart\xE3o de acesso"
+--- !u!54 &1596305509
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596305503}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1597677308
 GameObject:
   m_ObjectHideFlags: 0
@@ -3544,6 +3572,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7481062802961868494, guid: 10e2464053842c24dac8728c44966f31, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7961219664631616946, guid: 10e2464053842c24dac8728c44966f31, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3560,8 +3592,13 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8608143026908035375, guid: 10e2464053842c24dac8728c44966f31, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1345596634617593708, guid: 10e2464053842c24dac8728c44966f31, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10e2464053842c24dac8728c44966f31, type: 3}
@@ -3589,6 +3626,18 @@ PrefabInstance:
       propertyPath: _uiFuseZ
       value: 
       objectReference: {fileID: 1098306274}
+    - target: {fileID: 189640270980808586, guid: cc7a333710e49c644b47586e59029c02, type: 3}
+      propertyPath: _hasFuseX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 189640270980808586, guid: cc7a333710e49c644b47586e59029c02, type: 3}
+      propertyPath: _hasFuseY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 189640270980808586, guid: cc7a333710e49c644b47586e59029c02, type: 3}
+      propertyPath: _hasFuseZ
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1197465413366128598, guid: cc7a333710e49c644b47586e59029c02, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
