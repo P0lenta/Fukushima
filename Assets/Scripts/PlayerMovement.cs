@@ -102,33 +102,33 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void RotateCharacter()
+{
+    if (_currentMagnitude > 0.1f)
     {
-        if (_currentMagnitude > 0.1f)
+        Vector3 _snapInput = Vector3.zero;
+
+        if (Mathf.Abs(_input.x) > Mathf.Abs(_input.y))
         {
-
-            Vector3 _snapInput = Vector3.zero;
-
-            if (Mathf.Abs(_input.x) > Mathf.Abs(_input.y))
-            {
-                _snapInput.x = Mathf.Sign(_input.x);
-            }
-            else
-            {
-                _snapInput.z = Mathf.Sign(_input.y);
-            }
-
-            Quaternion _rotation = Quaternion.LookRotation(_snapInput, Vector3.up);
-
-            transform.rotation = Quaternion.RotateTowards
-            (transform.rotation, _rotation, _rotationSpeed * Time.deltaTime);
-            
+            _snapInput.x = Mathf.Sign(_input.x);
         }
         else
         {
-            Vector3 _currentEuler = transform.eulerAngles;
-            float _snapY = Mathf.Round(_currentEuler.y / 90f) * 90f;
-            transform.rotation = Quaternion.Euler(0f, _snapY, 0f);
+            _snapInput.z = Mathf.Sign(_input.y);
         }
+
+        Quaternion _rotation = Quaternion.LookRotation(_snapInput, Vector3.up);
+
+        Quaternion targetRotation = Quaternion.RotateTowards(_rig.rotation, _rotation, _rotationSpeed * Time.fixedDeltaTime);
+        
+        _rig.MoveRotation(targetRotation);
     }
+    else
+    {
+        Vector3 _currentEuler = _rig.rotation.eulerAngles;
+        float _snapY = Mathf.Round(_currentEuler.y / 90f) * 90f;
+        
+        _rig.MoveRotation(Quaternion.Euler(0f, _snapY, 0f));
+    }
+}
 
 }
