@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
 [Header("Valores de velocidade")]
     public float _speed = 10f;            
     public float _jumpForce = 10f;
-    public float _crouchmultiplyer = 0.5f;
     public float _rotationSpeed = 720f;
 
 [Header("Ajustes de gravidade")]

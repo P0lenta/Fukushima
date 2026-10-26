@@ -74,7 +74,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2579226008528869893}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8d804d6cc2cfec343befd48824b79ae9, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -104,7 +104,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   _speed: 6
   _jumpForce: 6
-  _crouchmultiplyer: 0.5
   _rotationSpeed: 720
   _fallMultiplyer: 2.5
   _jumpMultiplyer: 2
