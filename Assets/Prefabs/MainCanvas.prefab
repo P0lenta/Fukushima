@@ -274,31 +274,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7980690044421117749}
         m_TargetAssemblyTypeName: PanelManager, Assembly-CSharp
-        m_MethodName: DeletarSave
-        m_Mode: 1
+        m_MethodName: IrParaCena
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Menu principal
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 17443267670123044}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7980690044421117749}
-        m_TargetAssemblyTypeName: PanelManager, Assembly-CSharp
-        m_MethodName: VoltarProInicio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1890,12 +1878,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456dd895030490f4290d172c77d7ebed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
-  _uiCard1: {fileID: 0}
-  _uiCard2: {fileID: 0}
-  _uiCard3: {fileID: 0}
-  _uiFuseX: {fileID: 0}
-  _uiFuseY: {fileID: 0}
-  _uiFuseZ: {fileID: 0}
+  _uiCard1: {fileID: 490001179591721540}
+  _uiCard2: {fileID: 702955814526701342}
+  _uiCard3: {fileID: 1980224687729113199}
+  _uiFuseX: {fileID: 7119975039086903561}
+  _uiFuseY: {fileID: 8772015854035740214}
+  _uiFuseZ: {fileID: 3128912080619341754}
 --- !u!114 &2968080922787475896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4062,7 +4050,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Deletar Save
+  m_text: Sair para o menu principal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4576,39 +4564,103 @@ MonoBehaviour:
   _navigateInput:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Navigate Input
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: e932a305-68bb-46a7-87ab-da5e5e9e0892
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings: []
+      m_SingletonActionBindings:
+      - m_Name: 2D Vector
+        m_Id: 6907fb3c-9691-4dfe-9eb2-6a2fc6a50f9b
+        m_Path: 2DVector
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Navigate Input
+        m_Flags: 4
+      - m_Name: up
+        m_Id: 0562840a-4ebd-4102-ae76-79a896ebaf29
+        m_Path: 
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Navigate Input
+        m_Flags: 8
+      - m_Name: down
+        m_Id: cca7c835-1f53-4277-af55-dfe44238be0d
+        m_Path: 
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Navigate Input
+        m_Flags: 8
+      - m_Name: left
+        m_Id: ef69b0a3-a8bf-4bb9-b8df-da055bb7d5c8
+        m_Path: <Keyboard>/a
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Navigate Input
+        m_Flags: 8
+      - m_Name: right
+        m_Id: bf37e24d-19ac-40f3-8668-fe7743d5bd7d
+        m_Path: <Keyboard>/d
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Navigate Input
+        m_Flags: 8
       m_Flags: 0
       m_Priority: 0
     m_Reference: {fileID: 0}
   _confirmInput:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Confirm Input
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: 2f5e3348-be28-4dbd-8d33-3877aa51ab3f
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings: []
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 8cdff516-c004-4910-ae75-6578ac015779
+        m_Path: <Keyboard>/e
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Confirm Input
+        m_Flags: 0
       m_Flags: 0
       m_Priority: 0
     m_Reference: {fileID: 0}
   _cancelInput:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Cancel Input
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: 5d5ea827-7d85-4ead-9948-edfd2878eca2
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings: []
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 809cb232-e5fa-4505-b45c-c123dbbd357e
+        m_Path: <Keyboard>/tab
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Cancel Input
+        m_Flags: 0
+      - m_Name: 
+        m_Id: 881556f3-70f0-41eb-a510-a22673f1e266
+        m_Path: <Keyboard>/space
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Cancel Input
+        m_Flags: 0
       m_Flags: 0
       m_Priority: 0
     m_Reference: {fileID: 0}

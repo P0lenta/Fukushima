@@ -29,6 +29,15 @@ public class PlayerMovement : MonoBehaviour
 
     private bool _isControlsLocked = false;
 
+    public static PlayerMovement Instance { get; private set; }
+    public static System.Action OnPlayerJumped;
+    public bool _isMoving => _moveInput.magnitude > 0.1f;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void OnEnable()
     {
         FuseSelectionUI.OnMenuOpened += TravarControles;
@@ -79,6 +88,8 @@ public class PlayerMovement : MonoBehaviour
                     _rig.linearVelocity.x,
                     _jumpForce,
                     _rig.linearVelocity.z);
+                    
+                    OnPlayerJumped?.Invoke();
             }
         }
         else if (context.canceled) _isJumpPressed = false;

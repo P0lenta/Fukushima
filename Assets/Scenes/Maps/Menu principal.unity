@@ -1268,6 +1268,10 @@ PrefabInstance:
       propertyPath: _navigateInput.m_Action.m_Name
       value: Navigate Input
       objectReference: {fileID: 0}
+    - target: {fileID: 4797333906113625088, guid: 10e2464053842c24dac8728c44966f31, type: 3}
+      propertyPath: m_text
+      value: "Todo o progresso ser\xE1 deletado."
+      objectReference: {fileID: 0}
     - target: {fileID: 4831459015649944155, guid: 10e2464053842c24dac8728c44966f31, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1419,6 +1423,46 @@ PrefabInstance:
     - target: {fileID: 7249992077364487439, guid: 10e2464053842c24dac8728c44966f31, type: 3}
       propertyPath: m_Name
       value: MainCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034807909521715523, guid: 10e2464053842c24dac8728c44966f31, type: 3}
+      propertyPath: m_text
+      value: Deletar save
+      objectReference: {fileID: 0}
+    - target: {fileID: 8167392471369271137, guid: 10e2464053842c24dac8728c44966f31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8167392471369271137, guid: 10e2464053842c24dac8728c44966f31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8167392471369271137, guid: 10e2464053842c24dac8728c44966f31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8167392471369271137, guid: 10e2464053842c24dac8728c44966f31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1698591477}
+    - target: {fileID: 8167392471369271137, guid: 10e2464053842c24dac8728c44966f31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8167392471369271137, guid: 10e2464053842c24dac8728c44966f31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeletarSave
+      objectReference: {fileID: 0}
+    - target: {fileID: 8167392471369271137, guid: 10e2464053842c24dac8728c44966f31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: VoltarProInicio
+      objectReference: {fileID: 0}
+    - target: {fileID: 8167392471369271137, guid: 10e2464053842c24dac8728c44966f31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: PanelManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8167392471369271137, guid: 10e2464053842c24dac8728c44966f31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
