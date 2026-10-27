@@ -1,173 +1,206 @@
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
-    using UnityEngine.Events;
-    using UnityEngine.InputSystem;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.InputSystem;
+using DG.Tweening;
 
-    public class FuseSelectionUI : MonoBehaviour
+public class FuseSelectionUI : MonoBehaviour
+{
+    [Header("Referências Internas do Prefab")]
+    public RectTransform _selectorImage;
+    public RectTransform _slotX;
+    public RectTransform _slotY;
+    public RectTransform _slotZ;
+
+    [Header("Inputs (Arrastar as Actions do arquivo .inputactions)")]
+    public InputActionProperty _navigateInput;
+    public InputActionProperty _confirmInput;
+    public InputActionProperty _cancelInput;
+
+    public static event Action OnMenuOpened;
+    public static event Action OnMenuClosed;
+
+    private bool _isMenuOpen = false;
+    private bool _canConfirm = false;
+    private PlatformFuseSlots _currentPlatform;
+
+    private List<int> _availableIndexes = new List<int>();
+    private int _currentSelectionPointer = 0;
+
+    private void OnEnable()
     {
-        [Header("Referências")]
-        public PlayerInventory _inventory;
-        public GameObject _selectorImage;
+        PlatformFuseSlots.OnAbrirMenuFusivel += AbrirMenuFusivel;
 
-        [Header("Posições")]
-        public RectTransform _slotX;
-        public RectTransform _slotY;
-        public RectTransform _slotZ;
+        _navigateInput.action.Enable();
+        _confirmInput.action.Enable();
+        _cancelInput.action.Enable();
 
-        [Header("Eventos de Trava")]
-        public UnityEvent _onOpenMenu;
-        public UnityEvent _onCloseMenu;
+        _navigateInput.action.performed += NavegarFusivel;
+        _confirmInput.action.started += OnConfirm;
+        _cancelInput.action.started += OnCancel;
+    }
 
-        private bool _isMenuOpen = false;
-        private bool _canConfirm = false;
-        private PlatformFuseSlots _currentPlatform;
+    private void OnDisable()
+    {
+        PlatformFuseSlots.OnAbrirMenuFusivel -= AbrirMenuFusivel;
 
-        private List<int> _availableIndexes = new List<int>();
-        private int _currentSelectionPointer = 0;
+        _navigateInput.action.performed -= NavegarFusivel;
+        _confirmInput.action.started -= OnConfirm;
+        _cancelInput.action.started -= OnCancel;
 
-        private void Start()
+        _navigateInput.action.Disable();
+        _confirmInput.action.Disable();
+        _cancelInput.action.Disable();
+    }
+
+    private void Start()
+    {
+        if (_selectorImage != null) _selectorImage.gameObject.SetActive(false);
+        _canConfirm = false;
+    }
+
+    public void AbrirMenuFusivel(PlatformFuseSlots _platform)
+    {
+        if (_isMenuOpen) return;
+        if (PlayerInventory.Instance == null) return;
+
+        _currentPlatform = _platform;
+        _availableIndexes.Clear();
+
+        if (_slotX != null) _slotX.gameObject.SetActive(PlayerInventory.Instance._hasFuseX);
+        if (_slotY != null) _slotY.gameObject.SetActive(PlayerInventory.Instance._hasFuseY);
+        if (_slotZ != null) _slotZ.gameObject.SetActive(PlayerInventory.Instance._hasFuseZ);
+
+        if (PlayerInventory.Instance._hasFuseX) _availableIndexes.Add(0);
+        if (PlayerInventory.Instance._hasFuseY) _availableIndexes.Add(1);
+        if (PlayerInventory.Instance._hasFuseZ) _availableIndexes.Add(2);
+
+        if (_availableIndexes.Count == 0) return;
+
+        _isMenuOpen = true;
+        _canConfirm = false;
+        _currentSelectionPointer = 0;
+
+        if (_selectorImage != null) _selectorImage.gameObject.SetActive(true);
+
+        AtualizarSeletor(instantanio: true);
+
+        OnMenuOpened?.Invoke();
+
+        StopAllCoroutines();
+        StartCoroutine(LiberarConfirmacao());
+    }
+
+    private IEnumerator LiberarConfirmacao()
+    {
+        yield return new WaitForSecondsRealtime(0.2f);
+        _canConfirm = true;
+    }
+
+    public void FecharMenuFusivel()
+    {
+        _isMenuOpen = false;
+        _currentPlatform = null;
+        _canConfirm = false;
+
+        if (_selectorImage != null)
         {
-            if (_selectorImage != null) _selectorImage.SetActive(false);
-            
-            _canConfirm = false;
+            _selectorImage.DOKill();
+            _selectorImage.gameObject.SetActive(false);
         }
 
-        public void AbrirMenuFusivel(PlatformFuseSlots _platform)
+        OnMenuClosed?.Invoke();
+    }
+
+    private void NavegarFusivel(InputAction.CallbackContext context)
+    {
+        if (!_isMenuOpen || _availableIndexes.Count <= 1) return;
+
+        Vector2 _inputDir = context.ReadValue<Vector2>();
+
+        if (_inputDir.x > 0.3f)
         {
-            if (_isMenuOpen) return;
-            
-            _currentPlatform = _platform;
-            _availableIndexes.Clear();
+            _currentSelectionPointer = (_currentSelectionPointer + 1) % _availableIndexes.Count;
+            AtualizarSeletor(instantanio: false);
+        }
+        else if (_inputDir.x < -0.3f)
+        {
+            _currentSelectionPointer--;
+            if (_currentSelectionPointer < 0) _currentSelectionPointer = _availableIndexes.Count - 1;
+            AtualizarSeletor(instantanio: false);
+        }
+    }
 
-            if (_inventory._hasFuseX) _availableIndexes.Add(0);
-            if (_inventory._hasFuseY) _availableIndexes.Add(1);
-            if (_inventory._hasFuseZ) _availableIndexes.Add(2);
+    private void OnConfirm(InputAction.CallbackContext context)
+    {
+        if (!_isMenuOpen || !_canConfirm) return;
+        TentarPegarFusivel();
+    }
 
-            if (_availableIndexes.Count == 0)
+    private void OnCancel(InputAction.CallbackContext context)
+    {
+        if (!_isMenuOpen) return;
+        FecharMenuFusivel();
+    }
+
+    private void AtualizarSeletor(bool instantanio = false)
+    {
+        if (_selectorImage == null || _availableIndexes.Count == 0) return;
+
+        int _realFuseIndex = _availableIndexes[_currentSelectionPointer];
+        RectTransform _targetSlot = PegarPosicaoSlot(_realFuseIndex);
+
+        if (_targetSlot != null)
+        {
+            _selectorImage.DOKill();
+
+            if (instantanio)
             {
-                Debug.Log("Jogador não possui fusivel");
-                return;
+                _selectorImage.position = _targetSlot.position;
             }
-
-            _isMenuOpen = true;
-            _canConfirm = false;
-            _currentSelectionPointer = 0;
-
-            if (_selectorImage != null) _selectorImage.SetActive(true);
-
-            AtualizarSeletor();
-            _onOpenMenu?.Invoke();
-
-            StopAllCoroutines();
-            StartCoroutine(LiberarConfirmacao());
-        }
-
-        private IEnumerator LiberarConfirmacao()
-        {
-            yield return new WaitForSecondsRealtime(0.2f);
-            _canConfirm = true;
-        }
-
-        public void FecharMenuFusivel()
-        {
-            _isMenuOpen = false;
-            _currentPlatform = null;
-            _canConfirm = false;
-
-            if (_selectorImage != null) _selectorImage.SetActive(false);
-
-            _onCloseMenu?.Invoke();
-        }
-
-        public void NavegarFusivel(InputAction.CallbackContext context)
-        {
-            if (!_isMenuOpen || _availableIndexes.Count <= 1) return;
-
-            if (context.started)
+            else
             {
-
-            }
-
-            if (context.started || context.performed)
-            {
-                Vector2 _inputDir = context.ReadValue<Vector2>();
-                
-                if (_inputDir.x < -0.1f)
-                {
-                    _currentSelectionPointer = (_currentSelectionPointer + 1) % _availableIndexes.Count;
-                    AtualizarSeletor();
-                }
-                else if (_inputDir.x > 0.1f)
-                {   
-                    _currentSelectionPointer--;
-                    if (_currentSelectionPointer < 0) _currentSelectionPointer = _availableIndexes.Count -1;
-                    AtualizarSeletor();
-                }  
+                _selectorImage.DOMove(_targetSlot.position, 0.15f).SetUpdate(true).SetEase(Ease.OutCubic);
             }
         }
+    }
 
-        public void OnConfirm(InputAction.CallbackContext context)
+    private RectTransform PegarPosicaoSlot(int _index)
+    {
+        switch (_index)
         {
-            if (!_isMenuOpen || !_canConfirm || !context.started) return;
-
-            TentarPegarFusivel();
+            case 0: return _slotX;
+            case 1: return _slotY;
+            case 2: return _slotZ;
+            default: return null;
         }
+    }
 
-        public void OnCancel(InputAction.CallbackContext context)
+    private void TentarPegarFusivel()
+    {
+        if (_currentPlatform == null || _availableIndexes.Count == 0) return;
+
+        int _selectedFuse = _availableIndexes[_currentSelectionPointer];
+
+        if (_selectedFuse == 0 && PlayerInventory.Instance._hasFuseX)
         {
-            if (!_isMenuOpen || !context.started) return;
-
+            PlayerInventory.Instance.ConsumirFusivel("X");
+            _currentPlatform.ReceberFusivel(PlatformFuseSlots.FuseType.X);
             FecharMenuFusivel();
         }
-
-        private void AtualizarSeletor()
+        else if (_selectedFuse == 1 && PlayerInventory.Instance._hasFuseY)
         {
-            if (_selectorImage == null || _availableIndexes.Count == 0) return;
-
-            int _realFuseIndex = _availableIndexes[_currentSelectionPointer];
-            RectTransform _targetSlot = PegarPosicaoSlot(_realFuseIndex);
-
-            if (_targetSlot != null)
-            {
-                Canvas.ForceUpdateCanvases();
-                _selectorImage.transform.position = _targetSlot.position;
-            }
+            PlayerInventory.Instance.ConsumirFusivel("Y");
+            _currentPlatform.ReceberFusivel(PlatformFuseSlots.FuseType.Y);
+            FecharMenuFusivel();
         }
-
-        private RectTransform PegarPosicaoSlot(int _index)
+        else if (_selectedFuse == 2 && PlayerInventory.Instance._hasFuseZ)
         {
-            switch (_index)
-            {
-                case 0: return _slotX;
-                case 1: return _slotY;
-                case 2: return _slotZ;
-                default: return null;
-            }
+            PlayerInventory.Instance.ConsumirFusivel("Z");
+            _currentPlatform.ReceberFusivel(PlatformFuseSlots.FuseType.Z);
+            FecharMenuFusivel();
         }
-
-        private void TentarPegarFusivel()
-        {
-            int _selectedFuse = _availableIndexes[_currentSelectionPointer];
-
-            if (_selectedFuse == 0 && _inventory._hasFuseX)
-            {
-                _inventory.ColetarFusivelX();
-                _currentPlatform.ReceberFusivel(PlatformFuseSlots.FuseType.X);
-                FecharMenuFusivel();
-            }
-            else if (_selectedFuse == 1 && _inventory._hasFuseY)
-            {
-                _inventory.ColetarFusivelY();
-                _currentPlatform.ReceberFusivel(PlatformFuseSlots.FuseType.Y);
-                FecharMenuFusivel();
-            }
-            else if (_selectedFuse == 2 && _inventory._hasFuseZ)
-            {
-                _inventory.ColetarFusivelZ();
-                _currentPlatform.ReceberFusivel(PlatformFuseSlots.FuseType.Z);
-                FecharMenuFusivel();
-            }
-        }
-
     }
+}

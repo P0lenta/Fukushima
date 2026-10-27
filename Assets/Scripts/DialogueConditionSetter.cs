@@ -7,9 +7,13 @@ public class DialogueConditionSetter : MonoBehaviour
 
     public void UnlockCondition()
     {
-        PlayerPrefs.SetInt(_conditionKey, 1);
-        PlayerPrefs.Save();
+        if (!SaveManager.Instance._currentData._unlockedConditions.Contains(_conditionKey))
+        {
+            SaveManager.Instance._currentData._unlockedConditions.Add(_conditionKey);
+            
+            SaveManager.Instance.SaveGame(); 
 
-        Debug.Log($"Condição '{_conditionKey}' foi ativada!");
+            Debug.Log($"Condição '{_conditionKey}' foi ativada e salva no JSON!");
+        }
     }
 }

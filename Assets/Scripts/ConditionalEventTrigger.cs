@@ -14,7 +14,7 @@ public class ConditionalEventTrigger : MonoBehaviour
 
     public void ExecuteCondition()
     {
-        bool _hasCondition = PlayerPrefs.GetInt(_conditionKey, 0) == 1;
+        bool _hasCondition = SaveManager.Instance._currentData._unlockedConditions.Contains(_conditionKey);
 
         if (_hasCondition)
         {

@@ -1,54 +1,63 @@
 using UnityEngine;
+using System;
 
 public class PlayerInventory : MonoBehaviour
 {
-    [Header("HUD")]
-    public GameObject _uiCard;
-    public GameObject _uiFuseX;
-    public GameObject _uiFuseY;
-    public GameObject _uiFuseZ;
+    public static PlayerInventory Instance { get; private set; }
 
-    [Header("Itens coletados")]
-    public bool _hasCard = false;
+    public static event Action OnInventoryChanged;
+
+    [Header("Cartões de Acesso")]
+    public bool _hasCard1 = false;
+    public bool _hasCard2 = false;
+    public bool _hasCard3 = false;
+
+    [Header("Fusíveis")]
     public bool _hasFuseX = false;
     public bool _hasFuseY = false;
     public bool _hasFuseZ = false;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void Start()
     {
-        if (_uiCard != null) _uiCard.SetActive(_hasCard);
-        if (_uiFuseX != null) _uiFuseX.SetActive(_hasFuseX);
-        if (_uiFuseY != null) _uiFuseY.SetActive(_hasFuseY);
-        if (_uiFuseZ != null) _uiFuseZ.SetActive(_hasFuseZ);
+        OnInventoryChanged?.Invoke();
     }
 
-    public void ColetarCartao()
+    public void ColetarCartao(int _numeroDoCartao)
     {
-        _hasCard = !_hasCard;
-        
-        if (_uiCard != null) _uiCard.SetActive(_hasCard);
+        if (_numeroDoCartao == 1) _hasCard1 = true;
+        else if (_numeroDoCartao == 2) _hasCard2 = true;
+        else if (_numeroDoCartao == 3) _hasCard3 = true;
+
+        OnInventoryChanged?.Invoke(); 
     }
 
-    public void ColetarFusivelX()
+    public void ColetarFusivel(string _tipoFusivel)
     {
-        _hasFuseX = !_hasFuseX;
-        
-        if (_uiFuseX != null) _uiFuseX.SetActive(_hasFuseX);
+        if (_tipoFusivel == "X") _hasFuseX = true;
+        else if (_tipoFusivel == "Y") _hasFuseY = true;
+        else if (_tipoFusivel == "Z") _hasFuseZ = true;
+
+        OnInventoryChanged?.Invoke();
     }
 
-    public void ColetarFusivelY()
+    public void ConsumirFusivel(string _tipoFusivel)
     {
-        _hasFuseY = !_hasFuseY;
-        
-        if (_uiFuseY != null) _uiFuseY.SetActive(_hasFuseY);
+        if (_tipoFusivel == "X") _hasFuseX = false;
+        else if (_tipoFusivel == "Y") _hasFuseY = false;
+        else if (_tipoFusivel == "Z") _hasFuseZ = false;
+
+        OnInventoryChanged?.Invoke();
     }
-
-    public void ColetarFusivelZ()
-    {
-        _hasFuseZ = !_hasFuseZ;
-        
-        if (_uiFuseZ != null) _uiFuseZ.SetActive(_hasFuseZ);
-    }
-
-
 }

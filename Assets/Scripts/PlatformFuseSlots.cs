@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class PlatformFuseSlots : MonoBehaviour
 {
@@ -7,12 +8,10 @@ public class PlatformFuseSlots : MonoBehaviour
     [Header("Estado da plataforma")]
     public FuseType _fusivelAtual = FuseType.Nenhum;
 
-    [Header("Referências")]
-    public FuseSelectionUI _selectionUI;
-    public PlayerInventory _playerInventory;
-
     [Header("Waypoints")]
     public WaypointPlatform _waypointScript;
+
+    public static event Action<PlatformFuseSlots> OnAbrirMenuFusivel;
 
     private float _nextInteractionTime = 0f;
 
@@ -27,7 +26,7 @@ public class PlatformFuseSlots : MonoBehaviour
         
         if (_fusivelAtual == FuseType.Nenhum)
         {
-            _selectionUI.AbrirMenuFusivel(this);
+            OnAbrirMenuFusivel?.Invoke(this);
         }
         else
         {
@@ -46,9 +45,15 @@ public class PlatformFuseSlots : MonoBehaviour
 
     private void RetornarFusivelAoPlayer()
     {
-        if (_fusivelAtual == FuseType.X) _playerInventory.ColetarFusivelX();
-        else if (_fusivelAtual == FuseType.Y) _playerInventory.ColetarFusivelY();
-        else if (_fusivelAtual == FuseType.Z) _playerInventory.ColetarFusivelZ();
+        if (PlayerInventory.Instance == null)
+        {
+            Debug.LogError("PlayerInventory.Instance não encontrado na cena!");
+            return;
+        }
+
+        if (_fusivelAtual == FuseType.X) PlayerInventory.Instance.ColetarFusivel("X");
+        else if (_fusivelAtual == FuseType.Y) PlayerInventory.Instance.ColetarFusivel("Y");
+        else if (_fusivelAtual == FuseType.Z) PlayerInventory.Instance.ColetarFusivel("Z");
         
         _fusivelAtual = FuseType.Nenhum;
 
