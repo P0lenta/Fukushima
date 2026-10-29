@@ -58,14 +58,14 @@ public class TutorialManager : MonoBehaviour
                     _isMoveTutorialActive = false;
                 }
             }
-            else
+            /*else
             {
                 if (_moveTimer > 0f)
                 {
                     _moveTimer = 0f;
                     if (_moveProgressFill != null) _moveProgressFill.DOFillAmount(0f, 0.3f);
                 }
-            }
+            }*/
         }
     }
 
