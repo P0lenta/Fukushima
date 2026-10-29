@@ -33,6 +33,7 @@ public class Door : MonoBehaviour
             if (_requiredCard == 1) _hasAccess = PlayerInventory.Instance._hasCard1;
             else if (_requiredCard == 2) _hasAccess = PlayerInventory.Instance._hasCard2;
             else if (_requiredCard == 3) _hasAccess = PlayerInventory.Instance._hasCard3;
+            else if (_requiredCard == 0) _hasAccess = true;
         }
 
         if (_hasAccess)
@@ -54,6 +55,8 @@ public class Door : MonoBehaviour
 
         transform.DOMove(transform.position + _posicaoAbertaOffset, _tempoAnimacao)
                  .SetEase(Ease.OutCubic);
+
+        EntrarNaPorta();
     }
 
     private void EntrarNaPorta()
