@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class WaypointPlatform : MonoBehaviour
 {
     [Header("Controle de fusíveis")]
@@ -15,84 +16,75 @@ public class WaypointPlatform : MonoBehaviour
     [Header("Configurações")]
     public float _moveSpeed = 5f;
 
-    private enum _eixo { None, X, Y, Z }
-
-    private _eixo _eixoActual = _eixo.None;
-    private _eixo _eixoDesired = _eixo.None;
-
-    private Transform[] _waypointCurrent;
-    private int _currentTarget = 0;
     private Rigidbody _rb;
+    private Vector3 _posicaoOriginal;
+    private Transform[] _rotaAtual;
+    private Transform[] _rotaAlvo;
+    private int _indiceAtual = 0;
+    private bool _retornandoParaBase = false;
 
-    private void Start() 
+    private void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        AtualizarDirecao();
-    }
-
-    private void Update() 
-    {
-        AtualizarDirecao();
+        
+        _rb.isKinematic = true; 
+        
+        _posicaoOriginal = _rb.position;
     }
 
     private void FixedUpdate()
     {
-        MoverPlataforma();
+        ChecarMudancaDeRota();
+        ExecutarMovimento();
     }
 
-    private void AtualizarDirecao()
+    private void ChecarMudancaDeRota()
     {
-        if (_moveToX) { _eixoDesired = _eixo.X; _moveToY = false; _moveToZ = false; }
-        else if (_moveToY) { _eixoDesired = _eixo.Y; _moveToX = false; _moveToZ = false; }
-        else if (_moveToZ) { _eixoDesired = _eixo.Z; _moveToX = false; _moveToY = false; }
-        else { _eixoDesired = _eixo.None; }
-    }
+        Transform[] _novaRota = null;
 
-    private void MoverPlataforma()
-    {
-        if (_eixoActual == _eixo.None && _eixoDesired != _eixo.None)
+        if (_moveToX) _novaRota = _waypoipointX;
+        else if (_moveToY) _novaRota = _waypoipointY;
+        else if (_moveToZ) _novaRota = _waypoipointZ;
+
+        if (_rotaAlvo != _novaRota)
         {
-            ComecarMover(_eixoDesired);
+            _rotaAlvo = _novaRota;
+            _retornandoParaBase = true;
         }
+    }
 
-        if (_eixoActual != _eixo.None && _waypointCurrent != null && _waypointCurrent.Length >= 2)
+    private void ExecutarMovimento()
+    {
+        if (_retornandoParaBase)
         {
-            Vector3 _nextPosition = Vector3.MoveTowards(_rb.position, _waypointCurrent[_currentTarget].position, _moveSpeed * Time.fixedDeltaTime);
-            _rb.MovePosition(_nextPosition);
+            Vector3 _novaPos = Vector3.MoveTowards(_rb.position, _posicaoOriginal, _moveSpeed * Time.fixedDeltaTime);
+            _rb.MovePosition(_novaPos);
 
-            if (Vector3.Distance(transform.position, _waypointCurrent[_currentTarget].position) <= 0.01f)
+            if (Vector3.Distance(_rb.position, _posicaoOriginal) <= 0.01f)
             {
-                if (_currentTarget == 1)
-                {
-                    _currentTarget = 0; 
-                }
-                else if (_currentTarget == 0)
-                {
-                    if (_eixoDesired != _eixoActual)
-                    {
-                        _eixoActual = _eixo.None; 
-                    }
-                    else
-                    {
-                        ComecarMover(_eixoDesired); 
-                    }
-                }
-                else
-                {
-                    _currentTarget = 1;
-                }
-            }        
+                _retornandoParaBase = false;
+                _rotaAtual = _rotaAlvo;
+                _indiceAtual = 0;
+            }
         }
-    }
+        else if (_rotaAtual != null && _rotaAtual.Length > 0)
+        {
+            Transform _alvo = _rotaAtual[_indiceAtual];
 
-    private void ComecarMover(_eixo _newEixo)
-    {
-        _eixoActual = _newEixo;
+            if (_alvo != null)
+            {
+                Vector3 _novaPos = Vector3.MoveTowards(_rb.position, _alvo.position, _moveSpeed * Time.fixedDeltaTime);
+                _rb.MovePosition(_novaPos);
 
-        if (_eixoActual == _eixo.X) _waypointCurrent = _waypoipointX;
-        else if (_eixoActual == _eixo.Y) _waypointCurrent = _waypoipointY;
-        else if (_eixoActual == _eixo.Z) _waypointCurrent = _waypoipointZ;
-
-        _currentTarget = 1;
+                if (Vector3.Distance(_rb.position, _alvo.position) <= 0.01f)
+                {
+                    _indiceAtual++;
+                    if (_indiceAtual >= _rotaAtual.Length)
+                    {
+                        _indiceAtual = 0;
+                    }
+                }
+            }
+        }
     }
 }
