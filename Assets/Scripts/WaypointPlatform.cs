@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class WaypointPlatform : MonoBehaviour
 {
     [Header("Controle de fusíveis")]
@@ -15,92 +16,75 @@ public class WaypointPlatform : MonoBehaviour
     [Header("Configurações")]
     public float _moveSpeed = 5f;
 
-    private enum _eixo { None, X, Y, Z }
-
-    private _eixo _eixoActual = _eixo.None;
-    private _eixo _eixoDesired = _eixo.None;
-
-    private Transform[] _waypointCurrent;
-    private int _currentTarget = 0;
     private Rigidbody _rb;
+    private Vector3 _posicaoOriginal;
+    private Transform[] _rotaAtual;
+    private Transform[] _rotaAlvo;
+    private int _indiceAtual = 0;
+    private bool _retornandoParaBase = false;
 
-    private void Start() 
+    private void Start()
     {
         _rb = GetComponent<Rigidbody>();
-
-        AtualizarDirecao();
-    }
-
-    private void Update() 
-    {
-        AtualizarDirecao();
+        
+        _rb.isKinematic = true; 
+        
+        _posicaoOriginal = _rb.position;
     }
 
     private void FixedUpdate()
     {
-        MoverPlataforma();
+        ChecarMudancaDeRota();
+        ExecutarMovimento();
     }
 
-    private void AtualizarDirecao()
+    private void ChecarMudancaDeRota()
     {
-        if (_moveToX) _eixoDesired = _eixo.X;
-        else if (_moveToY) _eixoDesired = _eixo.Y;
-        else if (_moveToZ) _eixoDesired = _eixo.Z;
-        else _eixoDesired = _eixo.None;
+        Transform[] _novaRota = null;
 
-        if (_moveToX) {_moveToY = false; _moveToZ = false;}
-        if (_moveToY) {_moveToX = false; _moveToZ = false;}
-        if (_moveToZ) {_moveToX = false; _moveToY = false;}
-    }
+        if (_moveToX) _novaRota = _waypoipointX;
+        else if (_moveToY) _novaRota = _waypoipointY;
+        else if (_moveToZ) _novaRota = _waypoipointZ;
 
-    private void MoverPlataforma()
-    {
-        if (_eixoActual == _eixo.None && _eixoDesired != _eixo.None)
+        if (_rotaAlvo != _novaRota)
         {
-            ComecarMover(_eixoDesired);
+            _rotaAlvo = _novaRota;
+            _retornandoParaBase = true;
         }
-
-            if (_eixoActual != _eixo.None && _waypointCurrent != null && _waypointCurrent.Length >= 2)
-            {
-                Vector3 _nextPosition = Vector3.MoveTowards(_rb.position, _waypointCurrent[_currentTarget].position, _moveSpeed * Time.fixedDeltaTime);
-
-                _rb.MovePosition(_nextPosition);
-
-                if (Vector3.Distance(transform.position, _waypointCurrent[_currentTarget].position) <= 0.01f)
-                {
-                    if (_currentTarget == 1)
-                    {
-                        _currentTarget = 0;
-                    }
-                    else if (_currentTarget == 0)
-                    {
-                        if (_eixoDesired != _eixoActual)
-                        {
-                            _eixoActual = _eixo.None;
-                        }
-                        else
-                        {
-                            ComecarMover(_eixoDesired);
-                        }
-                    }
-                    else
-                    {
-                        _currentTarget = 1;
-                    }
-                }        
-            }
-        
     }
 
-    private void ComecarMover(_eixo _newEixo)
+    private void ExecutarMovimento()
     {
-        _eixoActual = _newEixo;
+        if (_retornandoParaBase)
+        {
+            Vector3 _novaPos = Vector3.MoveTowards(_rb.position, _posicaoOriginal, _moveSpeed * Time.fixedDeltaTime);
+            _rb.MovePosition(_novaPos);
 
-        if (_eixoActual == _eixo.X) _waypointCurrent = _waypoipointX;
-        else if (_eixoActual == _eixo.Y) _waypointCurrent = _waypoipointY;
-        else if (_eixoActual == _eixo.Z) _waypointCurrent = _waypoipointZ;
+            if (Vector3.Distance(_rb.position, _posicaoOriginal) <= 0.01f)
+            {
+                _retornandoParaBase = false;
+                _rotaAtual = _rotaAlvo;
+                _indiceAtual = 0;
+            }
+        }
+        else if (_rotaAtual != null && _rotaAtual.Length > 0)
+        {
+            Transform _alvo = _rotaAtual[_indiceAtual];
 
-        _currentTarget = 1;
+            if (_alvo != null)
+            {
+                Vector3 _novaPos = Vector3.MoveTowards(_rb.position, _alvo.position, _moveSpeed * Time.fixedDeltaTime);
+                _rb.MovePosition(_novaPos);
+
+                if (Vector3.Distance(_rb.position, _alvo.position) <= 0.01f)
+                {
+                    _indiceAtual++;
+                    if (_indiceAtual >= _rotaAtual.Length)
+                    {
+                        _indiceAtual = 0;
+                    }
+                }
+            }
+        }
     }
-
 }
