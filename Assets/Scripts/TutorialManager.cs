@@ -11,6 +11,7 @@ public class TutorialManager : MonoBehaviour
     [Header("Painéis de Tutorial")]
     public CanvasGroup _moveTutorialPanel;
     public CanvasGroup _jumpTutorialPanel;
+    public CanvasGroup _interactTutorialPanel;
 
     [Header("Feedbacks Visuais")]
     [Tooltip("Imagem com Image Type em 'Filled'")]
@@ -21,6 +22,7 @@ public class TutorialManager : MonoBehaviour
 
     private bool _isMoveTutorialActive = false;
     private bool _isJumpTutorialActive = false;
+    private bool _isInteractTutorialActive = false;
 
     private float _moveTimer = 0f;
     private int _jumpCount = 0;
@@ -34,6 +36,7 @@ public class TutorialManager : MonoBehaviour
     {
         if (_moveTutorialPanel != null) { _moveTutorialPanel.alpha = 0; _moveTutorialPanel.gameObject.SetActive(false); }
         if (_jumpTutorialPanel != null) { _jumpTutorialPanel.alpha = 0; _jumpTutorialPanel.gameObject.SetActive(false); }
+        if (_interactTutorialPanel != null) { _interactTutorialPanel.alpha = 0; _interactTutorialPanel.gameObject.SetActive(false); }
     }
 
     private void OnEnable() => PlayerMovement.OnPlayerJumped += RegistrarPulo;
@@ -58,14 +61,6 @@ public class TutorialManager : MonoBehaviour
                     _isMoveTutorialActive = false;
                 }
             }
-            /*else
-            {
-                if (_moveTimer > 0f)
-                {
-                    _moveTimer = 0f;
-                    if (_moveProgressFill != null) _moveProgressFill.DOFillAmount(0f, 0.3f);
-                }
-            }*/
         }
     }
 
@@ -93,6 +88,16 @@ public class TutorialManager : MonoBehaviour
         MostrarPainel(_jumpTutorialPanel);
     }
 
+    public void IniciarTutorialInteracao()
+    {
+        if (SaveManager.Instance._currentData._unlockedConditions.Contains("Tut_Interact")) return;
+
+        _isInteractTutorialActive = true;
+        MostrarPainel(_interactTutorialPanel);
+    }
+
+    // --- MÉTODOS DE CONCLUSÃO ---
+
     private void RegistrarPulo()
     {
         if (_isJumpTutorialActive)
@@ -102,7 +107,6 @@ public class TutorialManager : MonoBehaviour
             if (_jumpCounterText != null)
             {
                 _jumpCounterText.text = $"{_jumpCount}";
-
                 _jumpCounterText.transform.DOKill();
                 _jumpCounterText.transform.localScale = Vector3.one;
                 _jumpCounterText.transform.DOPunchScale(new Vector3(0.4f, 0.4f, 0f), 0.25f, 5, 1f).SetUpdate(true);
@@ -113,6 +117,15 @@ public class TutorialManager : MonoBehaviour
                 ConcluirTutorial("Tut_Jump", _jumpTutorialPanel);
                 _isJumpTutorialActive = false;
             }
+        }
+    }
+
+    public void ConcluirTutorialInteracao()
+    {
+        if (_isInteractTutorialActive)
+        {
+            ConcluirTutorial("Tut_Interact", _interactTutorialPanel);
+            _isInteractTutorialActive = false;
         }
     }
 
