@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,13 +37,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -52,9 +52,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -134,12 +134,2234 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Death_side_1
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 3732
+        width: 272
+        height: 603
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bceaf03a6287994ea34349b511ca839
+      internalID: -1314745112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_3
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 3726
+        width: 263
+        height: 609
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fbec614ced4477489a85bc2cdb6b28f
+      internalID: -1379528560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_6
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 3722
+        width: 254
+        height: 613
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b3aca0023eebaa499aed5548e529d06
+      internalID: -1952709873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_10
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 3717
+        width: 247
+        height: 618
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5b82fd6a876c1444aca9e49b15a747c
+      internalID: -193895677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_11
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 3713
+        width: 239
+        height: 622
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52195ff71ce53354f814d7f4a517c8d6
+      internalID: -814641863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_12
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 3709
+        width: 236
+        height: 626
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c78ba1ac457b4e24c9a2ccd17526a0be
+      internalID: 692410883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_13
+      rect:
+        serializedVersion: 2
+        x: 1864
+        y: 3707
+        width: 251
+        height: 628
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d591071d59394774ab6ea58dd5748f3c
+      internalID: -1563514861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_14
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 3705
+        width: 243
+        height: 630
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1534ae08f63ba94e8999d13258238ad
+      internalID: -1811154241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_15
+      rect:
+        serializedVersion: 2
+        x: 2485
+        y: 3702
+        width: 250
+        height: 633
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f57f63f8880f8ef4e840a24d5c869c83
+      internalID: 42257304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_16
+      rect:
+        serializedVersion: 2
+        x: 2801
+        y: 3705
+        width: 244
+        height: 630
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e722d3c76170a3438094101a7b54619
+      internalID: -517382915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_17
+      rect:
+        serializedVersion: 2
+        x: 3105
+        y: 3707
+        width: 250
+        height: 628
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5fc52c3ed48cbc40a9aca611c065329
+      internalID: -338941794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_18
+      rect:
+        serializedVersion: 2
+        x: 3415
+        y: 3709
+        width: 250
+        height: 626
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32caadb9e5cd9634e9013a990e14f6da
+      internalID: 887638271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_19
+      rect:
+        serializedVersion: 2
+        x: 3725
+        y: 3713
+        width: 250
+        height: 622
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4992fc0ba8c35445aae0486611a5d93
+      internalID: 86824933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_20
+      rect:
+        serializedVersion: 2
+        x: 4035
+        y: 3717
+        width: 250
+        height: 618
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67dd8a6fd2ef9c843a33f2ac5a1752a5
+      internalID: 2065883425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_47
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 3082
+        width: 250
+        height: 614
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b98ee0384e5d0a1419640ff599c3989b
+      internalID: 1078008335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_51
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 3087
+        width: 260
+        height: 609
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00302afb368e14e499ff650bdfed35a2
+      internalID: -1016337541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_54
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 3093
+        width: 267
+        height: 603
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9350f9c7dd87f94eb7efa2534b872af
+      internalID: -624425040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_56
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 3089
+        width: 260
+        height: 607
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d86f6a75485eedf4d9d53191b4b461c0
+      internalID: 210199055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_59
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 3085
+        width: 254
+        height: 611
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab2d602b0b4918409a0722c3cd00ba3
+      internalID: 1791665629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_62
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 3080
+        width: 248
+        height: 616
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8896d16d38e9e5d42a4b08ba1b9f6458
+      internalID: 1677255896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_66
+      rect:
+        serializedVersion: 2
+        x: 1894
+        y: 3076
+        width: 244
+        height: 618
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 387014504f2492448bb42fb52a05a748
+      internalID: 655588705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_67
+      rect:
+        serializedVersion: 2
+        x: 2205
+        y: 3074
+        width: 243
+        height: 622
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbbfbc46a63ef844aa084cb918f45654
+      internalID: 1609403573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_68
+      rect:
+        serializedVersion: 2
+        x: 2516
+        y: 3072
+        width: 242
+        height: 624
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5504c6f99357e03408bf2c796a822e6e
+      internalID: -1146741490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_69
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 3070
+        width: 249
+        height: 625
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f6186cda7f75064aaf36c57ae498168
+      internalID: -1346784531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_70
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 3068
+        width: 243
+        height: 628
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241cbc94e819e904c82e0151c51b0605
+      internalID: 1116569332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_71
+      rect:
+        serializedVersion: 2
+        x: 3444
+        y: 3065
+        width: 245
+        height: 631
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43a526e4ed7511844826dff78c60ac09
+      internalID: -1288064778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_72
+      rect:
+        serializedVersion: 2
+        x: 3754
+        y: 3063
+        width: 245
+        height: 633
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd1b62a4d3858ce49ae4ffeb11f46fdc
+      internalID: -2095254808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_73
+      rect:
+        serializedVersion: 2
+        x: 4058
+        y: 3066
+        width: 242
+        height: 630
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 142fd34de92d0324cbcd6139022bc98b
+      internalID: 915034927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_96
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 2430
+        width: 249
+        height: 627
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca7868d10ec7554ebd5e2ddb4e4b231
+      internalID: 742659088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_97
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 2433
+        width: 250
+        height: 624
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f94d1f97875a48541930b5acc22d88e1
+      internalID: 177801162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_98
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 2437
+        width: 251
+        height: 620
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2920d5016b0b341439766d6d9061115b
+      internalID: 1292079162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_99
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 2441
+        width: 250
+        height: 616
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3239278948fbc854f97edae5364aa0ea
+      internalID: -2143496197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_100
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 2445
+        width: 257
+        height: 612
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82169cee218b1894c8f1b1df4e527ed5
+      internalID: -488833630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_101
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 2450
+        width: 257
+        height: 607
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70fe9a04cd906ad4d970dfef2ff3a29b
+      internalID: 1296191100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_102
+      rect:
+        serializedVersion: 2
+        x: 1867
+        y: 2454
+        width: 258
+        height: 603
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab99540a7ddf284e951b7dfb79caa09
+      internalID: 2143285291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_103
+      rect:
+        serializedVersion: 2
+        x: 2174
+        y: 2460
+        width: 265
+        height: 597
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b438bab6e72138f42a89fd3ff66d7d7b
+      internalID: 1377885500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_104
+      rect:
+        serializedVersion: 2
+        x: 2482
+        y: 2464
+        width: 272
+        height: 593
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad4b3194b62d244982c113f3a203d8a
+      internalID: 1880725811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_105
+      rect:
+        serializedVersion: 2
+        x: 2790
+        y: 2473
+        width: 270
+        height: 584
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ff1e7052eef8d49a3a86fdfd69ecc9
+      internalID: -304085173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_106
+      rect:
+        serializedVersion: 2
+        x: 3109
+        y: 2481
+        width: 259
+        height: 574
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95777788e87987146bcad1bb791d08f2
+      internalID: -1515798286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_108
+      rect:
+        serializedVersion: 2
+        x: 3432
+        y: 2490
+        width: 256
+        height: 567
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe2cffcfbd1cf74799c648ebc03b7c3
+      internalID: -497780937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_110
+      rect:
+        serializedVersion: 2
+        x: 3748
+        y: 2500
+        width: 265
+        height: 557
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e10df6222095614b9c57591a34727fe
+      internalID: -551723045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_127
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1876
+        width: 278
+        height: 548
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 996f30fae6dfc1840aebdef73bd7f3a7
+      internalID: 1737400560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_128
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 1885
+        width: 269
+        height: 539
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b208255a4a60a1478bfa5d44ea3c966
+      internalID: 1786859964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_129
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1893
+        width: 277
+        height: 531
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c61ef7e4d6f73b4bb5556f1f7236a2c
+      internalID: -1774354015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_130
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 1904
+        width: 281
+        height: 520
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa35bb62c961fd041a5ece3fc86171c1
+      internalID: -1218626266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_131
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 1912
+        width: 283
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ee9374be9c6c6418237761cd388d7a
+      internalID: 1491043389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_132
+      rect:
+        serializedVersion: 2
+        x: 1651
+        y: 1921
+        width: 284
+        height: 503
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b882610c1db1a941aa551b1612d9956
+      internalID: 2042433737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_133
+      rect:
+        serializedVersion: 2
+        x: 1982
+        y: 1929
+        width: 288
+        height: 495
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62f4bbd582bceba4d9f5f46c9e42c5dd
+      internalID: -1387569890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_134
+      rect:
+        serializedVersion: 2
+        x: 2313
+        y: 1934
+        width: 310
+        height: 490
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db53d192af01afb42b96ef9311ee92ff
+      internalID: 1032494496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_135
+      rect:
+        serializedVersion: 2
+        x: 2659
+        y: 1940
+        width: 297
+        height: 484
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38771040413d3c647882a2359260103e
+      internalID: -1786891911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_136
+      rect:
+        serializedVersion: 2
+        x: 2994
+        y: 1946
+        width: 297
+        height: 478
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8698cbea1abf6924f9c52793c06fe4e7
+      internalID: -2109015730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_137
+      rect:
+        serializedVersion: 2
+        x: 3332
+        y: 1953
+        width: 301
+        height: 471
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06057f470f37b0448ac9861c7bbb78ec
+      internalID: 1262122671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_138
+      rect:
+        serializedVersion: 2
+        x: 3669
+        y: 1959
+        width: 304
+        height: 465
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2e0034f305f493479961aeffc695185
+      internalID: -593840613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_143
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1411
+        width: 312
+        height: 457
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6b39c21ebf2d614f859cdef6e329104
+      internalID: -2084461416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_144
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 1416
+        width: 319
+        height: 452
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a2e6d762b37764eb2709f2486370e9
+      internalID: -2112586894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_145
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 1422
+        width: 312
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e91999071e8cda4a99c9cf2b805be9d
+      internalID: -1846739893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_146
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 1430
+        width: 314
+        height: 440
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6bbfa0c56589f74ba68db92cd846a13
+      internalID: 210129226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_147
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1435
+        width: 333
+        height: 433
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e9408ebdbd9f944a3e5fb994356818
+      internalID: 1446284354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_148
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 1441
+        width: 337
+        height: 427
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d112fb8cb069247bcc426a56837092
+      internalID: -660094785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_149
+      rect:
+        serializedVersion: 2
+        x: 2224
+        y: 1447
+        width: 332
+        height: 421
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4d8030be3311ba439b9ec70b20c282a
+      internalID: -395197320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_151
+      rect:
+        serializedVersion: 2
+        x: 2603
+        y: 1454
+        width: 343
+        height: 415
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2efdd484c7d70146ab8e7727e384611
+      internalID: 1598004367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_153
+      rect:
+        serializedVersion: 2
+        x: 2986
+        y: 1460
+        width: 343
+        height: 408
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cac57515d0db3240be97a8f58c0828b
+      internalID: -232533267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_154
+      rect:
+        serializedVersion: 2
+        x: 3353
+        y: 1466
+        width: 354
+        height: 402
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95148557e08c86f429a8382e84518eda
+      internalID: 1156865073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_155
+      rect:
+        serializedVersion: 2
+        x: 3731
+        y: 1473
+        width: 358
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7ebd48ca3c4c874197f5bfe6f36cdbd
+      internalID: 1445590383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_158
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 1014
+        width: 360
+        height: 390
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72f8148ae10965a45b6bde22f620bc20
+      internalID: 97785451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_159
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 1019
+        width: 368
+        height: 386
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d32324308ae21d24ebb932966347141e
+      internalID: -1504299567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_160
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 1025
+        width: 370
+        height: 379
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 048cd391f190bf3499b17cef63055cf1
+      internalID: 1336715124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_161
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 1031
+        width: 373
+        height: 374
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d26c61e3b78f147917c22a02265cdc
+      internalID: -1551874820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_162
+      rect:
+        serializedVersion: 2
+        x: 1574
+        y: 1033
+        width: 383
+        height: 371
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e068ace9e8b363446b7a441af821646e
+      internalID: -1948652263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_163
+      rect:
+        serializedVersion: 2
+        x: 1966
+        y: 1036
+        width: 384
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee09b8c2a922a824a84fae6d4e3de1e6
+      internalID: -1005568134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_164
+      rect:
+        serializedVersion: 2
+        x: 2359
+        y: 1040
+        width: 384
+        height: 365
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a54a5ba793d1d4d9503951de71fdb9
+      internalID: -1661893805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_165
+      rect:
+        serializedVersion: 2
+        x: 2752
+        y: 1044
+        width: 383
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 369abe558b9a44b43955475826e5cf16
+      internalID: -116172606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_166
+      rect:
+        serializedVersion: 2
+        x: 3144
+        y: 1048
+        width: 384
+        height: 356
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62be3f03d6342ae419a42b714881c3bb
+      internalID: -160084550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_167
+      rect:
+        serializedVersion: 2
+        x: 3535
+        y: 1052
+        width: 382
+        height: 353
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bd049eafc1b6584c8032ad4eddf5098
+      internalID: 438687961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_168
+      rect:
+        serializedVersion: 2
+        x: 3926
+        y: 1056
+        width: 382
+        height: 349
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8337243ae86d53f4aa9bca8a7d1c11e7
+      internalID: 341840563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_170
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 662
+        width: 382
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2b1999c60b7eb14da3f60607c6b8f8a
+      internalID: -599512478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_171
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 666
+        width: 380
+        height: 339
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4a4bccb4ed31294fb4157e4becea019
+      internalID: 57514229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_172
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 670
+        width: 377
+        height: 335
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83094b4cc3a74fe449f4dca9c3a9421e
+      internalID: -1429454788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_173
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 674
+        width: 378
+        height: 331
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ac11102ed0156d42922750142ab60f2
+      internalID: 317205491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_174
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 678
+        width: 375
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a05c2c85570d08c4ab2ffa18f54949d3
+      internalID: 1521544994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_175
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 683
+        width: 372
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d6015af6fbc91d438020e62d432e95a
+      internalID: -1180691026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_176
+      rect:
+        serializedVersion: 2
+        x: 2316
+        y: 683
+        width: 373
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42baa7ad1d2e7b64ca30c4a7e81ecb5d
+      internalID: -36773753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_177
+      rect:
+        serializedVersion: 2
+        x: 2696
+        y: 683
+        width: 374
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8f96f3e059addf4d9d9757052400034
+      internalID: -417508882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_178
+      rect:
+        serializedVersion: 2
+        x: 3078
+        y: 683
+        width: 374
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa838ca934adc7d488af194e2e5e4a9e
+      internalID: -1234547734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_179
+      rect:
+        serializedVersion: 2
+        x: 3458
+        y: 683
+        width: 374
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb94fa2e8df18184d9f3a7fc07d65d08
+      internalID: 913371450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_180
+      rect:
+        serializedVersion: 2
+        x: 3841
+        y: 683
+        width: 373
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b3c6d6f36ce8ae43a50c16dff9af584
+      internalID: 1557099309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_181
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 332
+        width: 374
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98f0b3f24b7d82e4c82463dc40ab1cfa
+      internalID: 87554633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_182
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 332
+        width: 373
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0350f9f9726c9874aad358e391346a1e
+      internalID: -1267806764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_183
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 332
+        width: 373
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7fb1ac900cfc37428348ebe2556574a
+      internalID: -1819929981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_184
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 332
+        width: 373
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14d9ba435af47274f9d2fd393c4dcb56
+      internalID: 1363668904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_185
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 332
+        width: 372
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2fa1d6cde4fbc64f8ce28bcf7a42dbb
+      internalID: 1028060879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_186
+      rect:
+        serializedVersion: 2
+        x: 1908
+        y: 332
+        width: 374
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae5e9a7d99b4e7549a6861e1930a8043
+      internalID: 1744771623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_187
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 332
+        width: 374
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66400ae8646f76f42a5fe85b60703399
+      internalID: 174452196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_188
+      rect:
+        serializedVersion: 2
+        x: 2670
+        y: 332
+        width: 374
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50853084009f2af4ea314093737e6629
+      internalID: -1390172880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_189
+      rect:
+        serializedVersion: 2
+        x: 3051
+        y: 332
+        width: 373
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fef692af16c2edc40a096cc0d7232384
+      internalID: 54065231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_190
+      rect:
+        serializedVersion: 2
+        x: 3431
+        y: 332
+        width: 374
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2685f9c8eb3dfa4e95005057464217c
+      internalID: -810957355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_191
+      rect:
+        serializedVersion: 2
+        x: 3813
+        y: 332
+        width: 374
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20892567802c28841bee54feebf2648a
+      internalID: -1337406303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_192
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3
+        width: 374
+        height: 323
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aed537fda315028408f08e271bdc000f
+      internalID: 1787963561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_193
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 3
+        width: 373
+        height: 323
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68e13b8211ebed844bf0860cb4997dae
+      internalID: 1623827440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_194
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 3
+        width: 373
+        height: 323
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 636819a3c4be8f94eade3aa1430f4245
+      internalID: 976180640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_side_195
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 3
+        width: 373
+        height: 323
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c7d6b55b21b1724d90e713e625a262a
+      internalID: 1201268076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f10a5163a86c3dd46a1a0a41de7df480
     internalID: 0
     vertices: []
     indices: 
@@ -147,8 +2369,206 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Death_side_0: 450405951
+      Death_side_1: -1314745112
+      Death_side_10: -193895677
+      Death_side_100: -488833630
+      Death_side_101: 1296191100
+      Death_side_102: 2143285291
+      Death_side_103: 1377885500
+      Death_side_104: 1880725811
+      Death_side_105: -304085173
+      Death_side_106: -1515798286
+      Death_side_107: 1150385341
+      Death_side_108: -497780937
+      Death_side_109: -406044681
+      Death_side_11: -814641863
+      Death_side_110: -551723045
+      Death_side_111: 943514934
+      Death_side_112: 1329037064
+      Death_side_113: -1309051054
+      Death_side_114: 312132925
+      Death_side_115: -1014218839
+      Death_side_116: 988692582
+      Death_side_117: -1003311467
+      Death_side_118: 296679818
+      Death_side_119: 1675408370
+      Death_side_12: 692410883
+      Death_side_120: -1155367393
+      Death_side_121: 33384332
+      Death_side_122: -723591752
+      Death_side_123: 202457106
+      Death_side_124: -116616530
+      Death_side_125: 1857778807
+      Death_side_126: -1600578977
+      Death_side_127: 1737400560
+      Death_side_128: 1786859964
+      Death_side_129: -1774354015
+      Death_side_13: -1563514861
+      Death_side_130: -1218626266
+      Death_side_131: 1491043389
+      Death_side_132: 2042433737
+      Death_side_133: -1387569890
+      Death_side_134: 1032494496
+      Death_side_135: -1786891911
+      Death_side_136: -2109015730
+      Death_side_137: 1262122671
+      Death_side_138: -593840613
+      Death_side_139: -1326678088
+      Death_side_14: -1811154241
+      Death_side_140: 166370411
+      Death_side_141: 1803023729
+      Death_side_142: 1863424403
+      Death_side_143: -2084461416
+      Death_side_144: -2112586894
+      Death_side_145: -1846739893
+      Death_side_146: 210129226
+      Death_side_147: 1446284354
+      Death_side_148: -660094785
+      Death_side_149: -395197320
+      Death_side_15: 42257304
+      Death_side_150: -681355313
+      Death_side_151: 1598004367
+      Death_side_152: -1810331703
+      Death_side_153: -232533267
+      Death_side_154: 1156865073
+      Death_side_155: 1445590383
+      Death_side_156: 1725729070
+      Death_side_157: 1357069732
+      Death_side_158: 97785451
+      Death_side_159: -1504299567
+      Death_side_16: -517382915
+      Death_side_160: 1336715124
+      Death_side_161: -1551874820
+      Death_side_162: -1948652263
+      Death_side_163: -1005568134
+      Death_side_164: -1661893805
+      Death_side_165: -116172606
+      Death_side_166: -160084550
+      Death_side_167: 438687961
+      Death_side_168: 341840563
+      Death_side_169: 2023088500
+      Death_side_17: -338941794
+      Death_side_170: -599512478
+      Death_side_171: 57514229
+      Death_side_172: -1429454788
+      Death_side_173: 317205491
+      Death_side_174: 1521544994
+      Death_side_175: -1180691026
+      Death_side_176: -36773753
+      Death_side_177: -417508882
+      Death_side_178: -1234547734
+      Death_side_179: 913371450
+      Death_side_18: 887638271
+      Death_side_180: 1557099309
+      Death_side_181: 87554633
+      Death_side_182: -1267806764
+      Death_side_183: -1819929981
+      Death_side_184: 1363668904
+      Death_side_185: 1028060879
+      Death_side_186: 1744771623
+      Death_side_187: 174452196
+      Death_side_188: -1390172880
+      Death_side_189: 54065231
+      Death_side_19: 86824933
+      Death_side_190: -810957355
+      Death_side_191: -1337406303
+      Death_side_192: 1787963561
+      Death_side_193: 1623827440
+      Death_side_194: 976180640
+      Death_side_195: 1201268076
+      Death_side_2: 1163387363
+      Death_side_20: 2065883425
+      Death_side_21: -893188851
+      Death_side_22: -1696198080
+      Death_side_23: -550179743
+      Death_side_24: 1355123235
+      Death_side_25: -1219810029
+      Death_side_26: -638366487
+      Death_side_27: -837207207
+      Death_side_28: 1394784258
+      Death_side_29: 1096450615
+      Death_side_3: -1379528560
+      Death_side_30: -1647669363
+      Death_side_31: -605339359
+      Death_side_32: -1598179872
+      Death_side_33: -1580743429
+      Death_side_34: -533242800
+      Death_side_35: 1571121821
+      Death_side_36: -1649615927
+      Death_side_37: -800273680
+      Death_side_38: 1947627051
+      Death_side_39: 723314064
+      Death_side_4: -533924142
+      Death_side_40: 185043483
+      Death_side_41: 729182982
+      Death_side_42: 447066932
+      Death_side_43: 1624527377
+      Death_side_44: -2100659620
+      Death_side_45: -2068352822
+      Death_side_46: -1760545812
+      Death_side_47: 1078008335
+      Death_side_48: 1479012611
+      Death_side_49: 1893663491
+      Death_side_5: 957740599
+      Death_side_50: 2138243898
+      Death_side_51: -1016337541
+      Death_side_52: -1631423915
+      Death_side_53: 909376642
+      Death_side_54: -624425040
+      Death_side_55: -2066970380
+      Death_side_56: 210199055
+      Death_side_57: 1075975346
+      Death_side_58: -845952641
+      Death_side_59: 1791665629
+      Death_side_6: -1952709873
+      Death_side_60: -1931558215
+      Death_side_61: -1931514673
+      Death_side_62: 1677255896
+      Death_side_63: 930243713
+      Death_side_64: 1223383332
+      Death_side_65: -1605045653
+      Death_side_66: 655588705
+      Death_side_67: 1609403573
+      Death_side_68: -1146741490
+      Death_side_69: -1346784531
+      Death_side_7: 413528338
+      Death_side_70: 1116569332
+      Death_side_71: -1288064778
+      Death_side_72: -2095254808
+      Death_side_73: 915034927
+      Death_side_74: 1245733951
+      Death_side_75: -752387462
+      Death_side_76: 310837669
+      Death_side_77: -1774431987
+      Death_side_78: 1626289083
+      Death_side_79: 619079301
+      Death_side_8: -593771821
+      Death_side_80: -1114780009
+      Death_side_81: 1913325742
+      Death_side_82: -713796331
+      Death_side_83: -1438613333
+      Death_side_84: -1753964916
+      Death_side_85: -1789909741
+      Death_side_86: -956943059
+      Death_side_87: 2094891291
+      Death_side_88: 1198824607
+      Death_side_89: 1148662851
+      Death_side_9: 1120450718
+      Death_side_90: -443682037
+      Death_side_91: 1482984091
+      Death_side_92: 1290842317
+      Death_side_93: -573821244
+      Death_side_94: 931228475
+      Death_side_95: 821404590
+      Death_side_96: 742659088
+      Death_side_97: 177801162
+      Death_side_98: 1292079162
+      Death_side_99: -2143496197
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

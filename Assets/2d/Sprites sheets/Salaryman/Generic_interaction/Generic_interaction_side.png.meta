@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,13 +37,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -52,9 +52,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -134,12 +134,1134 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Generic_interaction_side_0
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 2689
+        width: 181
+        height: 631
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3cebe2e9219bec4cac166263bd2c06c
+      internalID: 583915551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_1
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 2690
+        width: 181
+        height: 630
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 275ca152aa6c13e4089f1bb0f377fe93
+      internalID: -1337674273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_2
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 2690
+        width: 182
+        height: 630
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8e57f63b929bd24ab5e2552266ec0df
+      internalID: 1288792004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_3
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 2690
+        width: 182
+        height: 630
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c13bc9c503359a41ba74e41dcfcd3fd
+      internalID: 81423805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_4
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 2690
+        width: 203
+        height: 630
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfbf1c2a6ba79dd4cbfcd21e71f4156c
+      internalID: 1392241412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_6
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 2691
+        width: 188
+        height: 629
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cee858f0cdff2f243a0e7812eb1f641b
+      internalID: -691966951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_7
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 2691
+        width: 206
+        height: 629
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e1b8c3ad42e2d4abf5c12cc95b6d9d
+      internalID: 693712264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_8
+      rect:
+        serializedVersion: 2
+        x: 1612
+        y: 2692
+        width: 239
+        height: 628
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5acd93cc0e930f40ae5d78cef7418ac
+      internalID: -735972994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_9
+      rect:
+        serializedVersion: 2
+        x: 1871
+        y: 2692
+        width: 250
+        height: 628
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54084502c555cf24ca1243a210d211bf
+      internalID: -720322800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_10
+      rect:
+        serializedVersion: 2
+        x: 2143
+        y: 2693
+        width: 261
+        height: 627
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fd99424d10d49a4cb7e6c4565f0fc43
+      internalID: -775010157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_11
+      rect:
+        serializedVersion: 2
+        x: 2427
+        y: 2694
+        width: 272
+        height: 626
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec7a1257173ea0344a4bcdb3b7160b01
+      internalID: 174269064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_12
+      rect:
+        serializedVersion: 2
+        x: 2719
+        y: 2695
+        width: 286
+        height: 625
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e1239a51637a42439c9102aa27ede4d
+      internalID: 1583429985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_13
+      rect:
+        serializedVersion: 2
+        x: 3031
+        y: 2696
+        width: 289
+        height: 624
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f4583326ac5de844ad5f306b19095c7
+      internalID: 959979102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_14
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 2045
+        width: 305
+        height: 623
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec17df4a39856a44a8567b3ecf85fb7f
+      internalID: -107975725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_15
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 2046
+        width: 313
+        height: 622
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b6f1144633255448b4066073e39e1a
+      internalID: 766299912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_16
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 2047
+        width: 307
+        height: 621
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49a536e56e949714ea60b8704966c135
+      internalID: 55306192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_17
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 2048
+        width: 324
+        height: 620
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60d1d5a114115664b87a366d75ce61ed
+      internalID: -416471169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_18
+      rect:
+        serializedVersion: 2
+        x: 1373
+        y: 2050
+        width: 339
+        height: 618
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 606cdfdff8981844c9a42926eaeee36a
+      internalID: 1851256243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_19
+      rect:
+        serializedVersion: 2
+        x: 1733
+        y: 2051
+        width: 347
+        height: 617
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 550122c2471e9c044b98c3d801ca6193
+      internalID: -1460621375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_20
+      rect:
+        serializedVersion: 2
+        x: 2101
+        y: 2051
+        width: 354
+        height: 617
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9957619794ec47345957cee5eecf4faf
+      internalID: -1653717989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_21
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 2051
+        width: 354
+        height: 617
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d4b01b8bad1934f86c1ea1f76ffd21
+      internalID: 983478559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_22
+      rect:
+        serializedVersion: 2
+        x: 2852
+        y: 2052
+        width: 352
+        height: 616
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92a63aa0943270843ae16471414d9752
+      internalID: -1341174057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_23
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 1408
+        width: 333
+        height: 615
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de33a988b7920b446a3d56bb9a365789
+      internalID: 89588053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_24
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 1408
+        width: 354
+        height: 615
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 486d4f852569f42468c5b8627b6349e2
+      internalID: -817738561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_25
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 1408
+        width: 348
+        height: 615
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 321893a02f2139a4aaf26cde2953c533
+      internalID: -2026582451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_26
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1408
+        width: 347
+        height: 615
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6202dee9d13802d48b249008a78a6e10
+      internalID: -1673463975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_27
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 1408
+        width: 346
+        height: 615
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 924f53b1dc4e9a140959f4b5d51ed67b
+      internalID: 1990050965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_28
+      rect:
+        serializedVersion: 2
+        x: 1891
+        y: 1408
+        width: 354
+        height: 615
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9084aa161703d914097db05465f21ada
+      internalID: -1726781822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_29
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 1408
+        width: 347
+        height: 615
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 759071e3597898146924b9099e987f9c
+      internalID: 642569433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_30
+      rect:
+        serializedVersion: 2
+        x: 2661
+        y: 1408
+        width: 333
+        height: 615
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d71cc5f0ab8d204185052f9e0a04e1f
+      internalID: -1567688968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_31
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 771
+        width: 348
+        height: 616
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ec8feb789735114cbdc31756f967229
+      internalID: -559842742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_32
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 771
+        width: 354
+        height: 616
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bcfdc71f17424a49aa99115bf834ec7
+      internalID: 8545009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_33
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 771
+        width: 355
+        height: 616
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11dbcb0f6b3c59c4f9e4e5a6eee09dfb
+      internalID: -1138028322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_34
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 770
+        width: 327
+        height: 617
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1efd6a5352bd2cd4997d4fa1fa8b42b4
+      internalID: -151338030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_35
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 768
+        width: 332
+        height: 619
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d96fa684d52b07418fe4ab8b3210d32
+      internalID: -2002510085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_36
+      rect:
+        serializedVersion: 2
+        x: 1886
+        y: 767
+        width: 315
+        height: 620
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed8331a805d59b54d875b3ebddac46ef
+      internalID: 63563050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_37
+      rect:
+        serializedVersion: 2
+        x: 2221
+        y: 766
+        width: 323
+        height: 621
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77202ead63100224c8872f415ed655ac
+      internalID: 1071306484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_38
+      rect:
+        serializedVersion: 2
+        x: 2583
+        y: 765
+        width: 298
+        height: 622
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e0813deed3a0714b818d811f8fb7af9
+      internalID: -1829411398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_39
+      rect:
+        serializedVersion: 2
+        x: 2902
+        y: 764
+        width: 305
+        height: 623
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 702bec3dde34e3940b221cbeb708bb9b
+      internalID: 993395149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_40
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 119
+        width: 296
+        height: 624
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68980ce4c46a4dc4a86d3ef3b33e8bb7
+      internalID: -2125280533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_41
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 118
+        width: 287
+        height: 625
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba5d3432e6f28424b84e8fbd365cfc98
+      internalID: -711938835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_42
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 117
+        width: 277
+        height: 626
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e74ffd690427e344a2f92a2d9046fa3
+      internalID: -1832675936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_43
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 116
+        width: 267
+        height: 627
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23834571ce59e84ea58f823dacdea03
+      internalID: -393513309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_45
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 116
+        width: 231
+        height: 627
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68dd4bf2e4e43f6429bfe1cfea159ddd
+      internalID: -1194283196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_47
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 115
+        width: 218
+        height: 628
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 491afdaa2cfbcd54aa003b106e939c3e
+      internalID: 485183794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_48
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 114
+        width: 230
+        height: 629
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b8eb194a8e38c64cba0759bb4103d50
+      internalID: -1403434883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_49
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 114
+        width: 195
+        height: 629
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05120a99982b5e84d9579d61721a1f73
+      internalID: -1150512417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_50
+      rect:
+        serializedVersion: 2
+        x: 2264
+        y: 113
+        width: 196
+        height: 630
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a4185cf22159f4abbdc97a4c76245b
+      internalID: -427481791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_51
+      rect:
+        serializedVersion: 2
+        x: 2480
+        y: 113
+        width: 203
+        height: 630
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc6fd251b57b2f4ca19149485f1983a
+      internalID: -1412050635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_52
+      rect:
+        serializedVersion: 2
+        x: 2703
+        y: 113
+        width: 203
+        height: 630
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 049bd9001e96cde40b19f8bf2625ef7a
+      internalID: 2053678491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_interaction_side_53
+      rect:
+        serializedVersion: 2
+        x: 2952
+        y: 112
+        width: 177
+        height: 630
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e398610786a246e4fa3bf8a9475eafc9
+      internalID: 1091430257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f293ef273febbb84f8216863d59fb787
     internalID: 0
     vertices: []
     indices: 
@@ -147,8 +1269,65 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Generic_interaction_side_0: 583915551
+      Generic_interaction_side_1: -1337674273
+      Generic_interaction_side_10: -775010157
+      Generic_interaction_side_11: 174269064
+      Generic_interaction_side_12: 1583429985
+      Generic_interaction_side_13: 959979102
+      Generic_interaction_side_14: -107975725
+      Generic_interaction_side_15: 766299912
+      Generic_interaction_side_16: 55306192
+      Generic_interaction_side_17: -416471169
+      Generic_interaction_side_18: 1851256243
+      Generic_interaction_side_19: -1460621375
+      Generic_interaction_side_2: 1288792004
+      Generic_interaction_side_20: -1653717989
+      Generic_interaction_side_21: 983478559
+      Generic_interaction_side_22: -1341174057
+      Generic_interaction_side_23: 89588053
+      Generic_interaction_side_24: -817738561
+      Generic_interaction_side_25: -2026582451
+      Generic_interaction_side_26: -1673463975
+      Generic_interaction_side_27: 1990050965
+      Generic_interaction_side_28: -1726781822
+      Generic_interaction_side_29: 642569433
+      Generic_interaction_side_3: 81423805
+      Generic_interaction_side_30: -1567688968
+      Generic_interaction_side_31: -559842742
+      Generic_interaction_side_32: 8545009
+      Generic_interaction_side_33: -1138028322
+      Generic_interaction_side_34: -151338030
+      Generic_interaction_side_35: -2002510085
+      Generic_interaction_side_36: 63563050
+      Generic_interaction_side_37: 1071306484
+      Generic_interaction_side_38: -1829411398
+      Generic_interaction_side_39: 993395149
+      Generic_interaction_side_4: 1392241412
+      Generic_interaction_side_40: -2125280533
+      Generic_interaction_side_41: -711938835
+      Generic_interaction_side_42: -1832675936
+      Generic_interaction_side_43: -393513309
+      Generic_interaction_side_44: -1693246406
+      Generic_interaction_side_45: -1194283196
+      Generic_interaction_side_46: -1078352704
+      Generic_interaction_side_47: 485183794
+      Generic_interaction_side_48: -1403434883
+      Generic_interaction_side_49: -1150512417
+      Generic_interaction_side_5: -994125923
+      Generic_interaction_side_50: -427481791
+      Generic_interaction_side_51: -1412050635
+      Generic_interaction_side_52: 2053678491
+      Generic_interaction_side_53: 1091430257
+      Generic_interaction_side_54: -1953607132
+      Generic_interaction_side_6: -691966951
+      Generic_interaction_side_7: 693712264
+      Generic_interaction_side_8: -735972994
+      Generic_interaction_side_9: -720322800
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

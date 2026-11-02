@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,13 +37,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -52,9 +52,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -134,12 +134,562 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Run_cycle_front_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1379
+        width: 164
+        height: 626
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77a0ce134a99a6f4fbe962fe5a4feaa5
+      internalID: 1537515273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_1
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 1364
+        width: 163
+        height: 641
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0552007274474bb46a6af9e94556d1b1
+      internalID: -2133691075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_4
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1359
+        width: 178
+        height: 647
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a423a0b0f7572d4c8d165dbe3ec9f67
+      internalID: -531847305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_5
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 1368
+        width: 198
+        height: 637
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10b621a82c8da454aaa4d1e621f06b78
+      internalID: -1513723769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_7
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 1371
+        width: 176
+        height: 634
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e805860d3e0b534687b14f93158e761
+      internalID: -478340805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_8
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 1364
+        width: 162
+        height: 641
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab3d38d008832f4faaa6e5406a3a6ea
+      internalID: 1948037671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_9
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 1371
+        width: 165
+        height: 634
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3bc357e5c186d1469bfeea1e2e06f42
+      internalID: -117843748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_10
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1363
+        width: 174
+        height: 642
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8c0a1d68edd89488eeee2527ce0d46
+      internalID: -1478223309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_11
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 1341
+        width: 211
+        height: 664
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e30e0563e79fab4e951d7db498b2313
+      internalID: 1339036939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_13
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 703
+        width: 204
+        height: 638
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04af8f985d96a414bb97fed0c9841aa4
+      internalID: 1661108542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_14
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 718
+        width: 188
+        height: 612
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cf02f0d7a5879945a7bbd6330dca14e
+      internalID: -292099351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_15
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 709
+        width: 170
+        height: 621
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce004b6bad43a44458ee7a5ea953f17b
+      internalID: -1143343243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_16
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 704
+        width: 161
+        height: 626
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68db2d607bc511c48ac6ab96df1599eb
+      internalID: -2117469484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_17
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 690
+        width: 162
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb482585e8ad744c86cf4b16f9b5662
+      internalID: -1434033110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_18
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 696
+        width: 268
+        height: 634
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77e1347f121f4254ba35b147276e809c
+      internalID: -1392642937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_19
+      rect:
+        serializedVersion: 2
+        x: 1497
+        y: 702
+        width: 284
+        height: 628
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91df3332d85bec4996f219163678314
+      internalID: 499033605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_28
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 16
+        width: 284
+        height: 634
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 295831b39ab453b40ae4f2aa107ea2ab
+      internalID: -2078479462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_29
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 9
+        width: 257
+        height: 641
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aca0706419291474ea8b9f602b39df68
+      internalID: -796486921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_30
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 16
+        width: 166
+        height: 634
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d366706f70281d04694b8d98edb6e4d8
+      internalID: 1374722446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_31
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 16
+        width: 175
+        height: 634
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d457c54d7067b6498abefb9c7da94a9
+      internalID: 1832768973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_32
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 18
+        width: 187
+        height: 632
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 451eebb93f622ad4187e860ec511a0f5
+      internalID: -1163055970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_33
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 23
+        width: 205
+        height: 638
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa11acaec0ec0640a6ed95558420744
+      internalID: -1236908358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_34
+      rect:
+        serializedVersion: 2
+        x: 1411
+        y: 38
+        width: 186
+        height: 612
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 146817b84657b0f4dab65025f9ef1569
+      internalID: 446308807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_35
+      rect:
+        serializedVersion: 2
+        x: 1619
+        y: 28
+        width: 167
+        height: 622
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 819b2a67f3eb4944ab969135a61bc6eb
+      internalID: -614531065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_front_36
+      rect:
+        serializedVersion: 2
+        x: 1808
+        y: 24
+        width: 164
+        height: 626
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e949712667b7cdb409b8a45844b26739
+      internalID: -1223547164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ce98ed1c3331f99429f56cdec951ec1f
     internalID: 0
     vertices: []
     indices: 
@@ -147,8 +697,47 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Run_cycle_front_0: 1537515273
+      Run_cycle_front_1: -2133691075
+      Run_cycle_front_10: -1478223309
+      Run_cycle_front_11: 1339036939
+      Run_cycle_front_12: 944488600
+      Run_cycle_front_13: 1661108542
+      Run_cycle_front_14: -292099351
+      Run_cycle_front_15: -1143343243
+      Run_cycle_front_16: -2117469484
+      Run_cycle_front_17: -1434033110
+      Run_cycle_front_18: -1392642937
+      Run_cycle_front_19: 499033605
+      Run_cycle_front_2: 1922455696
+      Run_cycle_front_20: 1916008394
+      Run_cycle_front_21: -804805918
+      Run_cycle_front_22: -423830941
+      Run_cycle_front_23: 1036914584
+      Run_cycle_front_24: 566988034
+      Run_cycle_front_25: 1625790735
+      Run_cycle_front_26: -1031579167
+      Run_cycle_front_27: -1336734476
+      Run_cycle_front_28: -2078479462
+      Run_cycle_front_29: -796486921
+      Run_cycle_front_3: -651580882
+      Run_cycle_front_30: 1374722446
+      Run_cycle_front_31: 1832768973
+      Run_cycle_front_32: -1163055970
+      Run_cycle_front_33: -1236908358
+      Run_cycle_front_34: 446308807
+      Run_cycle_front_35: -614531065
+      Run_cycle_front_36: -1223547164
+      Run_cycle_front_4: -531847305
+      Run_cycle_front_5: -1513723769
+      Run_cycle_front_6: 685472004
+      Run_cycle_front_7: -478340805
+      Run_cycle_front_8: 1948037671
+      Run_cycle_front_9: -117843748
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

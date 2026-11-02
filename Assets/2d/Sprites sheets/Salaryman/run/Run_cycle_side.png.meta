@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,13 +37,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -52,9 +52,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -134,12 +134,562 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Run_cycle_side_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1943
+        width: 426
+        height: 547
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34de614879f87bd44b767a3d5b5016c5
+      internalID: -781867903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_1
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 1940
+        width: 397
+        height: 550
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3437a35fdc938a44b27527ab20d27b4
+      internalID: -131932497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_2
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 1936
+        width: 365
+        height: 556
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd0a2c7f88e726346821cc408efbf883
+      internalID: -2072718249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_3
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 1923
+        width: 355
+        height: 569
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0daad47fc1f94f840875fde729187362
+      internalID: -1658620546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_4
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 1916
+        width: 314
+        height: 574
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b8038ab0fdf2274e9716809e60c6d21
+      internalID: -1622843121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_5
+      rect:
+        serializedVersion: 2
+        x: 2096
+        y: 1881
+        width: 375
+        height: 611
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43894c9af49e7d45a98d87290e549db
+      internalID: -1036442333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1268
+        width: 278
+        height: 599
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 450bb9406381af34b850f30c358c749e
+      internalID: 916178846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_15
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 1266
+        width: 223
+        height: 601
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf60d2be6a59a147a8ef43c0e3a5a7e
+      internalID: 1306707451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_16
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 1260
+        width: 220
+        height: 607
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e06c1731270d48246a2835923936b60d
+      internalID: -602058567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_17
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 1250
+        width: 234
+        height: 617
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ea56cbad6e61b5488d02eed1435af7e
+      internalID: 2108640916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_18
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 1299
+        width: 273
+        height: 568
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4251f89601b4229469c24c8cdddc19e0
+      internalID: 283575335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_19
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 1334
+        width: 344
+        height: 533
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d84d748d01c88ac45af8e1603a143d20
+      internalID: 727711715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_20
+      rect:
+        serializedVersion: 2
+        x: 1733
+        y: 1299
+        width: 423
+        height: 568
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda3248d1957f734bad73afe4fb0e175
+      internalID: -350602935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_22
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 679
+        width: 394
+        height: 549
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c901f321b1d61d1428bbaf225eacd3eb
+      internalID: 1208458896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_23
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 665
+        width: 375
+        height: 563
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8920d288dc697454fbe98e8d1368526e
+      internalID: -1038004409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_24
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 665
+        width: 390
+        height: 568
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a9a7b5f27cdd444c91dd28d5e32ed96
+      internalID: -1201161293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_25
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 653
+        width: 337
+        height: 575
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65a3f3d5140045d4285d9f8e429b3dd0
+      internalID: -406007815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_26
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 650
+        width: 288
+        height: 576
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75cfaa681e866cd4fadcfe42dbd3872b
+      internalID: 1331600500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_27
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 643
+        width: 238
+        height: 585
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb3337344eedd5948b31018d77990c54
+      internalID: -1431241913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_28
+      rect:
+        serializedVersion: 2
+        x: 2158
+        y: 641
+        width: 211
+        height: 590
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8f9ec5eeae6e7d409812c458ca26de5
+      internalID: 373138311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_31
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 20
+        width: 222
+        height: 615
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb1f970d5508194a98842fc61b9ecbc
+      internalID: 955272685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_32
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 16
+        width: 264
+        height: 620
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de23aeea98d47b4e9a419628cac1387
+      internalID: -1333980118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_33
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 30
+        width: 302
+        height: 605
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18be5585c14597e4d9ce508d75054902
+      internalID: -345914729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_34
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 36
+        width: 348
+        height: 598
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89385c28996c20145800815586c8bd10
+      internalID: -2073263136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_cycle_side_35
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 32
+        width: 459
+        height: 603
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f7f7fc979272f543beaac5d77fc3b60
+      internalID: -1312171303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: dd73e47c075bd334cb70e9e0f899d029
     internalID: 0
     vertices: []
     indices: 
@@ -147,8 +697,51 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Run_cycle_side_0: -781867903
+      Run_cycle_side_1: -131932497
+      Run_cycle_side_10: -100291136
+      Run_cycle_side_11: 1371127721
+      Run_cycle_side_12: 1301873086
+      Run_cycle_side_13: -1113327414
+      Run_cycle_side_14: 916178846
+      Run_cycle_side_15: 1306707451
+      Run_cycle_side_16: -602058567
+      Run_cycle_side_17: 2108640916
+      Run_cycle_side_18: 283575335
+      Run_cycle_side_19: 727711715
+      Run_cycle_side_2: -2072718249
+      Run_cycle_side_20: -350602935
+      Run_cycle_side_21: -1997350886
+      Run_cycle_side_22: 1208458896
+      Run_cycle_side_23: -1038004409
+      Run_cycle_side_24: -1201161293
+      Run_cycle_side_25: -406007815
+      Run_cycle_side_26: 1331600500
+      Run_cycle_side_27: -1431241913
+      Run_cycle_side_28: 373138311
+      Run_cycle_side_29: -890175461
+      Run_cycle_side_3: -1658620546
+      Run_cycle_side_30: 45874846
+      Run_cycle_side_31: 955272685
+      Run_cycle_side_32: -1333980118
+      Run_cycle_side_33: -345914729
+      Run_cycle_side_34: -2073263136
+      Run_cycle_side_35: -1312171303
+      Run_cycle_side_36: 438259058
+      Run_cycle_side_37: -411712739
+      Run_cycle_side_38: -2024366386
+      Run_cycle_side_39: -2032185443
+      Run_cycle_side_4: -1622843121
+      Run_cycle_side_40: 881751552
+      Run_cycle_side_5: -1036442333
+      Run_cycle_side_6: 1986353683
+      Run_cycle_side_7: 2050025713
+      Run_cycle_side_8: -2009710162
+      Run_cycle_side_9: 1156243545
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,13 +37,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -52,9 +52,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -134,12 +134,958 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Grab_side_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 2435
+        width: 241
+        height: 655
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5f023a9b626a7a4ca563f1f5cbf3388
+      internalID: -1598251923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_1
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 2446
+        width: 236
+        height: 646
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95c335e00224f6041a86c2271c4b05b9
+      internalID: 868716033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_2
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 2448
+        width: 277
+        height: 642
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff35a50858708e34e9811d61acb55ccb
+      internalID: 1764872874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_3
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 2471
+        width: 251
+        height: 619
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9da7a6f813b798c42bec6210ca7240a2
+      internalID: 270144818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_4
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 2487
+        width: 278
+        height: 605
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab86d1f09511ecb4c9df6698d739e26f
+      internalID: -1692126614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_5
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 2502
+        width: 285
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65b7d32049d16c488c5f0ec792d7b0a
+      internalID: -268126007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_6
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 2520
+        width: 285
+        height: 570
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b489550b2afd5ac4e90e69e0db6f0ec3
+      internalID: 1412785942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_7
+      rect:
+        serializedVersion: 2
+        x: 2082
+        y: 2538
+        width: 290
+        height: 552
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b923decd0387a145862d79e5f15698c
+      internalID: -46620239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_8
+      rect:
+        serializedVersion: 2
+        x: 2398
+        y: 2556
+        width: 306
+        height: 534
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9b0daf74571dd3439de20187f5196f2
+      internalID: 753543630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_9
+      rect:
+        serializedVersion: 2
+        x: 2727
+        y: 2576
+        width: 309
+        height: 514
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a04757f493d2bd04e90cf98330039c94
+      internalID: 1064542574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_12
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1930
+        width: 316
+        height: 496
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 274181370b9f27e4b9db696fd007f7b7
+      internalID: -687139560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_13
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 1950
+        width: 325
+        height: 476
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2aa2e7deace5194993b9a31fb441c2e
+      internalID: -1876514968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_14
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 1966
+        width: 336
+        height: 460
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bab127795398ee4cab7edbd7c5d69dd
+      internalID: -760511254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_15
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 1981
+        width: 345
+        height: 445
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90214d79bab9f594b8b7b7f9cb270bee
+      internalID: -2116155435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_16
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 1997
+        width: 374
+        height: 429
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ef544e235f754641a57f987d199626b
+      internalID: 915394287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_17
+      rect:
+        serializedVersion: 2
+        x: 1870
+        y: 2012
+        width: 362
+        height: 414
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 452bcb56e13cc544a8eb8182631038f4
+      internalID: 1877414926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_18
+      rect:
+        serializedVersion: 2
+        x: 2279
+        y: 2030
+        width: 373
+        height: 396
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b2d12fa494fa864babc9829c8ae4f76
+      internalID: -682762873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_20
+      rect:
+        serializedVersion: 2
+        x: 2689
+        y: 2045
+        width: 400
+        height: 381
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a4a574454e99a340bcf0c1e331efdf3
+      internalID: -1609719385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_24
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1558
+        width: 413
+        height: 364
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54d92b0f4d75c3c48bf39fa796822d20
+      internalID: 83461948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_25
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 1558
+        width: 413
+        height: 364
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d1ae55c052ce704b984ef32a6a1ea73
+      internalID: 883221877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_26
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 1558
+        width: 412
+        height: 364
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a29407451a1cf4b82b38944a5fe51f
+      internalID: 212507349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_27
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 1558
+        width: 412
+        height: 364
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edadb16139b137b47a09992bba0dfd80
+      internalID: 1114044629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_28
+      rect:
+        serializedVersion: 2
+        x: 1723
+        y: 1558
+        width: 412
+        height: 364
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ffbdc808c157f4eb8e1d2cab923303
+      internalID: 1310170496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_29
+      rect:
+        serializedVersion: 2
+        x: 2149
+        y: 1558
+        width: 413
+        height: 364
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acc404628b5329845aaa468080f424c3
+      internalID: -817440861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_31
+      rect:
+        serializedVersion: 2
+        x: 2577
+        y: 1558
+        width: 411
+        height: 364
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d721eb6b61decf74e9fbeea4cfed2fdd
+      internalID: -1770685051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_32
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1169
+        width: 411
+        height: 380
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91c357a3dfd31854ea438671c3009ae3
+      internalID: 1107296194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_33
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 1153
+        width: 399
+        height: 396
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf47d99c433c1d745bd6f95773b6a58e
+      internalID: 656411973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_34
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1137
+        width: 373
+        height: 412
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3811d3dcd945ec0429983b57d4f1ede7
+      internalID: -1820695763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_35
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 1120
+        width: 372
+        height: 429
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e521343bce332b46be182e1acc30c33
+      internalID: 1444166287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_36
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 1105
+        width: 344
+        height: 444
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 654256a0095923f41b41eef153b975fe
+      internalID: 393178286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_37
+      rect:
+        serializedVersion: 2
+        x: 2063
+        y: 1090
+        width: 340
+        height: 459
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a20dd73893fb264396b0ffc7ed13d7c
+      internalID: -1663367950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_38
+      rect:
+        serializedVersion: 2
+        x: 2427
+        y: 1073
+        width: 325
+        height: 476
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3bdaa43bbb0b1a4bba7ac587bf28871
+      internalID: 2075330106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_39
+      rect:
+        serializedVersion: 2
+        x: 2775
+        y: 1055
+        width: 315
+        height: 494
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f30f9f1f4194a26498d08673a578ee50
+      internalID: -1856291696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_43
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 530
+        width: 309
+        height: 516
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6210f4a6569e444ca66d37969e5577c
+      internalID: 1852828835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_44
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 512
+        width: 305
+        height: 534
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ba7900ab5a1cd4c803ce838ca34ad2
+      internalID: 1174403909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_45
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 492
+        width: 293
+        height: 554
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54819b4c04a222643873b569047beeca
+      internalID: -1155384906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_46
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 474
+        width: 286
+        height: 572
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd48e9a4a3fbc734ebe3068221702e6c
+      internalID: 1045839959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_47
+      rect:
+        serializedVersion: 2
+        x: 1313
+        y: 457
+        width: 278
+        height: 589
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2bed29f6eed1c0408047584142c56f2
+      internalID: -555052404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_48
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 441
+        width: 273
+        height: 605
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c36e3b9f7d84bf6409394a5e6e15027e
+      internalID: 239500709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_49
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 427
+        width: 270
+        height: 619
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7140d31bf6520b408f2e27793400247
+      internalID: 1074875377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_50
+      rect:
+        serializedVersion: 2
+        x: 2223
+        y: 412
+        width: 254
+        height: 634
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecfac98ced8f18f45a4600caea1943db
+      internalID: -332652953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_51
+      rect:
+        serializedVersion: 2
+        x: 2508
+        y: 400
+        width: 236
+        height: 646
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5becf7fef398a794d97441aed3191257
+      internalID: -1214732270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab_side_52
+      rect:
+        serializedVersion: 2
+        x: 2798
+        y: 389
+        width: 241
+        height: 657
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2e6e3b2d1b145a458368d9fddf87c36
+      internalID: -374925725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 10f3b6dcc3da7904b80ea1fb61e72526
     internalID: 0
     vertices: []
     indices: 
@@ -147,8 +1093,65 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Grab_side_0: -1598251923
+      Grab_side_1: 868716033
+      Grab_side_10: 1863661704
+      Grab_side_11: 1868488756
+      Grab_side_12: -687139560
+      Grab_side_13: -1876514968
+      Grab_side_14: -760511254
+      Grab_side_15: -2116155435
+      Grab_side_16: 915394287
+      Grab_side_17: 1877414926
+      Grab_side_18: -682762873
+      Grab_side_19: 1448363037
+      Grab_side_2: 1764872874
+      Grab_side_20: -1609719385
+      Grab_side_21: 1593185851
+      Grab_side_22: -1723055433
+      Grab_side_23: -738233985
+      Grab_side_24: 83461948
+      Grab_side_25: 883221877
+      Grab_side_26: 212507349
+      Grab_side_27: 1114044629
+      Grab_side_28: 1310170496
+      Grab_side_29: -817440861
+      Grab_side_3: 270144818
+      Grab_side_30: 1584775212
+      Grab_side_31: -1770685051
+      Grab_side_32: 1107296194
+      Grab_side_33: 656411973
+      Grab_side_34: -1820695763
+      Grab_side_35: 1444166287
+      Grab_side_36: 393178286
+      Grab_side_37: -1663367950
+      Grab_side_38: 2075330106
+      Grab_side_39: -1856291696
+      Grab_side_4: -1692126614
+      Grab_side_40: -144585573
+      Grab_side_41: -1221123832
+      Grab_side_42: 1923729466
+      Grab_side_43: 1852828835
+      Grab_side_44: 1174403909
+      Grab_side_45: -1155384906
+      Grab_side_46: 1045839959
+      Grab_side_47: -555052404
+      Grab_side_48: 239500709
+      Grab_side_49: 1074875377
+      Grab_side_5: -268126007
+      Grab_side_50: -332652953
+      Grab_side_51: -1214732270
+      Grab_side_52: -374925725
+      Grab_side_53: 1588588709
+      Grab_side_54: -1237357332
+      Grab_side_6: 1412785942
+      Grab_side_7: -46620239
+      Grab_side_8: 753543630
+      Grab_side_9: 1064542574
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

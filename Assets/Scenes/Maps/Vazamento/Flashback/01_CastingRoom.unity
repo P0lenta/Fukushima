@@ -10985,7 +10985,7 @@ PrefabInstance:
     - target: {fileID: 9213591186763927227, guid: ff4735ae4632fc6488e2595225c5ce8b, type: 3}
       propertyPath: _player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2145852023}
     - target: {fileID: 9213591186763927227, guid: ff4735ae4632fc6488e2595225c5ce8b, type: 3}
       propertyPath: _isParkourLevel
       value: 1
@@ -32483,10 +32483,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140150508}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2145852023 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1625412575540896489, guid: a4fb0a665f25cd74f8373ecf6f897c61, type: 3}
+  m_PrefabInstance: {fileID: 109666253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 109666253}
   - {fileID: 744714787}
   - {fileID: 1249342685}
   - {fileID: 309890115}
@@ -32679,7 +32685,6 @@ SceneRoots:
   - {fileID: 1674349366}
   - {fileID: 1753093117}
   - {fileID: 643134841}
-  - {fileID: 109666253}
   - {fileID: 1549462632}
   - {fileID: 337338329}
   - {fileID: 1309527603}
