@@ -6,6 +6,8 @@ using TMPro;
 
 public class DialogueUIManager : MonoBehaviour
 {
+    public static DialogueUIManager Instance { get; private set; }
+
     [Header("Componentes de UI")]
     public GameObject _dialoguePanel;
     public TextMeshProUGUI _dialogueText;
@@ -14,8 +16,9 @@ public class DialogueUIManager : MonoBehaviour
     [Header("Velocidade do texto")]
     public float _typingSpeed = 0.02f;
 
-    [Header("Referências")]
-    public PlayerMovement _playerMovement;
+    [Header("Input (Novo Input System)")]
+    [Tooltip("Arraste a AÇÃO (ex: Interact/Submit) do seu arquivo .inputactions aqui")]
+    public InputActionReference _advanceAction;
 
     private DialogueData _currentData;
     private int _currentLineIndex = 0;
@@ -24,21 +27,37 @@ public class DialogueUIManager : MonoBehaviour
     private int _startFrame;
     private Coroutine _typingCoroutine;
 
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+    }
+
     private void OnEnable()
     {
         DialogueInteractable.OnDialogueTriggered += StartDialogue;
+
+        if (_advanceAction != null)
+        {
+            _advanceAction.action.performed += OnAdvanceDialogue;
+            _advanceAction.action.Enable(); 
+        }
     }
 
     private void OnDisable()
     {
         DialogueInteractable.OnDialogueTriggered -= StartDialogue;
+
+        if (_advanceAction != null)
+        {
+            _advanceAction.action.performed -= OnAdvanceDialogue;
+        }
     }
 
     private void Start()
     {
         _dialoguePanel.SetActive(false);
         _dialogueText.text = "";
-        _documentImageDisplay.gameObject.SetActive(false);
+        if (_documentImageDisplay != null) _documentImageDisplay.gameObject.SetActive(false);
     }
 
     private void StartDialogue(DialogueData _data)
@@ -48,26 +67,26 @@ public class DialogueUIManager : MonoBehaviour
         _currentData = _data;
         _currentLineIndex = 0;
         _isDialogueActive = true;
-
         _startFrame = Time.frameCount;
 
         _dialoguePanel.SetActive(true);
 
-        if (_playerMovement != null) _playerMovement.StopMovement();
+        if (PlayerMovement.Instance != null) 
+        {
+            PlayerMovement.Instance.enabled = false; 
+        }
 
         _typingCoroutine = StartCoroutine(TypeLine());
     }
 
-    public void OnAdvanceDialogue(InputAction.CallbackContext context)
-    {
-        if (!_isDialogueActive || Time.frameCount == _startFrame   ) return;
-
-        if (context.started)
+    private void OnAdvanceDialogue(InputAction.CallbackContext context)
         {
+            if (!_isDialogueActive || Time.frameCount == _startFrame) return;
+
             if (_isTyping)
             {
                 if (_typingCoroutine != null) StopCoroutine(_typingCoroutine);
-            
+                
                 _dialogueText.text = _currentData._lines[_currentLineIndex]._text;
                 _isTyping = false;
             }
@@ -76,7 +95,6 @@ public class DialogueUIManager : MonoBehaviour
                 NextLine();
             }
         }
-    }
 
     private void NextLine()
     {
@@ -98,7 +116,13 @@ public class DialogueUIManager : MonoBehaviour
         _dialogueText.text = "";
 
         if (_documentImageDisplay != null)
-        _documentImageDisplay.gameObject.SetActive(false);
+            _documentImageDisplay.gameObject.SetActive(false);
+
+        // Religa o Player quando o diálogo acabar
+        if (PlayerMovement.Instance != null) 
+        {
+            PlayerMovement.Instance.enabled = true;
+        }
     }
 
     private IEnumerator TypeLine()
@@ -114,7 +138,7 @@ public class DialogueUIManager : MonoBehaviour
         }
         else
         {
-            _documentImageDisplay.gameObject.SetActive(false);
+            if (_documentImageDisplay != null) _documentImageDisplay.gameObject.SetActive(false);
         }
 
         foreach (char _c in _currentData._lines[_currentLineIndex]._text.ToCharArray())
