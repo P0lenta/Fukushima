@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _isJumpPressed = true;
 
-            if (Physics.Raycast(_col.bounds.center, Vector3.down, _col.bounds.extents.y * 1.1f, _floorLayers))
+            if (Physics.Raycast(_col.bounds.center, Vector3.down, _col.bounds.extents.y * 1.2f, _floorLayers))
             {
                 _rig.linearVelocity = new Vector3(
                     _rig.linearVelocity.x,

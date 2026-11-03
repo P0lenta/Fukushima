@@ -35,22 +35,13 @@ public class DialogueUIManager : MonoBehaviour
     private void OnEnable()
     {
         DialogueInteractable.OnDialogueTriggered += StartDialogue;
-
-        if (_advanceAction != null)
-        {
-            _advanceAction.action.performed += OnAdvanceDialogue;
-            _advanceAction.action.Enable(); 
-        }
+        
+        if (_advanceAction != null) _advanceAction.action.Enable(); 
     }
 
     private void OnDisable()
     {
         DialogueInteractable.OnDialogueTriggered -= StartDialogue;
-
-        if (_advanceAction != null)
-        {
-            _advanceAction.action.performed -= OnAdvanceDialogue;
-        }
     }
 
     private void Start()
@@ -58,6 +49,31 @@ public class DialogueUIManager : MonoBehaviour
         _dialoguePanel.SetActive(false);
         _dialogueText.text = "";
         if (_documentImageDisplay != null) _documentImageDisplay.gameObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (!_isDialogueActive || Time.frameCount == _startFrame) return;
+
+        if (_advanceAction != null && _advanceAction.action.WasPressedThisFrame())
+        {
+            AvancarOuCompletarTexto();
+        }
+    }
+
+    private void AvancarOuCompletarTexto()
+    {
+        if (_isTyping)
+        {
+            if (_typingCoroutine != null) StopCoroutine(_typingCoroutine);
+            
+            _dialogueText.text = _currentData._lines[_currentLineIndex]._text;
+            _isTyping = false;
+        }
+        else
+        {
+            NextLine();
+        }
     }
 
     private void StartDialogue(DialogueData _data)
@@ -78,23 +94,6 @@ public class DialogueUIManager : MonoBehaviour
 
         _typingCoroutine = StartCoroutine(TypeLine());
     }
-
-    private void OnAdvanceDialogue(InputAction.CallbackContext context)
-        {
-            if (!_isDialogueActive || Time.frameCount == _startFrame) return;
-
-            if (_isTyping)
-            {
-                if (_typingCoroutine != null) StopCoroutine(_typingCoroutine);
-                
-                _dialogueText.text = _currentData._lines[_currentLineIndex]._text;
-                _isTyping = false;
-            }
-            else
-            {
-                NextLine();
-            }
-        }
 
     private void NextLine()
     {
@@ -118,7 +117,6 @@ public class DialogueUIManager : MonoBehaviour
         if (_documentImageDisplay != null)
             _documentImageDisplay.gameObject.SetActive(false);
 
-        // Religa o Player quando o diálogo acabar
         if (PlayerMovement.Instance != null) 
         {
             PlayerMovement.Instance.enabled = true;
