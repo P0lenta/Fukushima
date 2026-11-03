@@ -1,7 +1,6 @@
 using UnityEngine;
 
 [RequireComponent(typeof(DialogueInteractable))]
-
 public class DialogueCondition : MonoBehaviour
 {
     [Header("Nova fala condicional")]
@@ -19,7 +18,7 @@ public class DialogueCondition : MonoBehaviour
 
     public void CheckCondition()
     {
-        if (PlayerPrefs.GetInt(_conditionKey, 0) == 1)
+        if (SaveManager.Instance._currentData._unlockedConditions.Contains(_conditionKey))
         {
             _dialogueComponent._currentDialogue = _conditionalDialogue;
         }
@@ -31,7 +30,11 @@ public class DialogueCondition : MonoBehaviour
 
     public void MarkCondition()
     {
-        PlayerPrefs.SetInt(_conditionKey, 1);
+        if (!SaveManager.Instance._currentData._unlockedConditions.Contains(_conditionKey))
+        {
+            SaveManager.Instance._currentData._unlockedConditions.Add(_conditionKey);
+            SaveManager.Instance.SaveGame();
+        }
 
         _dialogueComponent._currentDialogue = _conditionalDialogue;
     }

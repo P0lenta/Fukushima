@@ -68,9 +68,9 @@ MonoBehaviour:
   _onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1413546841607266039}
-        m_TargetAssemblyTypeName: Door, Assembly-CSharp
-        m_MethodName: TentarAbrir
+      - m_Target: {fileID: 7084517711372625535}
+        m_TargetAssemblyTypeName: DialogueCondition, Assembly-CSharp
+        m_MethodName: CheckCondition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -83,6 +83,18 @@ MonoBehaviour:
       - m_Target: {fileID: 6563353778093280527}
         m_TargetAssemblyTypeName: DialogueInteractable, Assembly-CSharp
         m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1413546841607266039}
+        m_TargetAssemblyTypeName: Door, Assembly-CSharp
+        m_MethodName: TentarAbrir
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

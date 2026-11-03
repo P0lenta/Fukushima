@@ -1,5 +1,4 @@
 using UnityEngine;
-using DG.Tweening;
 
 public class Door : MonoBehaviour
 {
@@ -35,6 +34,7 @@ public class Door : MonoBehaviour
             if (_requiredCard == 1) _hasAccess = PlayerInventory.Instance._hasCard1;
             else if (_requiredCard == 2) _hasAccess = PlayerInventory.Instance._hasCard2;
             else if (_requiredCard == 3) _hasAccess = PlayerInventory.Instance._hasCard3;
+            else if (_requiredCard == 0) _hasAccess = true;
         }
 
         if (_hasAccess)
@@ -44,9 +44,6 @@ public class Door : MonoBehaviour
         else
         {
             Debug.Log($"[Porta] Trancada! Requer o cartão {_requiredCard}.");
-            
-            transform.DOKill();
-            transform.DOPunchPosition(transform.right * 0.12f, 0.25f, 10, 1f);
         }
     }
 
