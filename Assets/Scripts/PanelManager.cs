@@ -1,10 +1,16 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem; // Adicionado para o Input System
 using DG.Tweening;
 
 public class PanelManager : MonoBehaviour
 {
+    public static PanelManager Instance { get; private set; } 
+
+    [Header("Input (Novo Input System)")]
+    public InputActionReference _pauseAction;
+
     [Header("Canvas de pause")]
     public GameObject _canvasPause;
     private RectTransform _canvasRectTransform;
@@ -26,10 +32,17 @@ public class PanelManager : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance == null) Instance = this;
+
         if (_canvasPause != null)
         {
             _canvasRectTransform = _canvasPause.GetComponent<RectTransform>();
         }
+    }
+
+    private void OnEnable()
+    {
+        if (_pauseAction != null) _pauseAction.action.Enable();
     }
 
     private void Start() 
@@ -53,6 +66,14 @@ public class PanelManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             Time.timeScale = 1f;
+        }
+    }
+
+    private void Update()
+    {
+        if (!_isMainMenu && _pauseAction != null && _pauseAction.action.WasPressedThisFrame())
+        {
+            ToggleMenu();
         }
     }
 
