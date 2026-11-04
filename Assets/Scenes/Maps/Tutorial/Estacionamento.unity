@@ -2610,6 +2610,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5784547362716322114, guid: 10e2464053842c24dac8728c44966f31, type: 3}
+      propertyPath: m_OverridePixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6051193215478700546, guid: 10e2464053842c24dac8728c44966f31, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -41587,7 +41591,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!1001 &1264727350
 PrefabInstance:
@@ -56875,7 +56879,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!1001 &1735157313
 PrefabInstance:
@@ -68492,7 +68496,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!1001 &2065036314
 PrefabInstance:
@@ -71291,8 +71295,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 1044185518}
   - {fileID: 744714787}
-  - {fileID: 86604379}
   - {fileID: 1021782073}
+  - {fileID: 86604379}
   - {fileID: 1145861735}
   - {fileID: 1249342685}
   - {fileID: 568202392}
