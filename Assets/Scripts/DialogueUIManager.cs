@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
@@ -7,6 +8,8 @@ using TMPro;
 public class DialogueUIManager : MonoBehaviour
 {
     public static DialogueUIManager Instance { get; private set; }
+    
+    public static event Action _onDialogueEnded;
 
     [Header("Componentes de UI")]
     public GameObject _dialoguePanel;
@@ -108,21 +111,6 @@ public class DialogueUIManager : MonoBehaviour
         }
     }
 
-    private void EndDialogue()
-    {
-        _isDialogueActive = false;
-        _dialoguePanel.SetActive(false);
-        _dialogueText.text = "";
-
-        if (_documentImageDisplay != null)
-            _documentImageDisplay.gameObject.SetActive(false);
-
-        if (PlayerMovement.Instance != null) 
-        {
-            PlayerMovement.Instance.enabled = true;
-        }
-    }
-
     private IEnumerator TypeLine()
     {
         _isTyping = true;
@@ -146,5 +134,22 @@ public class DialogueUIManager : MonoBehaviour
         }
 
         _isTyping = false;
+    }
+
+    private void EndDialogue()
+    {
+        _isDialogueActive = false;
+        _dialoguePanel.SetActive(false);
+        _dialogueText.text = "";
+
+        if (_documentImageDisplay != null)
+            _documentImageDisplay.gameObject.SetActive(false);
+
+        if (PlayerMovement.Instance != null) 
+        {
+            PlayerMovement.Instance.enabled = true;
+        }
+
+        _onDialogueEnded?.Invoke(); 
     }
 }

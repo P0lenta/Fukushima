@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem; // Adicionado para o Input System
+using UnityEngine.InputSystem;
 using DG.Tweening;
 
 public class PanelManager : MonoBehaviour
 {
-    public static PanelManager Instance { get; private set; } 
+    public static PanelManager Instance { get; private set; }
 
     [Header("Input (Novo Input System)")]
     public InputActionReference _pauseAction;
@@ -33,11 +33,8 @@ public class PanelManager : MonoBehaviour
     private void Awake()
     {
         if (Instance == null) Instance = this;
-
         if (_canvasPause != null)
-        {
             _canvasRectTransform = _canvasPause.GetComponent<RectTransform>();
-        }
     }
 
     private void OnEnable()
@@ -45,16 +42,15 @@ public class PanelManager : MonoBehaviour
         if (_pauseAction != null) _pauseAction.action.Enable();
     }
 
-    private void Start() 
+    private void Start()
     {
         if (_canvasPause != null) _canvasPause.SetActive(false);
-
         foreach (GameObject _panel in _panels)
         {
             if (_panel != null) _panel.SetActive(false);
         }
 
-        _menuOpen = false;  
+        _menuOpen = false;
         _isFlipping = false;
 
         if (!_isMainMenu)
@@ -72,66 +68,45 @@ public class PanelManager : MonoBehaviour
     private void Update()
     {
         if (!_isMainMenu && _pauseAction != null && _pauseAction.action.WasPressedThisFrame())
-        {
             ToggleMenu();
-        }
     }
 
     public void ToggleMenu()
     {
         if (_isFlipping) return;
-
         _menuOpen = !_menuOpen;
 
         if (_canvasRectTransform == null && _canvasPause != null)
             _canvasRectTransform = _canvasPause.GetComponent<RectTransform>();
 
         _canvasRectTransform.DOKill();
-
         float posicaoYEscondido = -Screen.height;
 
         if (_menuOpen)
         {
             if (!_isMainMenu) TravarJogo(true);
-
             TrocarVisibilidadeInstantanio(_initialPanel);
-
             _canvasPause.SetActive(true);
 
             _canvasRectTransform.anchoredPosition = new Vector2(0f, posicaoYEscondido);
             _canvasRectTransform.localRotation = Quaternion.Euler(0f, 0f, _angulo_inclinacao);
 
-            _canvasRectTransform.DOAnchorPos(Vector2.zero, _duracao_animacao)
-                .SetUpdate(true)
-                .SetEase(Ease.OutBack);
-
-            _canvasRectTransform.DOLocalRotate(Vector3.zero, _duracao_animacao)
-                .SetUpdate(true)
-                .SetEase(Ease.OutCubic);
+            _canvasRectTransform.DOAnchorPos(Vector2.zero, _duracao_animacao).SetUpdate(true).SetEase(Ease.OutBack);
+            _canvasRectTransform.DOLocalRotate(Vector3.zero, _duracao_animacao).SetUpdate(true).SetEase(Ease.OutCubic);
         }
         else
         {
             if (!_isMainMenu) TravarJogo(false);
 
-            _canvasRectTransform.DOAnchorPos(new Vector2(0f, posicaoYEscondido), _duracao_animacao * 0.8f)
-                .SetUpdate(true)
-                .SetEase(Ease.InCubic);
-
-            _canvasRectTransform.DOLocalRotate(new Vector3(0f, 0f, _angulo_inclinacao * 1.5f), _duracao_animacao * 0.8f)
-                .SetUpdate(true)
-                .SetEase(Ease.InCubic)
-                .OnComplete(() =>
-                {
-                    _canvasPause.SetActive(false);
-                });
+            _canvasRectTransform.DOAnchorPos(new Vector2(0f, posicaoYEscondido), _duracao_animacao * 0.8f).SetUpdate(true).SetEase(Ease.InCubic);
+            _canvasRectTransform.DOLocalRotate(new Vector3(0f, 0f, _angulo_inclinacao * 1.5f), _duracao_animacao * 0.8f).SetUpdate(true).SetEase(Ease.InCubic)
+                .OnComplete(() => _canvasPause.SetActive(false));
         }
     }
 
     public void AbrirPainel(GameObject _desiredPanel)
     {
-        if (_desiredPanel == null || _isFlipping) return;
-
-        if (_currentPanelActive == _desiredPanel) return;
+        if (_desiredPanel == null || _isFlipping || _currentPanelActive == _desiredPanel) return;
 
         if (_currentPanelActive == null)
         {
@@ -140,24 +115,14 @@ public class PanelManager : MonoBehaviour
         }
 
         _isFlipping = true;
-
         _canvasRectTransform.DOKill();
-        _canvasRectTransform.DOLocalRotate(new Vector3(0f, 90f, 0f), _duracao_flip)
-            .SetUpdate(true)
-            .SetEase(Ease.InBack)
+        _canvasRectTransform.DOLocalRotate(new Vector3(0f, 90f, 0f), _duracao_flip).SetUpdate(true).SetEase(Ease.InBack)
             .OnComplete(() =>
             {
                 TrocarVisibilidadeInstantanio(_desiredPanel);
-
                 _canvasRectTransform.localRotation = Quaternion.Euler(0f, -90f, 0f);
-
-                _canvasRectTransform.DOLocalRotate(Vector3.zero, _duracao_flip)
-                    .SetUpdate(true)
-                    .SetEase(Ease.OutBack)
-                    .OnComplete(() =>
-                    {
-                        _isFlipping = false;
-                    });
+                _canvasRectTransform.DOLocalRotate(Vector3.zero, _duracao_flip).SetUpdate(true).SetEase(Ease.OutBack)
+                    .OnComplete(() => _isFlipping = false);
             });
     }
 
@@ -167,22 +132,16 @@ public class PanelManager : MonoBehaviour
         {
             if (_panel != null) _panel.SetActive(_panel == _desiredPanel);
         }
-
         _currentPanelActive = _desiredPanel;
-
         if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
     }
 
-    public void VoltarProInicio()
-    {
-        AbrirPainel(_initialPanel);
-    }
+    public void VoltarProInicio() => AbrirPainel(_initialPanel);
 
     public void TravarJogo(bool _travar)
     {
         Cursor.lockState = _travar ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = _travar;
-
         Time.timeScale = _travar ? 0f : 1f;
     }
 
@@ -195,12 +154,10 @@ public class PanelManager : MonoBehaviour
     public void Sair()
     {
         Debug.Log("Jogo fechado");
-        
         Application.Quit();
-
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-        #endif
+#endif
     }
 
     public void DeletarSave()
@@ -208,7 +165,6 @@ public class PanelManager : MonoBehaviour
         if (SaveManager.Instance != null)
         {
             SaveManager.Instance.ResetData();
-            
             Debug.Log("Save resetado com sucesso!");
         }
     }

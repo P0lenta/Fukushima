@@ -5,6 +5,10 @@ using System.Collections;
 [RequireComponent(typeof(Collider))]
 public class TriggerEvent : MonoBehaviour
 {
+    [Header("Debug (Testes)")]
+    [Tooltip("Se marcado, ignora o JSON e roda o gatilho sempre (Apenas no Editor do Unity)")]
+    public bool _forcarModoTeste = false;
+
     [Header("Filtros de Colisão")]
     public string _targetTag = "Player";
     public bool _triggerOnlyOnce = true;
@@ -25,7 +29,6 @@ public class TriggerEvent : MonoBehaviour
     public UnityEvent _onTriggerEnter;
     public UnityEvent _onTriggerExit;
 
-    // --- Variáveis de Controle ---
     private bool _hasTriggered = false;
     private bool _canTrigger = false;
     private Collider _meuColisor;
@@ -36,7 +39,13 @@ public class TriggerEvent : MonoBehaviour
 
         if (!string.IsNullOrEmpty(_saveConditionKey) && SaveManager.Instance != null)
         {
-            if (SaveManager.Instance._currentData._unlockedConditions.Contains(_saveConditionKey))
+            bool jaPassou = SaveManager.Instance._currentData._unlockedConditions.Contains(_saveConditionKey);
+
+#if UNITY_EDITOR
+            if (_forcarModoTeste) jaPassou = false; 
+#endif
+
+            if (jaPassou)
             {
                 DesativarGatilhoPermanentemente();
                 yield break; 
@@ -94,10 +103,37 @@ public class TriggerEvent : MonoBehaviour
             _meuColisor.enabled = false;
         }
 
-        // Desliga o objeto inteiro da cena
         if (_disableGameObjectAfter)
         {
             gameObject.SetActive(false);
+        }
+    }
+
+    [ContextMenu("Resetar este evento no Save")]
+    public void ResetarEventoNoSave()
+    {
+        if (string.IsNullOrEmpty(_saveConditionKey))
+        {
+            Debug.LogWarning("Nenhuma Chave de Save configurada neste gatilho.");
+            return;
+        }
+
+        if (SaveManager.Instance != null && SaveManager.Instance._currentData != null)
+        {
+            if (SaveManager.Instance._currentData._unlockedConditions.Contains(_saveConditionKey))
+            {
+                SaveManager.Instance._currentData._unlockedConditions.Remove(_saveConditionKey);
+                SaveManager.Instance.SaveGame();
+                Debug.Log($"<color=green>Sucesso!</color> A chave '{_saveConditionKey}' foi apagada do save. Dê play para testar de novo.");
+            }
+            else
+            {
+                Debug.Log("O save já não possui esse evento registrado.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Dê play no jogo pelo menos uma vez na cena para carregar o SaveManager antes de usar este botão.");
         }
     }
 }

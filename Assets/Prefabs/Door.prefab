@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1413546841607266039}
   - component: {fileID: 7486497579528505822}
   - component: {fileID: 6563353778093280527}
-  - component: {fileID: 7084517711372625535}
   - component: {fileID: 4635077578972796354}
   m_Layer: 6
   m_Name: Door
@@ -52,7 +51,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Door
   _requiredCard: 1
   _cenaDestino: 
-  _mudarDeCenaAoAbrir: 1
+  _dialogoTrancada: {fileID: 11400000, guid: 973d4cf1c579d2f4fa94362bec3e3a40, type: 2}
+  _dialogoAberta: {fileID: 11400000, guid: f134dfc66c1a9cd4b89c3cb05403b4f6, type: 2}
   _animator: {fileID: 1259332439832706632}
   _meshCollider: {fileID: 4635077578972796354}
 --- !u!114 &7486497579528505822
@@ -70,30 +70,6 @@ MonoBehaviour:
   _onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7084517711372625535}
-        m_TargetAssemblyTypeName: DialogueCondition, Assembly-CSharp
-        m_MethodName: CheckCondition
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6563353778093280527}
-        m_TargetAssemblyTypeName: DialogueInteractable, Assembly-CSharp
-        m_MethodName: TriggerDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1413546841607266039}
         m_TargetAssemblyTypeName: Door, Assembly-CSharp
         m_MethodName: TentarAbrir
@@ -113,18 +89,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
         m_MethodName: SetTrigger
         m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: FocusIn
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 7084517711372625535}
-        m_TargetAssemblyTypeName: DialogueCondition, Assembly-CSharp
-        m_MethodName: CheckCondition
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -161,20 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueInteractable
   _currentDialogue: {fileID: 11400000, guid: 973d4cf1c579d2f4fa94362bec3e3a40, type: 2}
---- !u!114 &7084517711372625535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710195349742096366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a979c0d569193c34c87133877c18eebd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueCondition
-  _conditionalDialogue: {fileID: 11400000, guid: f134dfc66c1a9cd4b89c3cb05403b4f6, type: 2}
-  _conditionKey: "Tem o cart\xE3o de acesso"
 --- !u!65 &4635077578972796354
 BoxCollider:
   m_ObjectHideFlags: 0
