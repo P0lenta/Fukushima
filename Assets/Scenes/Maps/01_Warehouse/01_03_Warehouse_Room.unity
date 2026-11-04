@@ -7501,8 +7501,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1413546841607266039, guid: b6160b420a7b8894d8768a37b2bd70a3, type: 3}
+      propertyPath: _cenaDestino
+      value: 01_CastingRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413546841607266039, guid: b6160b420a7b8894d8768a37b2bd70a3, type: 3}
       propertyPath: _requiredCard
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413546841607266039, guid: b6160b420a7b8894d8768a37b2bd70a3, type: 3}
+      propertyPath: _dialogoAberta
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ce648256cf75bf4eaeaf31ef9884816, type: 2}
+    - target: {fileID: 1413546841607266039, guid: b6160b420a7b8894d8768a37b2bd70a3, type: 3}
+      propertyPath: _dialogoTrancada
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1689993723291360742, guid: b6160b420a7b8894d8768a37b2bd70a3, type: 3}
       propertyPath: m_LocalPosition.x
