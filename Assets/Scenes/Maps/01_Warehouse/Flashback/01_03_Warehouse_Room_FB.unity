@@ -3945,7 +3945,7 @@ Transform:
   m_GameObject: {fileID: 608822333}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 117.01, y: 0.29300028, z: -10.11}
+  m_LocalPosition: {x: 117.01, y: 0.29300028, z: -13.3}
   m_LocalScale: {x: 95.44578, y: 21.400282, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4846,6 +4846,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 7e7ad2c2871d2e7438af71a6f556cfc8, type: 2}
+    - target: {fileID: 8866441676973774143, guid: 04d73da2f8626b547aaeed1e161ceb3f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.322
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11322,7 +11326,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 753085877514606280, guid: a4fb0a665f25cd74f8373ecf6f897c61, type: 3}
       propertyPath: _speed
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 753085877514606280, guid: a4fb0a665f25cd74f8373ecf6f897c61, type: 3}
       propertyPath: _jumpForce
