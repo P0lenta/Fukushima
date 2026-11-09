@@ -41,11 +41,10 @@ public class PlayerDeath : MonoBehaviour
 
         OnPlayerDied?.Invoke();
 
-        /*if (_playerAnimator != null)
+        if (PlayerMovement.Instance != null)
         {
-            if (_causaDaMorte == "Queda") _playerAnimator.SetTrigger("DieFall");
-            else if (_causaDaMorte == "Radiacao") _playerAnimator.SetTrigger("DieRadiation");
-        }*/
+            PlayerMovement.Instance.TriggerDeath();
+        }
 
         StartCoroutine(RotinaDeMorte());
     }

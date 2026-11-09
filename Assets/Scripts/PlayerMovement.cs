@@ -197,4 +197,10 @@ public class PlayerMovement : MonoBehaviour
             TravarControles();
         }
     }
+
+    public Vector3 ObterDirecaoVisual()
+    {
+        Vector3 _direcao = new Vector3(_lastMoveX, 0f, _lastMoveY).normalized;
+        return _direcao == Vector3.zero ? Vector3.forward : _direcao;
+    }
 }

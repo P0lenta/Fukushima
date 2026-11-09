@@ -18,7 +18,7 @@ public class PlayerInteract : MonoBehaviour
 
     void ChecarInteracao()
     {
-        Vector3 _direction = transform.forward;
+        Vector3 _direction = PlayerMovement.Instance.ObterDirecaoVisual();
 
         Debug.DrawRay(rayOrigin.position, _direction * _interactRange, Color.red);
 
@@ -27,7 +27,7 @@ public class PlayerInteract : MonoBehaviour
             if (_hit.collider.TryGetComponent<IInteractable>(out IInteractable _interactableObject))
             {
                 Debug.DrawRay(rayOrigin.position, _direction * _interactRange, Color.green);
-                
+
                 if (_currentInteractable != _interactableObject)
                 {
                     if (_currentInteractable != null) _currentInteractable.OnLoseFocus();
@@ -50,8 +50,11 @@ public class PlayerInteract : MonoBehaviour
     {
         if (!context.started) return;
 
-        if (_currentInteractable != null) _currentInteractable.Interact();
-    }
-    
+        if (_currentInteractable != null)
+        {
+            _currentInteractable.Interact();
 
+            PlayerMovement.Instance.TriggerInteract();
+        }
+    }
 }
