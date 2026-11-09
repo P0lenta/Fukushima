@@ -6,18 +6,22 @@ public class PlayerMovement : MonoBehaviour
     [Header("Valores de velocidade")]
     public float _speed = 10f;            
     public float _jumpForce = 10f;
-    public float _rotationSpeed = 720f;
 
     [Header("Ajustes de gravidade")]
     public float _fallMultiplyer = 2.5f; 
     public float _jumpMultiplyer = 2f;
 
-    [Header("Colisores")]
+    [Header("Colisores e Física")]
     public Rigidbody _rig;               
     public Collider _col;                
     public LayerMask _floorLayers; 
-    public Animator _moveAnimation;
     public FixerPlatform _fixerPlatform;
+
+    [Header("Visuais 2D")]
+    public Animator _animator;
+    public SpriteRenderer _spriteRenderer;
+    [Tooltip("Se o seu sprite 'de lado' foi desenhado olhando para a direita, deixe falso. Se foi para a esquerda, marque verdadeiro.")]
+    public bool _inverterFlipSide = false;
 
     private Vector3 _moveInput;
     private Vector2 _input;
@@ -26,12 +30,14 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody _currentPlatformRb;
     private Vector3 _lastPlatformPosition;
-
     private bool _isControlsLocked = false;
+
+    private float _lastMoveX = 0f;
+    private float _lastMoveY = -1f;
 
     public static PlayerMovement Instance { get; private set; }
     public static System.Action OnPlayerJumped;
-    public bool _isMoving => _moveInput.magnitude > 0.1f;
+    public bool _isMoving => _moveInput.magnitude > 0.9f;
 
     private void Awake()
     {
@@ -72,6 +78,20 @@ public class PlayerMovement : MonoBehaviour
         _input = context.ReadValue<Vector2>();
         Vector3 _direction = new Vector3(_input.x, 0, _input.y);
         _moveInput = _direction.normalized * _speed;
+
+        if (_input.magnitude > 0.1f)
+        {
+            if (Mathf.Abs(_input.x) > Mathf.Abs(_input.y))
+            {
+                _lastMoveX = Mathf.Sign(_input.x);
+                _lastMoveY = 0f;
+            }
+            else
+            {
+                _lastMoveX = 0f;
+                _lastMoveY = Mathf.Sign(_input.y);
+            }
+        }
     }
 
     public void OnJump(InputAction.CallbackContext context)
@@ -84,48 +104,61 @@ public class PlayerMovement : MonoBehaviour
 
             if (Physics.Raycast(_col.bounds.center, Vector3.down, _col.bounds.extents.y * 1.2f, _floorLayers))
             {
-                _rig.linearVelocity = new Vector3(
-                    _rig.linearVelocity.x,
-                    _jumpForce,
-                    _rig.linearVelocity.z);
-                    
-                    OnPlayerJumped?.Invoke();
+                _rig.linearVelocity = new Vector3(_rig.linearVelocity.x, _jumpForce, _rig.linearVelocity.z);
+                OnPlayerJumped?.Invoke();
+                
+                if (_animator != null) _animator.SetTrigger("Jump");
             }
         }
-        else if (context.canceled) _isJumpPressed = false;
+        else if (context.canceled) 
+        {
+            _isJumpPressed = false;
+        }
     }
 
     private void Update() 
     {
         _currentMagnitude = _moveInput.magnitude;
-
-        if (_moveAnimation != null)
-            _moveAnimation.SetFloat("MoveMagnitude", _currentMagnitude);
+        AtualizarVisuais2D();
     }
 
     void FixedUpdate()
     {
         Vector3 movementVector = _isControlsLocked ? Vector3.zero : _moveInput;
-
         Vector3 _platformVelocity = _fixerPlatform != null ? _fixerPlatform._platformGetVelocity : Vector3.zero;
 
         float _targetY = _rig.linearVelocity.y;
-
         if (_platformVelocity.y < 0 && !_isJumpPressed && _rig.linearVelocity.y <= 0.01f) _targetY = _platformVelocity.y;
 
         _rig.linearVelocity = new Vector3(movementVector.x + _platformVelocity.x, _targetY, movementVector.z + _platformVelocity.z);
 
         ApplyJumpGravity();
 
-        if (!_isControlsLocked)
-        {
-            RotateCharacter();
-        }
-
         if (_currentPlatformRb != null)
         {
             _lastPlatformPosition = _currentPlatformRb.position;
         }
+
+        _rig.MoveRotation(Quaternion.identity); 
+    }
+
+    private void AtualizarVisuais2D()
+    {
+        if (_animator == null || _spriteRenderer == null) return;
+
+        if (_input.x != 0)
+        {
+            bool _indoParaEsquerda = _input.x < 0;
+            _spriteRenderer.flipX = _inverterFlipSide ? !_indoParaEsquerda : _indoParaEsquerda;
+        }
+
+        _animator.SetFloat("MoveX", _lastMoveX);
+        _animator.SetFloat("MoveY", _lastMoveY);
+        _animator.SetBool("IsMoving", _isMoving);
+
+        bool _isGrounded = Physics.Raycast(_col.bounds.center, Vector3.down, _col.bounds.extents.y * 1.2f, _floorLayers);
+        _animator.SetBool("IsGrounded", _isGrounded);
+        _animator.SetFloat("VerticalVelocity", _rig.linearVelocity.y);
     }
 
     public void StopMovement()
@@ -146,33 +179,22 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void RotateCharacter()
+    public void TriggerInteract()
     {
-        if (_currentMagnitude > 0.1f)
+        if (_animator != null) _animator.SetTrigger("Interact");
+    }
+
+    public void TriggerGrab()
+    {
+        if (_animator != null) _animator.SetTrigger("Grab");
+    }
+
+    public void TriggerDeath()
+    {
+        if (_animator != null) 
         {
-            Vector3 _snapInput = Vector3.zero;
-
-            if (Mathf.Abs(_input.x) > Mathf.Abs(_input.y))
-            {
-                _snapInput.x = Mathf.Sign(_input.x);
-            }
-            else
-            {
-                _snapInput.z = Mathf.Sign(_input.y);
-            }
-
-            Quaternion _rotation = Quaternion.LookRotation(_snapInput, Vector3.up);
-
-            Quaternion targetRotation = Quaternion.RotateTowards(_rig.rotation, _rotation, _rotationSpeed * Time.fixedDeltaTime);
-            
-            _rig.MoveRotation(targetRotation);
-        }
-        else
-        {
-            Vector3 _currentEuler = _rig.rotation.eulerAngles;
-            float _snapY = Mathf.Round(_currentEuler.y / 90f) * 90f;
-            
-            _rig.MoveRotation(Quaternion.Euler(0f, _snapY, 0f));
+            _animator.SetTrigger("Death");
+            TravarControles();
         }
     }
 }
