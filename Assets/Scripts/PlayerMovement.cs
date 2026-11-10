@@ -159,14 +159,17 @@ public class PlayerMovement : MonoBehaviour
         bool _isGrounded = Physics.Raycast(_col.bounds.center, Vector3.down, _col.bounds.extents.y * 1.2f, _floorLayers);
         _animator.SetBool("IsGrounded", _isGrounded);
         _animator.SetFloat("VerticalVelocity", _rig.linearVelocity.y);
-
-        Debug.Log($"<color=yellow>MoveX: {_lastMoveX} | MoveY: {_lastMoveY} | IsMoving: {_isMoving}</color>");
     }
 
     public void StopMovement()
     {
         _input = Vector2.zero;
         _moveInput = Vector3.zero;
+
+        if (_rig != null)
+        {
+            _rig.linearVelocity = new Vector3(0f, _rig.linearVelocity.y, 0f);
+        }
     }
 
     private void ApplyJumpGravity()
