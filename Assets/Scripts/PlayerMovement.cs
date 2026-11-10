@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     public static PlayerMovement Instance { get; private set; }
     public static System.Action OnPlayerJumped;
-    public bool _isMoving => _moveInput.magnitude > 0.9f;
+    public bool _isMoving => _moveInput.magnitude > 0.1f;
 
     private void Awake()
     {
@@ -79,17 +79,17 @@ public class PlayerMovement : MonoBehaviour
         Vector3 _direction = new Vector3(_input.x, 0, _input.y);
         _moveInput = _direction.normalized * _speed;
 
-        if (_input.magnitude > 0.1f)
+        if (_input.magnitude > 0.1f) 
         {
-            if (Mathf.Abs(_input.x) > Mathf.Abs(_input.y))
+            if (Mathf.Abs(_input.x) > Mathf.Abs(_input.y) + 0.1f)
             {
-                _lastMoveX = Mathf.Sign(_input.x);
+                _lastMoveX = _input.x > 0 ? 1f : -1f;
                 _lastMoveY = 0f;
             }
-            else
+            else if (Mathf.Abs(_input.y) > Mathf.Abs(_input.x) + 0.1f)
             {
                 _lastMoveX = 0f;
-                _lastMoveY = Mathf.Sign(_input.y);
+                _lastMoveY = _input.y > 0 ? 1f : -1f;
             }
         }
     }
@@ -159,6 +159,8 @@ public class PlayerMovement : MonoBehaviour
         bool _isGrounded = Physics.Raycast(_col.bounds.center, Vector3.down, _col.bounds.extents.y * 1.2f, _floorLayers);
         _animator.SetBool("IsGrounded", _isGrounded);
         _animator.SetFloat("VerticalVelocity", _rig.linearVelocity.y);
+
+        Debug.Log($"<color=yellow>MoveX: {_lastMoveX} | MoveY: {_lastMoveY} | IsMoving: {_isMoving}</color>");
     }
 
     public void StopMovement()
