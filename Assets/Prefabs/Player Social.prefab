@@ -110,8 +110,12 @@ MonoBehaviour:
   _col: {fileID: 9195272977266741053}
   _floorLayers:
     serializedVersion: 2
-    m_Bits: 95
+    m_Bits: 8
   _fixerPlatform: {fileID: 941482584712676127}
+  _ledgeReach: 0.4
+  _handHeightOffset: 0.3
+  _headClearance: 0.5
+  _climbDuration: 0.25
   _animator: {fileID: 5862484020366261263}
   _spriteRenderer: {fileID: 3648461868556904291}
   _inverterFlipSide: 0
