@@ -43,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _lastPlatformPosition;
     private bool _isControlsLocked = false;
 
-    // Estados do Ledge Grab
     private bool _isGrabbingLedge = false;
     private bool _isClimbingLedge = false;
     private float _ledgeCooldownTimer = 0f;
@@ -118,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (context.started)  
         {
+            Debug.Log($"[Jump] Locked: {_isControlsLocked} | Climbing: {_isClimbingLedge} | Grabbing: {_isGrabbingLedge} | Grounded: {IsGrounded()}");
             _isJumpPressed = true;
 
             if (_isGrabbingLedge)
