@@ -12,6 +12,7 @@ public class TutorialManager : MonoBehaviour
     public CanvasGroup _moveTutorialPanel;
     public CanvasGroup _jumpTutorialPanel;
     public CanvasGroup _interactTutorialPanel;
+    public CanvasGroup _radiationTutorialPanel;
 
     [Header("Feedbacks Visuais")]
     [Tooltip("Imagem com Image Type em 'Filled'")]
@@ -37,6 +38,7 @@ public class TutorialManager : MonoBehaviour
         if (_moveTutorialPanel != null) { _moveTutorialPanel.alpha = 0; _moveTutorialPanel.gameObject.SetActive(false); }
         if (_jumpTutorialPanel != null) { _jumpTutorialPanel.alpha = 0; _jumpTutorialPanel.gameObject.SetActive(false); }
         if (_interactTutorialPanel != null) { _interactTutorialPanel.alpha = 0; _interactTutorialPanel.gameObject.SetActive(false); }
+        if (_radiationTutorialPanel != null) { _radiationTutorialPanel.alpha = 0; _radiationTutorialPanel.gameObject.SetActive(false); }
     }
 
     private void OnEnable() => PlayerMovement.OnPlayerJumped += RegistrarPulo;
@@ -96,7 +98,15 @@ public class TutorialManager : MonoBehaviour
         MostrarPainel(_interactTutorialPanel);
     }
 
-    // --- MÉTODOS DE CONCLUSÃO ---
+    public void MostrarTutorialRadiacao()
+    {
+        MostrarPainel(_radiationTutorialPanel);
+    }
+
+    public void EsconderTutorialRadiacao()
+    {
+        EsconderPainel(_radiationTutorialPanel);
+    }
 
     private void RegistrarPulo()
     {
@@ -132,8 +142,16 @@ public class TutorialManager : MonoBehaviour
     private void MostrarPainel(CanvasGroup _panel)
     {
         if (_panel == null) return;
+        _panel.DOKill();
         _panel.gameObject.SetActive(true);
         _panel.DOFade(1f, 0.5f).SetUpdate(true);
+    }
+
+    private void EsconderPainel(CanvasGroup _panel)
+    {
+        if (_panel == null) return;
+        _panel.DOKill();
+        _panel.DOFade(0f, 0.5f).SetUpdate(true).OnComplete(() => _panel.gameObject.SetActive(false));
     }
 
     private void ConcluirTutorial(string _saveKey, CanvasGroup _panel)
@@ -144,9 +162,6 @@ public class TutorialManager : MonoBehaviour
             SaveManager.Instance.SaveGame();
         }
 
-        if (_panel != null)
-        {
-            _panel.DOFade(0f, 0.5f).SetUpdate(true).OnComplete(() => _panel.gameObject.SetActive(false));
-        }
+        EsconderPainel(_panel);
     }
 }
