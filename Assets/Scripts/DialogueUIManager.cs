@@ -14,6 +14,7 @@ public class DialogueUIManager : MonoBehaviour
     [Header("Componentes de UI")]
     public GameObject _dialoguePanel;
     public TextMeshProUGUI _dialogueText;
+    public TextMeshProUGUI _dialogueCharacter;
     public Image _documentImageDisplay;
 
     [Header("Velocidade do texto")]
@@ -137,6 +138,12 @@ public class DialogueUIManager : MonoBehaviour
         {
             _dialogueText.text += _c;
             yield return new WaitForSeconds(_typingSpeed); 
+        }
+
+        String _currentCharacter = _currentData._lines[_currentLineIndex]._char;
+        if (_currentCharacter != null)
+        {
+            _dialogueCharacter.text = _currentCharacter;
         }
 
         _isTyping = false;

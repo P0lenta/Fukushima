@@ -8,6 +8,9 @@ public struct DialogueLine
 
     [Tooltip("Imagem")]
     public Sprite _documentImage;
+
+    [Tooltip("Personagem falando")]
+    public string _char;
 }
 
 [CreateAssetMenu(fileName = "Novo Dialogo", menuName = "Sistema de Dialogo/Novo Dialogo")]
