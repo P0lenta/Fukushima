@@ -10655,8 +10655,34 @@ PrefabInstance:
     - {fileID: 3733420834301449274, guid: a4e6a52fef80f274bb1f2081ea40acc3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8147363944472937849, guid: a4e6a52fef80f274bb1f2081ea40acc3, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1028453320}
   m_SourcePrefab: {fileID: 100100000, guid: a4e6a52fef80f274bb1f2081ea40acc3, type: 3}
+--- !u!1 &1028453319 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8147363944472937849, guid: a4e6a52fef80f274bb1f2081ea40acc3, type: 3}
+  m_PrefabInstance: {fileID: 1028453318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1028453320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028453319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27953704679c8cf4e9eea4aed740386f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Door
+  _requiredCard: 1
+  _cenaDestino: 
+  _dialogoTrancada: {fileID: 0}
+  _dialogoAberta: {fileID: 0}
+  _animator: {fileID: 0}
+  _meshCollider: {fileID: 0}
 --- !u!1001 &1031212852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11757,7 +11783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2975463962346318546, guid: 677f2c1f7517bb243a2d08a50fa94084, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3232318926632196547, guid: 677f2c1f7517bb243a2d08a50fa94084, type: 3}
       propertyPath: _onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -11773,15 +11799,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6721504756682605904, guid: 677f2c1f7517bb243a2d08a50fa94084, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 106.88
+      value: 125.41
       objectReference: {fileID: 0}
     - target: {fileID: 6721504756682605904, guid: 677f2c1f7517bb243a2d08a50fa94084, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9954447
+      value: -1.58
       objectReference: {fileID: 0}
     - target: {fileID: 6721504756682605904, guid: 677f2c1f7517bb243a2d08a50fa94084, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.24
+      value: -7.38
       objectReference: {fileID: 0}
     - target: {fileID: 6721504756682605904, guid: 677f2c1f7517bb243a2d08a50fa94084, type: 3}
       propertyPath: m_LocalRotation.w

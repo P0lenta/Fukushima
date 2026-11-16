@@ -14,6 +14,7 @@ public class DialogueUIManager : MonoBehaviour
     [Header("Componentes de UI")]
     public GameObject _dialoguePanel;
     public TextMeshProUGUI _dialogueText;
+    public TextMeshProUGUI _dialogueCharacter;
     public Image _documentImageDisplay;
 
     [Header("Velocidade do texto")]
@@ -52,6 +53,7 @@ public class DialogueUIManager : MonoBehaviour
         _dialoguePanel.SetActive(false);
         _dialogueText.text = "";
         if (_documentImageDisplay != null) _documentImageDisplay.gameObject.SetActive(false);
+        if (_dialogueCharacter != null) _dialogueCharacter.gameObject.SetActive(false); 
     }
 
     private void Update()
@@ -122,6 +124,13 @@ public class DialogueUIManager : MonoBehaviour
         _isTyping = true;
         _dialogueText.text = "";
 
+        String _currentCharacter = _currentData._lines[_currentLineIndex]._char;
+        if (_currentCharacter != null)
+        {
+            _dialogueCharacter.text = _currentCharacter;
+            _dialogueCharacter.gameObject.SetActive(true);
+        }
+
         Sprite _currentImage = _currentData._lines[_currentLineIndex]._documentImage;
         if (_currentImage != null)
         {
@@ -150,6 +159,8 @@ public class DialogueUIManager : MonoBehaviour
 
         if (_documentImageDisplay != null)
             _documentImageDisplay.gameObject.SetActive(false);
+
+        if (_dialogueCharacter != null) _dialogueCharacter.gameObject.SetActive(false);
 
         if (PlayerMovement.Instance != null) 
         {
