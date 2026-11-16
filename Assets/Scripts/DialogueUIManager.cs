@@ -92,7 +92,13 @@ public class DialogueUIManager : MonoBehaviour
 
         if (PlayerMovement.Instance != null) 
         {
+            PlayerMovement.Instance.StopMovement();
             PlayerMovement.Instance.enabled = false; 
+        }
+
+        if (PlayerMovement.Instance._animator != null)
+        {
+            PlayerMovement.Instance._animator.SetBool("IsMoving", false);
         }
 
         _typingCoroutine = StartCoroutine(TypeLine());

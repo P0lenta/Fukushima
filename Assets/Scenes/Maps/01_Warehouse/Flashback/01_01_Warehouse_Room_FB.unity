@@ -7208,7 +7208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3232318926632196547, guid: 677f2c1f7517bb243a2d08a50fa94084, type: 3}
       propertyPath: _onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3232318926632196547, guid: 677f2c1f7517bb243a2d08a50fa94084, type: 3}
       propertyPath: _onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -7216,7 +7216,11 @@ PrefabInstance:
       objectReference: {fileID: 600799299}
     - target: {fileID: 3232318926632196547, guid: 677f2c1f7517bb243a2d08a50fa94084, type: 3}
       propertyPath: _onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: VoltarParaPresente
+      value: IrParaPassado
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232318926632196547, guid: 677f2c1f7517bb243a2d08a50fa94084, type: 3}
+      propertyPath: _onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 01_01_Warehouse_Room
       objectReference: {fileID: 0}
     - target: {fileID: 6721504756682605904, guid: 677f2c1f7517bb243a2d08a50fa94084, type: 3}
       propertyPath: m_LocalScale.y
@@ -7475,6 +7479,22 @@ PrefabInstance:
     - target: {fileID: 2579226008528869893, guid: a4fb0a665f25cd74f8373ecf6f897c61, type: 3}
       propertyPath: m_Name
       value: Player Social
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648461868556904291, guid: a4fb0a665f25cd74f8373ecf6f897c61, type: 3}
+      propertyPath: m_Size.x
+      value: 4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648461868556904291, guid: a4fb0a665f25cd74f8373ecf6f897c61, type: 3}
+      propertyPath: m_Size.y
+      value: 6.601499
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648461868556904291, guid: a4fb0a665f25cd74f8373ecf6f897c61, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1490455202, guid: 3214d25839e08e54181b6c2ffcad3c87, type: 3}
+    - target: {fileID: 3648461868556904291, guid: a4fb0a665f25cd74f8373ecf6f897c61, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8303,6 +8323,22 @@ PrefabInstance:
     - target: {fileID: 60623042065143002, guid: ff4735ae4632fc6488e2595225c5ce8b, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741639674946748949, guid: ff4735ae4632fc6488e2595225c5ce8b, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741639674946748949, guid: ff4735ae4632fc6488e2595225c5ce8b, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741639674946748949, guid: ff4735ae4632fc6488e2595225c5ce8b, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741639674946748949, guid: ff4735ae4632fc6488e2595225c5ce8b, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7611398679437870571, guid: ff4735ae4632fc6488e2595225c5ce8b, type: 3}
       propertyPath: m_LocalPosition.x

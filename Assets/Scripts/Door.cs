@@ -1,5 +1,5 @@
 using UnityEngine;
-using System; // Necessário para os Action Events
+using System;
 
 [RequireComponent(typeof(DialogueInteractable))]
 public class Door : MonoBehaviour
@@ -23,7 +23,7 @@ public class Door : MonoBehaviour
 
     private bool _isOpen = false;
     private bool _esperandoDialogoDeSucesso = false;
-    
+
     private DialogueInteractable _dialogueInteractable;
 
     private void Awake()
@@ -43,6 +43,8 @@ public class Door : MonoBehaviour
 
     public void TentarAbrir()
     {
+        if (_esperandoDialogoDeSucesso) return;
+
         if (_isOpen)
         {
             if (!string.IsNullOrEmpty(_cenaDestino)) EntrarNaPorta();
@@ -65,7 +67,7 @@ public class Door : MonoBehaviour
         else
         {
             Debug.Log($"[Porta] Trancada! Requer o cartão {_requiredCard}.");
-            
+
             if (_dialogueInteractable != null && _dialogoTrancada != null)
             {
                 _dialogueInteractable._currentDialogue = _dialogoTrancada;
@@ -76,23 +78,19 @@ public class Door : MonoBehaviour
 
     private void AbrirPorta()
     {
-        _isOpen = true;
-
-        if (_animator != null) _animator.SetTrigger("_abrirPorta");
-        if (_meshCollider != null) _meshCollider.enabled = false;
-
-
         if (_dialogueInteractable != null && _dialogoAberta != null)
         {
             _dialogueInteractable._currentDialogue = _dialogoAberta;
-            
+
             _esperandoDialogoDeSucesso = true;
             DialogueUIManager._onDialogueEnded += AoTerminarDialogoAberta;
-            
+
             _dialogueInteractable.TriggerDialogue();
         }
         else
         {
+            ExecutarAberturaDaPorta();
+
             if (!string.IsNullOrEmpty(_cenaDestino)) EntrarNaPorta();
         }
     }
@@ -100,14 +98,24 @@ public class Door : MonoBehaviour
     private void AoTerminarDialogoAberta()
     {
         if (!_esperandoDialogoDeSucesso) return;
-        
+
         _esperandoDialogoDeSucesso = false;
         DialogueUIManager._onDialogueEnded -= AoTerminarDialogoAberta;
+
+        ExecutarAberturaDaPorta();
 
         if (!string.IsNullOrEmpty(_cenaDestino))
         {
             EntrarNaPorta();
         }
+    }
+
+    private void ExecutarAberturaDaPorta()
+    {
+        _isOpen = true;
+
+        if (_animator != null) _animator.SetTrigger("_abrirPorta");
+        if (_meshCollider != null) _meshCollider.enabled = false;
     }
 
     public void FecharPorta()
