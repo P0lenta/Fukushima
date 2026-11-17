@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
     private void TravarControles()
     {
         _isControlsLocked = true;
-        if (_isGrabbingLedge) SoltarBeirada();
+        if (_isGrabbingLedge || _isClimbingLedge) SoltarBeirada();
         StopMovement(); 
     }
 
@@ -117,7 +117,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (context.started)  
         {
-            Debug.Log($"[Jump] Locked: {_isControlsLocked} | Climbing: {_isClimbingLedge} | Grabbing: {_isGrabbingLedge} | Grounded: {IsGrounded()}");
             _isJumpPressed = true;
 
             if (_isGrabbingLedge)
@@ -191,31 +190,65 @@ public class PlayerMovement : MonoBehaviour
         Vector3 _handOrigin = _col.bounds.center + Vector3.up * _handHeightOffset;
         Vector3 _headOrigin = _handOrigin + Vector3.up * _headClearance;
 
-        if (Physics.Raycast(_handOrigin, _forwardDir, out RaycastHit _wallHit, _totalReach, _floorLayers) &&
-            !Physics.Raycast(_headOrigin, _forwardDir, _totalReach + 0.15f, _floorLayers))
-        {
-            Vector3 _topRayOrigin = new Vector3(_wallHit.point.x, _headOrigin.y, _wallHit.point.z) + _forwardDir * 0.25f;
+        if (!Physics.Raycast(_handOrigin, _forwardDir, out RaycastHit _wallHit, _totalReach, _floorLayers, QueryTriggerInteraction.Ignore))
+            return;
 
-            if (Physics.Raycast(_topRayOrigin, Vector3.down, out RaycastHit _topHit, _headClearance + 0.5f, _floorLayers))
+        if (TemObstaculoSolidoNoRaio(_headOrigin, _forwardDir, _totalReach + 0.25f))
+            return;
+
+        Vector3 _topRayOrigin = new Vector3(_wallHit.point.x, _headOrigin.y, _wallHit.point.z) + _forwardDir * 0.25f;
+
+        if (Physics.Raycast(_topRayOrigin, Vector3.down, out RaycastHit _topHit, _headClearance + 0.5f, _floorLayers, QueryTriggerInteraction.Ignore))
+        {
+            Vector3 _pivotToCenter = _col.bounds.center - transform.position;
+            Vector3 _hangCenter = new Vector3(_wallHit.point.x, _topHit.point.y - _handHeightOffset, _wallHit.point.z) + _wallHit.normal * (_radius + 0.05f);
+            Vector3 _standCenter = _topHit.point + Vector3.up * (_col.bounds.extents.y + 0.05f) + _forwardDir * (_radius + 0.2f);
+
+            if (!EspacoLivreParaCorpo(_hangCenter, 0.85f) || !EspacoLivreParaCorpo(_standCenter, 0.9f))
+                return;
+
+            if (Physics.Linecast(_hangCenter, _standCenter, out RaycastHit _pathHit, ~0, QueryTriggerInteraction.Ignore))
             {
-                IniciarAgarrar(_wallHit, _topHit, _forwardDir, _radius);
+                if (_pathHit.collider != _col && !_pathHit.collider.transform.IsChildOf(transform))
+                    return;
             }
+
+            IniciarAgarrar(_hangCenter - _pivotToCenter, _standCenter - _pivotToCenter);
         }
     }
 
-    private void IniciarAgarrar(RaycastHit _wallHit, RaycastHit _topHit, Vector3 _forwardDir, float _radius)
+    private bool TemObstaculoSolidoNoRaio(Vector3 origin, Vector3 dir, float distance)
+    {
+        RaycastHit[] hits = Physics.RaycastAll(origin, dir, distance, ~0, QueryTriggerInteraction.Ignore);
+        foreach (RaycastHit hit in hits)
+        {
+            if (hit.collider != _col && !hit.collider.transform.IsChildOf(transform))
+                return true;
+        }
+        return false;
+    }
+
+    private bool EspacoLivreParaCorpo(Vector3 targetCenter, float scaleMargin)
+    {
+        Vector3 halfExtents = _col.bounds.extents * scaleMargin;
+        Collider[] hits = Physics.OverlapBox(targetCenter, halfExtents, Quaternion.identity, ~0, QueryTriggerInteraction.Ignore);
+
+        foreach (Collider hit in hits)
+        {
+            if (hit != _col && !hit.transform.IsChildOf(transform))
+                return false;
+        }
+        return true;
+    }
+
+    private void IniciarAgarrar(Vector3 _hangPosition, Vector3 _standPosition)
     {
         _isGrabbingLedge = true;
         _rig.useGravity = false;
         _rig.linearVelocity = Vector3.zero;
 
-        Vector3 _pivotToCenter = _col.bounds.center - transform.position;
-
-        Vector3 _hangCenter = new Vector3(_wallHit.point.x, _topHit.point.y - _handHeightOffset, _wallHit.point.z) + _wallHit.normal * (_radius + 0.05f);
-        transform.position = _hangCenter - _pivotToCenter;
-
-        Vector3 _standCenter = _topHit.point + Vector3.up * (_col.bounds.extents.y + 0.05f) + _forwardDir * (_radius + 0.2f);
-        _climbTargetPosition = _standCenter - _pivotToCenter;
+        transform.position = _hangPosition;
+        _climbTargetPosition = _standPosition;
 
         TriggerGrab();
     }
@@ -225,7 +258,7 @@ public class PlayerMovement : MonoBehaviour
         _isGrabbingLedge = false;
         _isClimbingLedge = true;
 
-        if (_animator != null) _animator.SetBool("IsGrabbing", false);
+        TriggerGrab();
 
         Vector3 startPos = transform.position;
         float elapsed = 0f;
@@ -234,14 +267,16 @@ public class PlayerMovement : MonoBehaviour
         {
             elapsed += Time.deltaTime;
             float t = Mathf.SmoothStep(0f, 1f, elapsed / _climbDuration);
-            transform.position = Vector3.Lerp(startPos, _climbTargetPosition, t);
+            _rig.MovePosition(Vector3.Lerp(startPos, _climbTargetPosition, t));
             yield return null;
         }
 
-        transform.position = _climbTargetPosition;
+        _rig.MovePosition(_climbTargetPosition);
         _isClimbingLedge = false;
         _rig.useGravity = true;
         _ledgeCooldownTimer = 0.4f;
+
+        if (_animator != null) _animator.SetBool("IsGrabbing", false);
     }
 
     public void SoltarBeirada()
@@ -255,7 +290,12 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics.Raycast(_col.bounds.center, Vector3.down, _col.bounds.extents.y * 1.2f, _floorLayers);
+        if (_col == null) return false;
+
+        float sphereRadius = Mathf.Max(0.2f, Mathf.Max(_col.bounds.extents.x, _col.bounds.extents.z) * 0.85f);
+        Vector3 sphereCenter = new Vector3(_col.bounds.center.x, _col.bounds.min.y + (sphereRadius * 0.6f), _col.bounds.center.z);
+
+        return Physics.CheckSphere(sphereCenter, sphereRadius, _floorLayers, QueryTriggerInteraction.Ignore);
     }
 
     private void AtualizarVisuais2D()
@@ -271,7 +311,7 @@ public class PlayerMovement : MonoBehaviour
         _animator.SetFloat("MoveX", _lastMoveX);
         _animator.SetFloat("MoveY", _lastMoveY);
         _animator.SetBool("IsMoving", _isMoving);
-        _animator.SetBool("IsGrabbing", _isGrabbingLedge);
+        _animator.SetBool("IsGrabbing", _isGrabbingLedge || _isClimbingLedge);
 
         bool _isGrounded = IsGrounded();
         _animator.SetBool("IsGrounded", _isGrounded);
@@ -303,6 +343,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void TriggerInteract()
     {
+        StopMovement();
         if (_animator != null) _animator.SetTrigger("Interact");
     }
 
@@ -310,6 +351,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_animator != null)
         {
+            _animator.ResetTrigger("Grab");
             _animator.SetTrigger("Grab");
             _animator.SetBool("IsGrabbing", true);
         }
@@ -333,6 +375,11 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         if (_col == null) return;
+
+        float sphereRadius = Mathf.Max(0.2f, Mathf.Max(_col.bounds.extents.x, _col.bounds.extents.z) * 0.85f);
+        Vector3 sphereCenter = new Vector3(_col.bounds.center.x, _col.bounds.min.y + (sphereRadius * 0.6f), _col.bounds.center.z);
+        Gizmos.color = Application.isPlaying && IsGrounded() ? Color.green : Color.red;
+        Gizmos.DrawWireSphere(sphereCenter, sphereRadius);
 
         Vector3 forwardDir = Application.isPlaying ? ObterDirecaoVisual() : Vector3.right;
         float radius = Mathf.Max(_col.bounds.extents.x, _col.bounds.extents.z);

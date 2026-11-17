@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 
 public class PlayerDeath : MonoBehaviour
@@ -19,18 +20,91 @@ public class PlayerDeath : MonoBehaviour
     [Tooltip("Se a posição Y do Player for menor ou igual a esse valor, a morte por queda é disparada automaticamente.")]
     public float _killYThreshold = -10f;
 
+    [Header("Morte na Água")]
+    [Tooltip("Tempo contínuo em contato com a layer 'Water' para morrer.")]
+    public float _tempoParaMorrerNaAgua = 0.5f;
+
     public bool _isDead { get; private set; } = false;
+
+    private int _waterLayer;
+    private float _waterContactTimer = 0f;
+    private readonly HashSet<Collider> _activeWaterColliders = new HashSet<Collider>();
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
+        _waterLayer = LayerMask.NameToLayer("Water");
+    }
+
+    private void Start()
+    {
+        if (_waterLayer == -1)
+        {
+            Debug.LogWarning("[PlayerDeath] A layer 'Water' não foi encontrada. Crie-a em Edit > Project Settings > Tags and Layers.");
+        }
     }
 
     private void Update()
     {
-        if (!_isDead && transform.position.y <= _killYThreshold)
+        if (_isDead) return;
+
+        if (transform.position.y <= _killYThreshold)
         {
             Morrer("Queda");
+            return;
+        }
+
+        VerificarContatoComAgua();
+    }
+
+    private void VerificarContatoComAgua()
+    {
+        _activeWaterColliders.RemoveWhere(c => c == null || !c.enabled || !c.gameObject.activeInHierarchy);
+
+        if (_activeWaterColliders.Count > 0)
+        {
+            _waterContactTimer += Time.deltaTime;
+
+            if (_waterContactTimer >= _tempoParaMorrerNaAgua)
+            {
+                Morrer("Agua");
+            }
+        }
+        else
+        {
+            _waterContactTimer = 0f;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (_waterLayer != -1 && other.gameObject.layer == _waterLayer)
+        {
+            _activeWaterColliders.Add(other);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (_waterLayer != -1 && other.gameObject.layer == _waterLayer)
+        {
+            _activeWaterColliders.Remove(other);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (_waterLayer != -1 && collision.gameObject.layer == _waterLayer)
+        {
+            _activeWaterColliders.Add(collision.collider);
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (_waterLayer != -1 && collision.gameObject.layer == _waterLayer)
+        {
+            _activeWaterColliders.Remove(collision.collider);
         }
     }
 
@@ -44,6 +118,10 @@ public class PlayerDeath : MonoBehaviour
         if (PlayerMovement.Instance != null)
         {
             PlayerMovement.Instance.TriggerDeath();
+        }
+        else if (_playerAnimator != null)
+        {
+            _playerAnimator.SetTrigger("Death");
         }
 
         StartCoroutine(RotinaDeMorte());
