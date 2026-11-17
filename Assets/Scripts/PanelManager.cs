@@ -30,6 +30,8 @@ public class PanelManager : MonoBehaviour
     private const float _duracao_flip = 0.25f;
     private const float _angulo_inclinacao = -8f;
 
+    public bool IsMenuOpen => _menuOpen;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -73,6 +75,9 @@ public class PanelManager : MonoBehaviour
 
     public void ToggleMenu()
     {
+
+        if (DialogueUIManager.Instance != null && DialogueUIManager.Instance._isDialogueActive) return;
+
         if (_isFlipping) return;
         _menuOpen = !_menuOpen;
 

@@ -27,7 +27,7 @@ public class DialogueUIManager : MonoBehaviour
     private DialogueData _currentData;
     private int _currentLineIndex = 0;
     private bool _isTyping = false;
-    private bool _isDialogueActive = false;
+    public bool _isDialogueActive = false;
     private int _startFrame;
     private Coroutine _typingCoroutine;
 
@@ -59,6 +59,8 @@ public class DialogueUIManager : MonoBehaviour
     private void Update()
     {
         if (!_isDialogueActive || Time.frameCount == _startFrame) return;
+
+        if (PanelManager.Instance != null && PanelManager.Instance.IsMenuOpen) return;
 
         if (_advanceAction != null && _advanceAction.action.WasPressedThisFrame())
         {
