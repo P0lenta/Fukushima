@@ -102,10 +102,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2397c1067e00ecdddaccc2e3c827d9cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  _speed: 6
-  _jumpForce: 6
+  _speed: 5
+  _jumpForce: 5
   _fallMultiplyer: 2.5
-  _jumpMultiplyer: 2
+  _jumpMultiplyer: 3
   _rig: {fileID: 6026088431026700291}
   _col: {fileID: 9195272977266741053}
   _floorLayers:
@@ -185,6 +185,7 @@ MonoBehaviour:
   _tempoAteReset: 2.5
   _fadeDuration: 1.5
   _killYThreshold: -10
+  _tempoParaMorrerNaAgua: 0.5
 --- !u!114 &1197465413366128598
 MonoBehaviour:
   m_ObjectHideFlags: 0
