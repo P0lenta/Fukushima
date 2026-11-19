@@ -4070,6 +4070,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Card1
       objectReference: {fileID: 0}
+    - target: {fileID: 1580813864680369063, guid: 10e2464053842c24dac8728c44966f31, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580813864680369063, guid: 10e2464053842c24dac8728c44966f31, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580813864680369063, guid: 10e2464053842c24dac8728c44966f31, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3610287576468403311, guid: 10e2464053842c24dac8728c44966f31, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4140,6 +4152,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5784547362716322114, guid: 10e2464053842c24dac8728c44966f31, type: 3}
       propertyPath: m_OverridePixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044907041010673948, guid: 10e2464053842c24dac8728c44966f31, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044907041010673948, guid: 10e2464053842c24dac8728c44966f31, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051193215478700546, guid: 10e2464053842c24dac8728c44966f31, type: 3}
@@ -23293,8 +23313,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: /3
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d00969e7a09ed174b881af0071886dad, type: 2}
+  m_sharedMaterial: {fileID: -1906946483577923057, guid: d00969e7a09ed174b881af0071886dad, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -40959,8 +40979,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Aperte [E] para interagir com \nobjetos"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d00969e7a09ed174b881af0071886dad, type: 2}
+  m_sharedMaterial: {fileID: -1906946483577923057, guid: d00969e7a09ed174b881af0071886dad, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -55429,8 +55449,8 @@ MonoBehaviour:
   m_text: "Perto da usina, existem zonas\ncom alto n\xEDvel de radia\xE7\xE3o!\n\nEsse
     \xE9 seu medidor Geiger, use-o\npara ficar longe de perigo.\n "
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d00969e7a09ed174b881af0071886dad, type: 2}
+  m_sharedMaterial: {fileID: -1906946483577923057, guid: d00969e7a09ed174b881af0071886dad, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -67882,6 +67902,10 @@ PrefabInstance:
     - target: {fileID: 6051737335970995430, guid: 11e33792da6d06c47b5da7b3e6787646, type: 3}
       propertyPath: m_Name
       value: WATER (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051737335970995430, guid: 11e33792da6d06c47b5da7b3e6787646, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -91948,8 +91972,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Aperte [W] [A] [S] [D] para ANDAR
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d00969e7a09ed174b881af0071886dad, type: 2}
+  m_sharedMaterial: {fileID: -1906946483577923057, guid: d00969e7a09ed174b881af0071886dad, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -99751,7 +99775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2072878688}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: WATERs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100086,8 +100110,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Aperte [ESPA\xC7O] para pular"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d00969e7a09ed174b881af0071886dad, type: 2}
+  m_sharedMaterial: {fileID: -1906946483577923057, guid: d00969e7a09ed174b881af0071886dad, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -101052,8 +101076,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d00969e7a09ed174b881af0071886dad, type: 2}
+  m_sharedMaterial: {fileID: -1906946483577923057, guid: d00969e7a09ed174b881af0071886dad, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -101700,6 +101724,10 @@ PrefabInstance:
     - target: {fileID: 6051737335970995430, guid: 11e33792da6d06c47b5da7b3e6787646, type: 3}
       propertyPath: m_Name
       value: WATER
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051737335970995430, guid: 11e33792da6d06c47b5da7b3e6787646, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
