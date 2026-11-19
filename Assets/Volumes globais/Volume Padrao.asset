@@ -56,6 +56,40 @@ MonoBehaviour:
   blueOutBlueIn:
     m_OverrideState: 0
     m_Value: 100
+--- !u!114 &-2000051827004132786
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558a8e2b6826cf840aae193990ba9f2e, type: 3}
+  m_Name: ShadowsMidtonesHighlights
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.ShadowsMidtonesHighlights
+  active: 1
+  shadows:
+    m_OverrideState: 1
+    m_Value: {x: 0.86436254, y: 1, z: 0.94421506, w: 0.1664145}
+  midtones:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.76916534, z: 0.94229156, w: -0.28744325}
+  highlights:
+    m_OverrideState: 1
+    m_Value: {x: 0.60623795, y: 0.9777194, z: 1, w: 0.5446293}
+  shadowsStart:
+    m_OverrideState: 1
+    m_Value: 0.06
+  shadowsEnd:
+    m_OverrideState: 1
+    m_Value: 0.48
+  highlightsStart:
+    m_OverrideState: 0
+    m_Value: 0.55
+  highlightsEnd:
+    m_OverrideState: 0
+    m_Value: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,6 +110,7 @@ MonoBehaviour:
   - {fileID: 8529691333347707968}
   - {fileID: 8055999791336835038}
   - {fileID: 6880427665373143777}
+  - {fileID: -2000051827004132786}
 --- !u!114 &4194236451751727886
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -150,16 +185,16 @@ MonoBehaviour:
     m_Value: 0.9
   intensity:
     m_OverrideState: 1
-    m_Value: 1.02
+    m_Value: 21.07
   scatter:
     m_OverrideState: 1
-    m_Value: 0.752
+    m_Value: 0.761
   clamp:
     m_OverrideState: 1
     m_Value: 65472
   tint:
     m_OverrideState: 1
-    m_Value: {r: 0.41532913, g: 0.4339623, b: 0.3254717, a: 1}
+    m_Value: {r: 0.9837978, g: 1, b: 0, a: 1}
   highQualityFiltering:
     m_OverrideState: 0
     m_Value: 0
