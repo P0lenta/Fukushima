@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f1536ed0ed1fc34794803618148fe46, type: 3}
+  m_Name: Dialogo1 Completo
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  _lines:
+  - _text: Bom dia, Mako-kun!
+    _documentImage: {fileID: 0}
+    _char: Yashima
+  - _text: Bom dia, Yashima-san. Chegou cedo hoje.
+    _documentImage: {fileID: 0}
+    _char: "Mako, secret\xE1ria"
+  - _text: "Tentei evitar o tr\xE2nsito. Funcionou\u2026 mais ou menos."
+    _documentImage: {fileID: 0}
+    _char: Yashima
+  - _text: 'Pelo menos chegou inteiro. '
+    _documentImage: {fileID: 0}
+    _char: Mako
+  - _text: "O caf\xE9 est\xE1 fresquinho, se quiser pegar antes de ir para o escrit\xF3rio."
+    _documentImage: {fileID: 0}
+    _char: Mako
+  - _text: Obrigado, mas vou deixar para depois. Tenho algumas coisas para revisar.
+    _documentImage: {fileID: 0}
+    _char: Yashima
