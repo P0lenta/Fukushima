@@ -1,24 +1,28 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Collider))]
 public class TriggerEvent : MonoBehaviour
 {
     [Header("Debug (Testes)")]
-    [Tooltip("Se marcado, ignora o JSON e roda o gatilho sempre (Apenas no Editor do Unity)")]
+    [Tooltip("Se marcado, ignora o JSON e a memória de morte, rodando o gatilho sempre (Apenas no Editor do Unity)")]
     public bool _forcarModoTeste = false;
 
     [Header("Filtros de Colisão")]
     public string _targetTag = "Player";
     public bool _triggerOnlyOnce = true;
+    [Tooltip("Se marcado, o gatilho some se o player morrer e a fase recarregar (ideal para câmeras de puzzle, sem precisar criar chave no JSON).")]
+    public bool _naoRepetirAoMorrer = false;
 
     [Header("Ações de Limpeza (Para Cutscenes)")]
     [Tooltip("Se marcado, desativa o GameObject inteiro após ativar. Excelente para não deixar lixo na cena.")]
     public bool _disableGameObjectAfter = false;
 
-    [Header("Persistência com SaveManager")]
-    [Tooltip("Se preenchido, salva no JSON. Ao recarregar a cena, o gatilho nem chegará a existir.")]
+    [Header("Persistência Permanente (SaveManager JSON)")]
+    [Tooltip("Opcional: salva permanentemente no JSON (use para diálogos únicos, chaves ou progresso definitivo).")]
     public string _saveConditionKey = "";
 
     [Header("Proteção de Spawn")]
@@ -31,25 +35,49 @@ public class TriggerEvent : MonoBehaviour
 
     private bool _hasTriggered = false;
     private bool _canTrigger = false;
-    private Collider _meuColisor;
+    private Collider[] _meusColisores;
+
+    private static readonly HashSet<string> _triggeredInCurrentScene = new HashSet<string>();
+    private static string _lastGameplayScene = "";
 
     private IEnumerator Start()
     {
-        _meuColisor = GetComponent<Collider>();
+        _meusColisores = GetComponentsInChildren<Collider>(true);
 
-        if (!string.IsNullOrEmpty(_saveConditionKey) && SaveManager.Instance != null)
+        string cenaAtual = SceneManager.GetActiveScene().name;
+        bool isMenu = PanelManager.Instance != null && PanelManager.Instance._isMainMenu;
+
+        if (isMenu)
         {
-            bool jaPassou = SaveManager.Instance._currentData._unlockedConditions.Contains(_saveConditionKey);
+            _triggeredInCurrentScene.Clear();
+            _lastGameplayScene = "";
+        }
+        else if (_lastGameplayScene != cenaAtual)
+        {
+            _triggeredInCurrentScene.Clear();
+            _lastGameplayScene = cenaAtual;
+        }
+
+        bool jaPassou = false;
+
+        if (_naoRepetirAoMorrer && _triggeredInCurrentScene.Contains(ObterAutoID()))
+        {
+            jaPassou = true;
+        }
+
+        if (!jaPassou && !string.IsNullOrEmpty(_saveConditionKey) && SaveManager.Instance != null)
+        {
+            jaPassou = SaveManager.Instance._currentData._unlockedConditions.Contains(_saveConditionKey);
+        }
 
 #if UNITY_EDITOR
-            if (_forcarModoTeste) jaPassou = false; 
+        if (_forcarModoTeste) jaPassou = false;
 #endif
 
-            if (jaPassou)
-            {
-                DesativarGatilhoPermanentemente();
-                yield break; 
-            }
+        if (jaPassou)
+        {
+            DesativarGatilhoPermanentemente();
+            yield break;
         }
 
         _canTrigger = false;
@@ -63,9 +91,14 @@ public class TriggerEvent : MonoBehaviour
 
         if (string.IsNullOrEmpty(_targetTag) || other.CompareTag(_targetTag))
         {
-            if (_triggerOnlyOnce) 
+            if (_triggerOnlyOnce)
             {
-                _hasTriggered = true; 
+                _hasTriggered = true;
+            }
+
+            if (_naoRepetirAoMorrer)
+            {
+                _triggeredInCurrentScene.Add(ObterAutoID());
             }
 
             if (!string.IsNullOrEmpty(_saveConditionKey) && SaveManager.Instance != null)
@@ -96,11 +129,20 @@ public class TriggerEvent : MonoBehaviour
         }
     }
 
+    private string ObterAutoID()
+    {
+        string cena = SceneManager.GetActiveScene().name;
+        return $"{cena}_{gameObject.name}_{transform.position.x:F1}_{transform.position.y:F1}_{transform.position.z:F1}";
+    }
+
     private void DesativarGatilhoPermanentemente()
     {
-        if (_meuColisor != null)
+        if (_meusColisores != null)
         {
-            _meuColisor.enabled = false;
+            foreach (Collider col in _meusColisores)
+            {
+                if (col != null) col.enabled = false;
+            }
         }
 
         if (_disableGameObjectAfter)
@@ -112,9 +154,11 @@ public class TriggerEvent : MonoBehaviour
     [ContextMenu("Resetar este evento no Save")]
     public void ResetarEventoNoSave()
     {
+        _triggeredInCurrentScene.Remove(ObterAutoID());
+
         if (string.IsNullOrEmpty(_saveConditionKey))
         {
-            Debug.LogWarning("Nenhuma Chave de Save configurada neste gatilho.");
+            Debug.Log("Memória temporária deste gatilho limpa.");
             return;
         }
 
