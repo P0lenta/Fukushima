@@ -60,6 +60,23 @@ public class PlayerMovement : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        if (SaveManager.Instance != null && SaveManager.Instance.TemCheckpointNaCenaAtual())
+        {
+            Vector3 _posicaoSalva = SaveManager.Instance._currentData._checkpointPosition;
+            transform.position = _posicaoSalva;
+
+            if (_rig != null)
+            {
+                _rig.position = _posicaoSalva;
+                _rig.linearVelocity = Vector3.zero;
+            }
+
+            Physics.SyncTransforms();
+        }
+    }
+
     private void OnEnable()
     {
         FuseSelectionUI.OnMenuOpened += TravarControles;
@@ -72,14 +89,14 @@ public class PlayerMovement : MonoBehaviour
         FuseSelectionUI.OnMenuClosed -= DestravarControles;
     }
 
-    private void TravarControles()
+    public void TravarControles()
     {
         _isControlsLocked = true;
         if (_isGrabbingLedge || _isClimbingLedge) SoltarBeirada();
         StopMovement(); 
     }
 
-    private void DestravarControles()
+    public void DestravarControles()
     {
         _isControlsLocked = false;
     }

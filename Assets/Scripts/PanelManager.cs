@@ -173,4 +173,12 @@ public class PanelManager : MonoBehaviour
             Debug.Log("Save resetado com sucesso!");
         }
     }
+
+    public void ContinuarJogo(string _nomePrimeiroLevel)
+    {
+        if (SaveManager.Instance != null)
+        {
+            SaveManager.Instance.ContinuarJogoSalvo(_nomePrimeiroLevel);
+        }
+    }   
 }

@@ -148,4 +148,17 @@ public class PlayerDeath : MonoBehaviour
             SceneManager.LoadScene(_cenaAtual);
         }
     }
+
+    public void AtivarCheckpoint(Transform _pontoDeRespawn)
+    {
+        if (_isDead || _pontoDeRespawn == null) return;
+
+        if (SaveManager.Instance != null)
+        {
+            Camera _cam = Camera.main != null ? Camera.main : FindFirstObjectByType<Camera>();
+            Vector3 _posicaoCamera = _cam != null ? _cam.transform.position : Vector3.zero;
+
+            SaveManager.Instance.SalvarCheckpoint(_pontoDeRespawn.position, _posicaoCamera);
+        }
+    }
 }
