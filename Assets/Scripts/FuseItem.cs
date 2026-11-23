@@ -21,7 +21,7 @@ public class FuseItem : MonoBehaviour
     public bool _animarItem = true;
     public float _floatHeight = 0.2f;
     public float _floatDuration = 1.2f;
-    public float _rotationSpeed = 60f;
+    public float _rotationSpeed = 0f;
 
     private Vector3 _initialLocalPosition;
 
