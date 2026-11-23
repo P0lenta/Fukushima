@@ -34,6 +34,11 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("Se o seu sprite 'de lado' foi desenhado olhando para a direita, deixe falso. Se foi para a esquerda, marque verdadeiro.")]
     public bool _inverterFlipSide = false;
 
+    [Header("Modo Cheat / Noclip (Testes)")]
+    [Tooltip("Habilita a action ToggleCheat (0) para atravessar paredes e voar. Desmarque na build final.")]
+    public bool _permitirModoCheat = true;
+    public float _velocidadeVooCheat = 14f;
+
     private Vector3 _moveInput;
     private Vector2 _input;
     private float _currentMagnitude;
@@ -51,13 +56,22 @@ public class PlayerMovement : MonoBehaviour
     private float _lastMoveX = 0f;
     private float _lastMoveY = -1f;
 
+    private bool _originalIsTrigger = false;
+    private bool _isCheatUpPressed = false;
+    private bool _isCheatDownPressed = false;
+
     public static PlayerMovement Instance { get; private set; }
     public static System.Action OnPlayerJumped;
+    public bool _isCheatModeActive { get; private set; } = false;
     public bool _isMoving => !_isGrabbingLedge && !_isClimbingLedge && _moveInput.magnitude > 0.1f;
 
     private void Awake()
     {
         Instance = this;
+        if (_col != null)
+        {
+            _originalIsTrigger = _col.isTrigger;
+        }
     }
 
     private void Start()
@@ -92,6 +106,8 @@ public class PlayerMovement : MonoBehaviour
     public void TravarControles()
     {
         _isControlsLocked = true;
+        _isCheatUpPressed = false;
+        _isCheatDownPressed = false;
         if (_isGrabbingLedge || _isClimbingLedge) SoltarBeirada();
         StopMovement(); 
     }
@@ -130,7 +146,26 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (_isControlsLocked || _isClimbingLedge) return;
+        if (context.canceled)
+        {
+            _isJumpPressed = false;
+            _isCheatUpPressed = false;
+            return;
+        }
+
+        if (_isControlsLocked) return;
+
+        // No modo cheat, a mesma action de Jump (Espaço) faz o personagem subir
+        if (_isCheatModeActive)
+        {
+            if (context.started || context.performed)
+            {
+                _isCheatUpPressed = true;
+            }
+            return;
+        }
+
+        if (_isClimbingLedge) return;
 
         if (context.started)  
         {
@@ -150,9 +185,87 @@ public class PlayerMovement : MonoBehaviour
                 if (_animator != null) _animator.SetTrigger("Jump");
             }
         }
-        else if (context.canceled) 
+    }
+
+    public void OnToggleCheat(InputAction.CallbackContext context)
+    {
+        if (!context.started) return;
+        if (!_permitirModoCheat || _isControlsLocked || Time.timeScale == 0f) return;
+        if (PlayerDeath.Instance != null && PlayerDeath.Instance._isDead) return;
+
+        AlternarModoCheat();
+    }
+
+    public void OnCheatDescend(InputAction.CallbackContext context)
+    {
+        if (context.canceled)
         {
+            _isCheatDownPressed = false;
+            return;
+        }
+
+        if (!_isCheatModeActive || _isControlsLocked) return;
+
+        if (context.started || context.performed)
+        {
+            _isCheatDownPressed = true;
+        }
+    }
+
+    public void AlternarModoCheat()
+    {
+        _isCheatModeActive = !_isCheatModeActive;
+        _isCheatUpPressed = false;
+        _isCheatDownPressed = false;
+
+        if (_isCheatModeActive)
+        {
+            StopAllCoroutines();
+            _isGrabbingLedge = false;
+            _isClimbingLedge = false;
             _isJumpPressed = false;
+
+            if (_rig != null)
+            {
+                _rig.useGravity = false;
+                _rig.linearVelocity = Vector3.zero;
+            }
+
+            if (_col != null)
+            {
+                _col.isTrigger = true;
+            }
+
+            if (_spriteRenderer != null)
+            {
+                Color c = _spriteRenderer.color;
+                c.a = 0.6f;
+                _spriteRenderer.color = c;
+            }
+
+            Debug.Log("<color=cyan>[CHEAT]</color> Modo Noclip ATIVADO (0 para sair | Espaço sobe | C desce)");
+        }
+        else
+        {
+            if (_col != null)
+            {
+                _col.isTrigger = _originalIsTrigger;
+            }
+
+            if (_rig != null)
+            {
+                _rig.useGravity = true;
+                _rig.linearVelocity = Vector3.zero;
+            }
+
+            if (_spriteRenderer != null)
+            {
+                Color c = _spriteRenderer.color;
+                c.a = 1f;
+                _spriteRenderer.color = c;
+            }
+
+            Debug.Log("<color=yellow>[CHEAT]</color> Modo Noclip DESATIVADO");
         }
     }
 
@@ -170,6 +283,25 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         _rig.MoveRotation(Quaternion.identity);
+
+        if (_isCheatModeActive)
+        {
+            if (_isControlsLocked)
+            {
+                _rig.linearVelocity = Vector3.zero;
+                return;
+            }
+
+            float verticalDir = (_isCheatUpPressed ? 1f : 0f) - (_isCheatDownPressed ? 1f : 0f);
+            Vector3 dirHorizontal = new Vector3(_input.x, 0f, _input.y).normalized;
+
+            _rig.linearVelocity = new Vector3(
+                dirHorizontal.x * _velocidadeVooCheat,
+                verticalDir * _velocidadeVooCheat,
+                dirHorizontal.z * _velocidadeVooCheat
+            );
+            return;
+        }
 
         if (_isGrabbingLedge || _isClimbingLedge)
         {
@@ -300,7 +432,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _isGrabbingLedge = false;
         _isClimbingLedge = false;
-        _rig.useGravity = true;
+        _rig.useGravity = !_isCheatModeActive;
         _ledgeCooldownTimer = 0.4f;
         if (_animator != null) _animator.SetBool("IsGrabbing", false);
     }
@@ -330,9 +462,9 @@ public class PlayerMovement : MonoBehaviour
         _animator.SetBool("IsMoving", _isMoving);
         _animator.SetBool("IsGrabbing", _isGrabbingLedge || _isClimbingLedge);
 
-        bool _isGrounded = IsGrounded();
+        bool _isGrounded = _isCheatModeActive ? true : IsGrounded();
         _animator.SetBool("IsGrounded", _isGrounded);
-        _animator.SetFloat("VerticalVelocity", _rig.linearVelocity.y);
+        _animator.SetFloat("VerticalVelocity", _isCheatModeActive ? 0f : _rig.linearVelocity.y);
     }
 
     public void StopMovement()
@@ -376,6 +508,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void TriggerDeath()
     {
+        if (_isCheatModeActive) AlternarModoCheat();
+
         if (_animator != null) 
         {
             _animator.SetTrigger("Death");

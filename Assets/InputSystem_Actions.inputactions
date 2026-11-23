@@ -50,7 +50,7 @@
                     "name": "Crouch",
                     "type": "Button",
                     "id": "27c5f898-bc57-4ee1-8800-db469aca5fe3",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false,
@@ -100,6 +100,16 @@
                     "name": "MainMenu",
                     "type": "Button",
                     "id": "d72602e7-494a-4403-90ff-dfd7122f7a84",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "Cheat",
+                    "type": "Button",
+                    "id": "4c35b782-f972-4178-b746-cae43affa9d8",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -501,6 +511,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "MainMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "afaac073-734a-4607-96f5-6b9f7d80942a",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cheat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "365a0b97-2a1b-4fd7-840f-cbfbefabcf95",
+                    "path": "<Keyboard>/0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cheat",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

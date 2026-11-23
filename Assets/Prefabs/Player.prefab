@@ -119,6 +119,8 @@ MonoBehaviour:
   _animator: {fileID: 5812119103324660437}
   _spriteRenderer: {fileID: 5024975152278526517}
   _inverterFlipSide: 0
+  _permitirModoCheat: 1
+  _velocidadeVooCheat: 14
 --- !u!114 &1955408153384611232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,7 +290,19 @@ MonoBehaviour:
     m_ActionId: 852140f2-7766-474d-8707-702459ba45f3
     m_ActionName: 'Player/Interact[/Keyboard/e,/Gamepad/buttonNorth]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 753085877514606280}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnCheatDescend
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 27c5f898-bc57-4ee1-8800-db469aca5fe3
     m_ActionName: 'Player/Crouch[/Gamepad/buttonEast,/Keyboard/c]'
   - m_PersistentCalls:
@@ -387,6 +401,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d72602e7-494a-4403-90ff-dfd7122f7a84
     m_ActionName: 'Player/MainMenu[/Keyboard/tab]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 753085877514606280}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnToggleCheat
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4c35b782-f972-4178-b746-cae43affa9d8
+    m_ActionName: 'Player/Cheat[/Keyboard/0]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 
