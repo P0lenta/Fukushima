@@ -225,16 +225,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1698591477}
-        m_TargetAssemblyTypeName: PanelManager, Assembly-CSharp
-        m_MethodName: Sair
-        m_Mode: 1
+      - m_Target: {fileID: 448408438}
+        m_TargetAssemblyTypeName: SceneChangerProxy, Assembly-CSharp
+        m_MethodName: CarregarCena
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: "Cr\xE9ditos"
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1036300263}
@@ -301,6 +301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 448408437}
+  - component: {fileID: 448408438}
   m_Layer: 5
   m_Name: Buttons
   m_TagString: Untagged
@@ -330,6 +331,18 @@ RectTransform:
   m_AnchoredPosition: {x: 597, y: -51}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &448408438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448408436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcbed45399d6b7042ad5988220d99935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneChangerProxy
 --- !u!1 &875082937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1684,7 +1697,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sair
+  m_text: "Cr\xE9ditos"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d00969e7a09ed174b881af0071886dad, type: 2}
   m_sharedMaterial: {fileID: -1906946483577923057, guid: d00969e7a09ed174b881af0071886dad, type: 2}
