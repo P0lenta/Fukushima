@@ -5546,6 +5546,8 @@ PlayableDirector:
     value: {fileID: 855398973}
   - key: {fileID: -4207746465233972210, guid: 6ce9777ba29003246bff763da60b32b5, type: 2}
     value: {fileID: 362664721}
+  - key: {fileID: -8568250697319154158, guid: 6ce9777ba29003246bff763da60b32b5, type: 2}
+    value: {fileID: 473389740}
   m_ExposedReferences:
     m_References:
     - d9f0525724c6639449d455f79e5790e6: {fileID: 1445433464}
@@ -7100,6 +7102,135 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b17cf93538174ee4cb1458b545adbbcc, type: 3}
   m_PrefabInstance: {fileID: 464201342}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &473389739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 473389741}
+  - component: {fileID: 473389740}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &473389740
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473389739}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 1889713080597549901, guid: a01a304c050df1e4d974fe9515f36874, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 964e6d08c0c9ea640b912a5b95e34b00, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.734
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &473389741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473389739}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 110.62329, y: 5.00361, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &481799894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12096,8 +12227,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "M\xFAsica:\n \nSoftwares: Clipstudio Paint, Unity, Maya, Substance Painter,
-    Adobe Audition\n\nFonte: Wellfleet (GOOGLE)"
+  m_text: "M\xFAsica: Bee Gees - Stayin' Alive\n \nSoftwares: Clipstudio Paint, Unity,
+    Maya, Substance Painter, Adobe Audition\n\nFonte: Wellfleet (GOOGLE)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d00969e7a09ed174b881af0071886dad, type: 2}
   m_sharedMaterial: {fileID: -1906946483577923057, guid: d00969e7a09ed174b881af0071886dad, type: 2}
@@ -14733,8 +14864,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993644069}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.019674368, y: -0.04503484, z: 0.0008903146, w: 0.99879134}
-  m_LocalPosition: {x: 86.83452, y: 2.9999998, z: -6.9678802}
+  m_LocalRotation: {x: 0.11772212, y: -0.2739248, z: 0.035681248, w: 0.953852}
+  m_LocalPosition: {x: 86.83452, y: 3.0644867, z: -6.967881}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31571,3 +31702,4 @@ SceneRoots:
   - {fileID: 1458073009}
   - {fileID: 855398976}
   - {fileID: 1025873383}
+  - {fileID: 473389741}

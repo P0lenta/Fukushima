@@ -30,30 +30,62 @@ public class PanelManager : MonoBehaviour
     private const float _duracao_flip = 0.25f;
     private const float _angulo_inclinacao = -8f;
 
-    public bool IsMenuOpen => _menuOpen;
+    public bool IsMenuOpen => _menuOpen || _isFlipping;
 
     private void Awake()
     {
-        if (Instance == null) Instance = this;
+        // Sempre assume o controle dos painéis da cena atual
+        Instance = this;
+
         if (_canvasPause != null)
+        {
             _canvasRectTransform = _canvasPause.GetComponent<RectTransform>();
+        }
     }
 
     private void OnEnable()
     {
-        if (_pauseAction != null) _pauseAction.action.Enable();
+        if (_pauseAction != null)
+        {
+            _pauseAction.action.Enable();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (_canvasRectTransform != null)
+        {
+            _canvasRectTransform.DOKill();
+        }
+
+        if (Instance == this)
+        {
+            Instance = null;
+        }
     }
 
     private void Start()
     {
-        if (_canvasPause != null) _canvasPause.SetActive(false);
+        _menuOpen = false;
+        _isFlipping = false;
+        _currentPanelActive = null;
+
+        if (_canvasRectTransform != null)
+        {
+            _canvasRectTransform.DOKill();
+            _canvasRectTransform.anchoredPosition = Vector2.zero;
+            _canvasRectTransform.localRotation = Quaternion.identity;
+        }
+
         foreach (GameObject _panel in _panels)
         {
             if (_panel != null) _panel.SetActive(false);
         }
 
-        _menuOpen = false;
-        _isFlipping = false;
+        if (_canvasPause != null)
+        {
+            _canvasPause.SetActive(false);
+        }
 
         if (!_isMainMenu)
         {
@@ -70,19 +102,24 @@ public class PanelManager : MonoBehaviour
     private void Update()
     {
         if (!_isMainMenu && _pauseAction != null && _pauseAction.action.WasPressedThisFrame())
+        {
             ToggleMenu();
+        }
     }
 
     public void ToggleMenu()
     {
-
+        if (_canvasPause == null) return;
         if (DialogueUIManager.Instance != null && DialogueUIManager.Instance._isDialogueActive) return;
-
+        if (PlayerDeath.Instance != null && PlayerDeath.Instance._isDead) return;
         if (_isFlipping) return;
+
         _menuOpen = !_menuOpen;
 
-        if (_canvasRectTransform == null && _canvasPause != null)
+        if (_canvasRectTransform == null)
+        {
             _canvasRectTransform = _canvasPause.GetComponent<RectTransform>();
+        }
 
         _canvasRectTransform.DOKill();
         float posicaoYEscondido = -Screen.height;
@@ -96,22 +133,44 @@ public class PanelManager : MonoBehaviour
             _canvasRectTransform.anchoredPosition = new Vector2(0f, posicaoYEscondido);
             _canvasRectTransform.localRotation = Quaternion.Euler(0f, 0f, _angulo_inclinacao);
 
-            _canvasRectTransform.DOAnchorPos(Vector2.zero, _duracao_animacao).SetUpdate(true).SetEase(Ease.OutBack);
-            _canvasRectTransform.DOLocalRotate(Vector3.zero, _duracao_animacao).SetUpdate(true).SetEase(Ease.OutCubic);
+            _canvasRectTransform.DOAnchorPos(Vector2.zero, _duracao_animacao)
+                .SetUpdate(true)
+                .SetEase(Ease.OutBack)
+                .SetLink(_canvasPause);
+
+            _canvasRectTransform.DOLocalRotate(Vector3.zero, _duracao_animacao)
+                .SetUpdate(true)
+                .SetEase(Ease.OutCubic)
+                .SetLink(_canvasPause);
         }
         else
         {
             if (!_isMainMenu) TravarJogo(false);
 
-            _canvasRectTransform.DOAnchorPos(new Vector2(0f, posicaoYEscondido), _duracao_animacao * 0.8f).SetUpdate(true).SetEase(Ease.InCubic);
-            _canvasRectTransform.DOLocalRotate(new Vector3(0f, 0f, _angulo_inclinacao * 1.5f), _duracao_animacao * 0.8f).SetUpdate(true).SetEase(Ease.InCubic)
-                .OnComplete(() => _canvasPause.SetActive(false));
+            _canvasRectTransform.DOAnchorPos(new Vector2(0f, posicaoYEscondido), _duracao_animacao * 0.8f)
+                .SetUpdate(true)
+                .SetEase(Ease.InCubic)
+                .SetLink(_canvasPause);
+
+            _canvasRectTransform.DOLocalRotate(new Vector3(0f, 0f, _angulo_inclinacao * 1.5f), _duracao_animacao * 0.8f)
+                .SetUpdate(true)
+                .SetEase(Ease.InCubic)
+                .SetLink(_canvasPause)
+                .OnComplete(() =>
+                {
+                    if (_canvasPause != null) _canvasPause.SetActive(false);
+                });
         }
     }
 
     public void AbrirPainel(GameObject _desiredPanel)
     {
-        if (_desiredPanel == null || _isFlipping || _currentPanelActive == _desiredPanel) return;
+        if (_desiredPanel == null || _canvasPause == null || _isFlipping || _currentPanelActive == _desiredPanel) return;
+
+        if (_canvasRectTransform == null)
+        {
+            _canvasRectTransform = _canvasPause.GetComponent<RectTransform>();
+        }
 
         if (_currentPanelActive == null)
         {
@@ -121,12 +180,20 @@ public class PanelManager : MonoBehaviour
 
         _isFlipping = true;
         _canvasRectTransform.DOKill();
-        _canvasRectTransform.DOLocalRotate(new Vector3(0f, 90f, 0f), _duracao_flip).SetUpdate(true).SetEase(Ease.InBack)
+        _canvasRectTransform.DOLocalRotate(new Vector3(0f, 90f, 0f), _duracao_flip)
+            .SetUpdate(true)
+            .SetEase(Ease.InBack)
+            .SetLink(_canvasPause)
             .OnComplete(() =>
             {
+                if (_canvasRectTransform == null) return;
+
                 TrocarVisibilidadeInstantanio(_desiredPanel);
                 _canvasRectTransform.localRotation = Quaternion.Euler(0f, -90f, 0f);
-                _canvasRectTransform.DOLocalRotate(Vector3.zero, _duracao_flip).SetUpdate(true).SetEase(Ease.OutBack)
+                _canvasRectTransform.DOLocalRotate(Vector3.zero, _duracao_flip)
+                    .SetUpdate(true)
+                    .SetEase(Ease.OutBack)
+                    .SetLink(_canvasPause)
                     .OnComplete(() => _isFlipping = false);
             });
     }
@@ -152,8 +219,17 @@ public class PanelManager : MonoBehaviour
 
     public void IrParaCena(string _cena)
     {
+        if (_canvasRectTransform != null) _canvasRectTransform.DOKill();
         Time.timeScale = 1f;
-        SceneChanger.Instance.ChangeScene(_cena);
+
+        if (SceneChanger.Instance != null)
+        {
+            SceneChanger.Instance.ChangeScene(_cena);
+        }
+        else
+        {
+            SceneManager.LoadScene(_cena);
+        }
     }
 
     public void Sair()
@@ -180,5 +256,5 @@ public class PanelManager : MonoBehaviour
         {
             SaveManager.Instance.ContinuarJogoSalvo(_nomePrimeiroLevel);
         }
-    }   
+    }
 }
