@@ -1,0 +1,1791 @@
+fileFormatVersion: 2
+guid: 64ec1e9a327aed840913e4c4bf2498a6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ledge_side_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4620
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a7cae212c2455f48b0372c2f5f8804f
+      internalID: 1070832383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_1
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 4620
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3322a9cab42cfa438f3e523a271b20b
+      internalID: 1330655241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_2
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 4620
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc800d27972d6248a0a85e7854b35e2
+      internalID: -1974848303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_3
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 4620
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae1bbcced6e2a884fb156f06924be4a1
+      internalID: -1285319835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_4
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 4620
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40406fdd422a3a34498b8667a1f875ab
+      internalID: -1275052434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_5
+      rect:
+        serializedVersion: 2
+        x: 2150
+        y: 4620
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 885c2b0be71637147887567d10c57862
+      internalID: 1521808580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_6
+      rect:
+        serializedVersion: 2
+        x: 2580
+        y: 4620
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efe3c82c59ac69743899930cb9f4a731
+      internalID: -1559116449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_7
+      rect:
+        serializedVersion: 2
+        x: 3010
+        y: 4620
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2dd9f5e964382e4188274254856524e
+      internalID: -940571065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_8
+      rect:
+        serializedVersion: 2
+        x: 3440
+        y: 4620
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 529e74f117e901b4abbefc22d5e27932
+      internalID: -81042113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3960
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 538142181b28cec4dadf3c39ec1728ec
+      internalID: -1107161849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_10
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 3960
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d2ab68f02f4e56428675db85811868b
+      internalID: 2053521847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_11
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 3960
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5cbf8c4a0b3c634190c5632f130638e
+      internalID: 147870417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_12
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 3960
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4b5c151346d4bc46b204b80a291eff9
+      internalID: -1100587791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_13
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 3960
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5965113f86214b447987ab99e3ef6776
+      internalID: -2081002060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_14
+      rect:
+        serializedVersion: 2
+        x: 2150
+        y: 3960
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82f75ef0e8877914eaf0546bfdaa2103
+      internalID: 652282175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_15
+      rect:
+        serializedVersion: 2
+        x: 2580
+        y: 3960
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ed597f975b691740bc917cb5a9b3340
+      internalID: -67248391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_16
+      rect:
+        serializedVersion: 2
+        x: 3010
+        y: 3960
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55308942caf8ff74b98bdaf4e05e5f9b
+      internalID: -691643052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_17
+      rect:
+        serializedVersion: 2
+        x: 3440
+        y: 3960
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56f28d78614c5334ba8f0fc76adf088f
+      internalID: -2031422650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3300
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0d9745faa33004d854d7e7098619df
+      internalID: 331491911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_19
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 3300
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c32ce29baaa6bd4c8a60679e1def2fd
+      internalID: 823739090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_20
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 3300
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9afa74b01534f0b408e1086c6e136af0
+      internalID: 1163901570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_21
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 3300
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d011768354b26f4da87847fb70fc9fe
+      internalID: 1509133612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_22
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 3300
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d2356f0c5fa3e498ef439e1cb51a1f
+      internalID: -2038097538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_23
+      rect:
+        serializedVersion: 2
+        x: 2150
+        y: 3300
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 553430ca4d360dd47b08ba68d0fa47a3
+      internalID: 1986309619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_24
+      rect:
+        serializedVersion: 2
+        x: 2580
+        y: 3300
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7ace9fbeae2974b8e556f8b096f803
+      internalID: -697739826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_25
+      rect:
+        serializedVersion: 2
+        x: 3010
+        y: 3300
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41a24dae92507774fb153506152c7fbe
+      internalID: 348109999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_26
+      rect:
+        serializedVersion: 2
+        x: 3440
+        y: 3300
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24b1ea587aa596349aba337c11c6b07d
+      internalID: 1031243809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2640
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc9971ed4f9487b4297519032de94de1
+      internalID: 112949632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_28
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 2640
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29b51eab671dfeb479ae3d594a854377
+      internalID: 321157787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_29
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 2640
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bbd291a998a02947b860de900da3015
+      internalID: 1114064703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_30
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 2640
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80e26b9af3acda74097a8728933a8da3
+      internalID: 1303343238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_31
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 2640
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6e29db9de47af74fa3a9c0341e27c3f
+      internalID: -277312572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_32
+      rect:
+        serializedVersion: 2
+        x: 2150
+        y: 2640
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af2aea1b982c0244699f5d0c6f849311
+      internalID: 1125547171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_33
+      rect:
+        serializedVersion: 2
+        x: 2580
+        y: 2640
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 553bdb252f13cf6469bc8f76ae1ced1b
+      internalID: 1401641975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_34
+      rect:
+        serializedVersion: 2
+        x: 3010
+        y: 2640
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e741b31be5a2fdc478c40bf3e1c0d3c4
+      internalID: 1732085325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_35
+      rect:
+        serializedVersion: 2
+        x: 3440
+        y: 2640
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25b98c1873279b54eb61d27b55fb2ffa
+      internalID: -810620082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1980
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b17963d243fed945b02815afb0c321b
+      internalID: 1561833599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_37
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 1980
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6fd51652b5c1d34895d313887c4626a
+      internalID: 855083641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_38
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 1980
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6561cf2a2756fb48a1c015fc25d1b2f
+      internalID: -1609022699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_39
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 1980
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b7e81c478df1e4a8abae3ee2e457b0
+      internalID: -1831165948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_40
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 1980
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b80623579f262c74f8999aa40a758c46
+      internalID: 469164701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_41
+      rect:
+        serializedVersion: 2
+        x: 2150
+        y: 1980
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 120a2ab0e96ef1c4ba6c93a2a9b4a284
+      internalID: -357230954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_42
+      rect:
+        serializedVersion: 2
+        x: 2580
+        y: 1980
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c46057cd73a2caf49939a9732b65d59f
+      internalID: -1283984948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_43
+      rect:
+        serializedVersion: 2
+        x: 3010
+        y: 1980
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c712d8d4ed6e52848bf0ecd3acd6c953
+      internalID: 197084768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_44
+      rect:
+        serializedVersion: 2
+        x: 3440
+        y: 1980
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a1b337bad1d5834d9e887ac76281bb7
+      internalID: 389742722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1320
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6734984a068be634caca3c4fc9bf80be
+      internalID: -1503247810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_46
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 1320
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7cc3677a13d5784591c6d6a8ca65471
+      internalID: 268479153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_47
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 1320
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98ca9bed6229ca147b5d430a28a53adf
+      internalID: 930797954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_48
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 1320
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e8cac96a7dec724abbfa0252f1d95d4
+      internalID: -1982541822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_49
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 1320
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8094fea0e7468c94f9505a6ba5629e2d
+      internalID: -948326313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_50
+      rect:
+        serializedVersion: 2
+        x: 2150
+        y: 1320
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b1026ab2b5f7d74c83ec4d6a7fd7d92
+      internalID: 568802750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_51
+      rect:
+        serializedVersion: 2
+        x: 2580
+        y: 1320
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 148cd6a440838e745ab842d0339fe3fc
+      internalID: -83668509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_52
+      rect:
+        serializedVersion: 2
+        x: 3010
+        y: 1320
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd6f2507ab01f44191600fc85a0c9aa
+      internalID: -1282342871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_53
+      rect:
+        serializedVersion: 2
+        x: 3440
+        y: 1320
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c66e3ff6ba59b874998e2d4209b70ae7
+      internalID: -979835942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 660
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e99078a54ad34f49bd0f9027eab1697
+      internalID: -772608338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_55
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 660
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8ffa62778958e046a84b0a06ac7e074
+      internalID: 753080121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_56
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 660
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec9fb4d353bccae4da9a32839c974813
+      internalID: -1603043317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_57
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 660
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b9e08681b74d254794a4dbcb4310fc4
+      internalID: -714945789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_58
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 660
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d25d87950f9d78d4d9b0efd26e8bd515
+      internalID: -1682397058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_59
+      rect:
+        serializedVersion: 2
+        x: 2150
+        y: 660
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c35b5189777b414ca2e3cd9a4e2d5d4
+      internalID: -2045538689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_60
+      rect:
+        serializedVersion: 2
+        x: 2580
+        y: 660
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6711a4dc1489e446bbba17997c2c4e4
+      internalID: -1480891720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_61
+      rect:
+        serializedVersion: 2
+        x: 3010
+        y: 660
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c03d0e9f0d54cbb40b625b33e0f546a6
+      internalID: -1944801934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_62
+      rect:
+        serializedVersion: 2
+        x: 3440
+        y: 660
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ddece0127de3354ab3f4e42ab567465
+      internalID: 148306402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ccdf07e35410b4290a5bcf777008f5
+      internalID: 628799377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_64
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 0
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7bad0ab6ed360d4c961ee9f89c9eab1
+      internalID: 1982022624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_65
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 0
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 976ec69577c60f04086b705581deaaa7
+      internalID: 1876220986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_66
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 0
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5238c0a21ebdd9042bfdde9000f20e50
+      internalID: 560836746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_67
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 0
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51146b6c305a614448a44098ead0954c
+      internalID: -165528392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_68
+      rect:
+        serializedVersion: 2
+        x: 2150
+        y: 0
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec9b002185501e34aa5ec19cb4a6b44c
+      internalID: -528152185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_69
+      rect:
+        serializedVersion: 2
+        x: 2580
+        y: 0
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0778dfa0a207f514a864fae771d4cf7d
+      internalID: 1697613167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ledge_side_70
+      rect:
+        serializedVersion: 2
+        x: 3010
+        y: 0
+        width: 430
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b46aa09fe725dc439a50c83fd1d330a
+      internalID: -1393040370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 45a145d66a53d514ea6f27672023e79c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":9.0,"y":8.0},"gridSpriteSize":{"x":430.0,"y":660.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Ledge_side_0: 1070832383
+      Ledge_side_1: 1330655241
+      Ledge_side_10: 2053521847
+      Ledge_side_11: 147870417
+      Ledge_side_12: -1100587791
+      Ledge_side_13: -2081002060
+      Ledge_side_14: 652282175
+      Ledge_side_15: -67248391
+      Ledge_side_16: -691643052
+      Ledge_side_17: -2031422650
+      Ledge_side_18: 331491911
+      Ledge_side_19: 823739090
+      Ledge_side_2: -1974848303
+      Ledge_side_20: 1163901570
+      Ledge_side_21: 1509133612
+      Ledge_side_22: -2038097538
+      Ledge_side_23: 1986309619
+      Ledge_side_24: -697739826
+      Ledge_side_25: 348109999
+      Ledge_side_26: 1031243809
+      Ledge_side_27: 112949632
+      Ledge_side_28: 321157787
+      Ledge_side_29: 1114064703
+      Ledge_side_3: -1285319835
+      Ledge_side_30: 1303343238
+      Ledge_side_31: -277312572
+      Ledge_side_32: 1125547171
+      Ledge_side_33: 1401641975
+      Ledge_side_34: 1732085325
+      Ledge_side_35: -810620082
+      Ledge_side_36: 1561833599
+      Ledge_side_37: 855083641
+      Ledge_side_38: -1609022699
+      Ledge_side_39: -1831165948
+      Ledge_side_4: -1275052434
+      Ledge_side_40: 469164701
+      Ledge_side_41: -357230954
+      Ledge_side_42: -1283984948
+      Ledge_side_43: 197084768
+      Ledge_side_44: 389742722
+      Ledge_side_45: -1503247810
+      Ledge_side_46: 268479153
+      Ledge_side_47: 930797954
+      Ledge_side_48: -1982541822
+      Ledge_side_49: -948326313
+      Ledge_side_5: 1521808580
+      Ledge_side_50: 568802750
+      Ledge_side_51: -83668509
+      Ledge_side_52: -1282342871
+      Ledge_side_53: -979835942
+      Ledge_side_54: -772608338
+      Ledge_side_55: 753080121
+      Ledge_side_56: -1603043317
+      Ledge_side_57: -714945789
+      Ledge_side_58: -1682397058
+      Ledge_side_59: -2045538689
+      Ledge_side_6: -1559116449
+      Ledge_side_60: -1480891720
+      Ledge_side_61: -1944801934
+      Ledge_side_62: 148306402
+      Ledge_side_63: 628799377
+      Ledge_side_64: 1982022624
+      Ledge_side_65: 1876220986
+      Ledge_side_66: 560836746
+      Ledge_side_67: -165528392
+      Ledge_side_68: -528152185
+      Ledge_side_69: 1697613167
+      Ledge_side_7: -940571065
+      Ledge_side_70: -1393040370
+      Ledge_side_8: -81042113
+      Ledge_side_9: -1107161849
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
