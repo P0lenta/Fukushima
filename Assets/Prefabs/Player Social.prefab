@@ -119,6 +119,8 @@ MonoBehaviour:
   _animator: {fileID: 5862484020366261263}
   _spriteRenderer: {fileID: 3648461868556904291}
   _inverterFlipSide: 0
+  _permitirModoCheat: 1
+  _velocidadeVooCheat: 14
 --- !u!114 &1955408153384611232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,6 +372,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d72602e7-494a-4403-90ff-dfd7122f7a84
     m_ActionName: 'Player/MainMenu[/Keyboard/tab]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4c35b782-f972-4178-b746-cae43affa9d8
+    m_ActionName: 'Player/Cheat[/Keyboard/0]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 
@@ -453,7 +459,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: fa3d050c51906b9418ad651497c11fad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -475,7 +481,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_Sprite: {fileID: -1882326473, guid: 18455a2fbebc7f3439aeab812c85a35d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

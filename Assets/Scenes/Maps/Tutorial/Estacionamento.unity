@@ -9855,7 +9855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightFlicker
   minIntensity: 0.5
-  maxIntensity: 5
+  maxIntensity: 6.72
   flickerSpeed: 0.1
 --- !u!4 &208426800 stripped
 Transform:
@@ -27915,9 +27915,13 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5024975152278526517, guid: cc7a333710e49c644b47586e59029c02, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024975152278526517, guid: cc7a333710e49c644b47586e59029c02, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 1bd7c8ac25ec35c4ba87459ce8f8718f, type: 2}
+      objectReference: {fileID: 2100000, guid: fa3d050c51906b9418ad651497c11fad, type: 2}
     - target: {fileID: 6026088431026700291, guid: cc7a333710e49c644b47586e59029c02, type: 3}
       propertyPath: m_IsKinematic
       value: 0
@@ -45733,7 +45737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightFlicker
   minIntensity: 0.5
-  maxIntensity: 5
+  maxIntensity: 6.72
   flickerSpeed: 0.1
 --- !u!1001 &937026120
 PrefabInstance:
@@ -55463,7 +55467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightFlicker
   minIntensity: 0.5
-  maxIntensity: 5
+  maxIntensity: 6.72
   flickerSpeed: 0.1
 --- !u!1001 &1145399625
 PrefabInstance:
