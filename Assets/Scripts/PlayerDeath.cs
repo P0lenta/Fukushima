@@ -26,44 +26,116 @@ public class PlayerDeath : MonoBehaviour
 
     public bool _isDead { get; private set; } = false;
 
-    private int _waterLayer;
+    private Rigidbody _rig;
+    private Collider _col;
+    private LayerMask _waterMask;
     private float _waterContactTimer = 0f;
+    private bool _isInWater = false;
+    private Vector3 _lastPosition;
     private readonly HashSet<Collider> _activeWaterColliders = new HashSet<Collider>();
 
     private void Awake()
     {
-        if (Instance == null) Instance = this;
-        _waterLayer = LayerMask.NameToLayer("Water");
+        Instance = this;
+        _waterMask = LayerMask.GetMask("Water");
+        _rig = GetComponentInParent<Rigidbody>();
+        _col = GetComponentInParent<Collider>();
+        if (_col == null) _col = GetComponentInChildren<Collider>();
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
     }
 
     private void Start()
     {
-        if (_waterLayer == -1)
+        if (PlayerMovement.Instance != null)
+        {
+            if (_rig == null) _rig = PlayerMovement.Instance._rig;
+            if (_col == null) _col = PlayerMovement.Instance._col;
+        }
+
+        _lastPosition = _rig != null ? _rig.position : transform.position;
+
+        if (_waterMask == 0)
         {
             Debug.LogWarning("[PlayerDeath] A layer 'Water' não foi encontrada. Crie-a em Edit > Project Settings > Tags and Layers.");
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
+        Vector3 posAtual = _rig != null ? _rig.position : transform.position;
+
         if (_isDead) return;
 
-        if (transform.position.y <= _killYThreshold)
+        if (PlayerMovement.Instance != null && PlayerMovement.Instance._isCheatModeActive)
+        {
+            _lastPosition = posAtual;
+            return;
+        }
+
+        if (posAtual.y <= _killYThreshold)
         {
             Morrer("Queda");
             return;
         }
 
-        VerificarContatoComAgua();
+        VerificarContatoComAgua(posAtual);
+        _lastPosition = _rig != null ? _rig.position : transform.position;
     }
 
-    private void VerificarContatoComAgua()
+    private void VerificarContatoComAgua(Vector3 posAtual)
     {
         _activeWaterColliders.RemoveWhere(c => c == null || !c.enabled || !c.gameObject.activeInHierarchy);
 
-        if (_activeWaterColliders.Count > 0)
+        bool tocouAgua = _activeWaterColliders.Count > 0;
+
+        // 1. Checa sobreposição direta na caixa do colisor do Player
+        if (!tocouAgua && _waterMask != 0)
         {
-            _waterContactTimer += Time.deltaTime;
+            Vector3 center = _col != null ? _col.bounds.center : posAtual;
+            Vector3 halfExtents = _col != null ? _col.bounds.extents : new Vector3(0.3f, 0.5f, 0.3f);
+
+            tocouAgua = Physics.CheckBox(
+                center,
+                halfExtents,
+                Quaternion.identity,
+                _waterMask,
+                QueryTriggerInteraction.Collide
+            );
+        }
+
+        // 2. Anti-tunneling: se caiu rápido e atravessou um plano fino de água entre dois frames, puxa de volta para a superfície
+        if (!tocouAgua && _waterMask != 0 && _lastPosition != posAtual)
+        {
+            if (Physics.Linecast(_lastPosition, posAtual, out RaycastHit hit, _waterMask, QueryTriggerInteraction.Collide))
+            {
+                tocouAgua = true;
+                if (_rig != null)
+                {
+                    _rig.position = new Vector3(posAtual.x, hit.point.y, posAtual.z);
+                }
+                else
+                {
+                    transform.position = new Vector3(posAtual.x, hit.point.y, posAtual.z);
+                }
+            }
+        }
+
+        if (tocouAgua)
+        {
+            if (!_isInWater)
+            {
+                _isInWater = true;
+                CongelarNaAgua();
+            }
+
+            _waterContactTimer += Time.fixedDeltaTime;
 
             if (_waterContactTimer >= _tempoParaMorrerNaAgua)
             {
@@ -72,21 +144,66 @@ public class PlayerDeath : MonoBehaviour
         }
         else
         {
+            if (_isInWater)
+            {
+                _isInWater = false;
+                DescongelarDaAgua();
+            }
+
             _waterContactTimer = 0f;
         }
     }
 
+    private bool PertenceALayerWater(GameObject obj)
+    {
+        if (_waterMask == 0 || obj == null) return false;
+
+        Transform atual = obj.transform;
+        while (atual != null)
+        {
+            if ((_waterMask.value & (1 << atual.gameObject.layer)) != 0)
+                return true;
+            atual = atual.parent;
+        }
+        return false;
+    }
+
+    private void CongelarNaAgua()
+    {
+        if (_rig == null) return;
+
+        _rig.linearVelocity = Vector3.zero;
+        _rig.angularVelocity = Vector3.zero;
+        _rig.useGravity = false;
+        _rig.isKinematic = true;
+    }
+
+    private void DescongelarDaAgua()
+    {
+        if (_rig == null || _isDead) return;
+
+        _rig.isKinematic = false;
+        _rig.useGravity = true;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (_waterLayer != -1 && other.gameObject.layer == _waterLayer)
+        if (PertenceALayerWater(other.gameObject))
         {
             _activeWaterColliders.Add(other);
+
+            bool emCheat = PlayerMovement.Instance != null && PlayerMovement.Instance._isCheatModeActive;
+            if (!_isDead && !emCheat)
+            {
+                _isInWater = true;
+                CongelarNaAgua();
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (_waterLayer != -1 && other.gameObject.layer == _waterLayer)
+        if (PertenceALayerWater(other.gameObject))
         {
             _activeWaterColliders.Remove(other);
         }
@@ -94,15 +211,22 @@ public class PlayerDeath : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (_waterLayer != -1 && collision.gameObject.layer == _waterLayer)
+        if (PertenceALayerWater(collision.gameObject))
         {
             _activeWaterColliders.Add(collision.collider);
+
+            bool emCheat = PlayerMovement.Instance != null && PlayerMovement.Instance._isCheatModeActive;
+            if (!_isDead && !emCheat)
+            {
+                _isInWater = true;
+                CongelarNaAgua();
+            }
         }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        if (_waterLayer != -1 && collision.gameObject.layer == _waterLayer)
+        if (PertenceALayerWater(collision.gameObject))
         {
             _activeWaterColliders.Remove(collision.collider);
         }
@@ -112,6 +236,11 @@ public class PlayerDeath : MonoBehaviour
     {
         if (_isDead) return;
         _isDead = true;
+
+        if (_causaDaMorte == "Agua")
+        {
+            CongelarNaAgua();
+        }
 
         OnPlayerDied?.Invoke();
 

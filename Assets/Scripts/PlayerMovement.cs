@@ -153,7 +153,8 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (_isControlsLocked) return;
+        if (_isControlsLocked || (_rig != null && _rig.isKinematic)) return;
+        if (PlayerDeath.Instance != null && PlayerDeath.Instance._isDead) return;
 
         // No modo cheat, a mesma action de Jump (Espaço) faz o personagem subir
         if (_isCheatModeActive)
@@ -227,6 +228,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (_rig != null)
             {
+                _rig.isKinematic = false;
                 _rig.useGravity = false;
                 _rig.linearVelocity = Vector3.zero;
             }
@@ -282,6 +284,14 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (_rig == null) return;
+
+        // Se morreu ou foi congelado na água (isKinematic), não aplica gravidade nem movimentação
+        if ((PlayerDeath.Instance != null && PlayerDeath.Instance._isDead) || _rig.isKinematic)
+        {
+            return;
+        }
+
         _rig.MoveRotation(Quaternion.identity);
 
         if (_isCheatModeActive)
@@ -432,7 +442,10 @@ public class PlayerMovement : MonoBehaviour
     {
         _isGrabbingLedge = false;
         _isClimbingLedge = false;
-        _rig.useGravity = !_isCheatModeActive;
+        if (_rig != null && !_rig.isKinematic)
+        {
+            _rig.useGravity = !_isCheatModeActive;
+        }
         _ledgeCooldownTimer = 0.4f;
         if (_animator != null) _animator.SetBool("IsGrabbing", false);
     }
@@ -462,9 +475,9 @@ public class PlayerMovement : MonoBehaviour
         _animator.SetBool("IsMoving", _isMoving);
         _animator.SetBool("IsGrabbing", _isGrabbingLedge || _isClimbingLedge);
 
-        bool _isGrounded = _isCheatModeActive ? true : IsGrounded();
+        bool _isGrounded = (_isCheatModeActive || (_rig != null && _rig.isKinematic)) ? true : IsGrounded();
         _animator.SetBool("IsGrounded", _isGrounded);
-        _animator.SetFloat("VerticalVelocity", _isCheatModeActive ? 0f : _rig.linearVelocity.y);
+        _animator.SetFloat("VerticalVelocity", (_isCheatModeActive || (_rig != null && _rig.isKinematic)) ? 0f : _rig.linearVelocity.y);
     }
 
     public void StopMovement()
@@ -472,7 +485,7 @@ public class PlayerMovement : MonoBehaviour
         _input = Vector2.zero;
         _moveInput = Vector3.zero;
 
-        if (_rig != null)
+        if (_rig != null && !_rig.isKinematic)
         {
             _rig.linearVelocity = new Vector3(0f, _rig.linearVelocity.y, 0f);
         }
@@ -510,10 +523,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_isCheatModeActive) AlternarModoCheat();
 
+        TravarControles();
+
         if (_animator != null) 
         {
             _animator.SetTrigger("Death");
-            TravarControles();
         }
     }
 
