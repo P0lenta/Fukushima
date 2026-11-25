@@ -357,7 +357,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -5574,7 +5574,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -7608,7 +7608,6 @@ MonoBehaviour:
   _skipAction: {fileID: 0}
   _holdTime: 1
   _progressImage: {fileID: 252049032}
-  _targetSceneName: Estacionamento
   _onSkipCompleted:
     m_PersistentCalls:
       m_Calls:
@@ -14741,8 +14740,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123495667}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04414506, y: 0.02606872, z: 0.0011576146, w: -0.9986843}
-  m_LocalPosition: {x: -12.15, y: -2.65, z: -5.8}
+  m_LocalRotation: {x: 0.0698128, y: 0.26438752, z: -0.044949856, w: 0.9608356}
+  m_LocalPosition: {x: -12.16, y: -2.36, z: -5.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21252,8 +21251,6 @@ PlayableDirector:
     value: {fileID: 1174663429}
   - key: {fileID: -8267091504920121499, guid: a90be0b73b55834458302c78c6c50504, type: 2}
     value: {fileID: 1297284536}
-  - key: {fileID: 6761439734221774844, guid: a90be0b73b55834458302c78c6c50504, type: 2}
-    value: {fileID: 798054319}
   - key: {fileID: -85279291386664378, guid: a90be0b73b55834458302c78c6c50504, type: 2}
     value: {fileID: 71202120}
   - key: {fileID: -1069485815031950170, guid: a90be0b73b55834458302c78c6c50504, type: 2}
@@ -21264,6 +21261,8 @@ PlayableDirector:
     value: {fileID: 14144070}
   - key: {fileID: 2830249974882994265, guid: a90be0b73b55834458302c78c6c50504, type: 2}
     value: {fileID: 1686643826}
+  - key: {fileID: -1401385295836524763, guid: a90be0b73b55834458302c78c6c50504, type: 2}
+    value: {fileID: 798054319}
   m_ExposedReferences:
     m_References:
     - a54d3b5a0f8af7b449325d3fee0bd332: {fileID: 14144068}
