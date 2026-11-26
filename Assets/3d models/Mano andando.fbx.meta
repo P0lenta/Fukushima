@@ -3,7 +3,12 @@ guid: 6c75a9b13ca424945aedba13086bcc92
 ModelImporter:
   serializedVersion: 24501
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hazmat_M
+    second: {fileID: 2100000, guid: 87e958af37425ae4d9bb23ce9f758414, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
