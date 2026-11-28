@@ -1,12 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
+using System;
 
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance { get; private set; }
 
     public PlayerData _currentData; 
+
+    [Header("Cenas que não salvam progresso")]
+    public string[] _cenasIgnoradas = { "Menu principal", "Credits", "Creditos" };
 
     private string _savePath;
 
@@ -15,9 +19,10 @@ public class SaveManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            transform.SetParent(null);
             DontDestroyOnLoad(gameObject);
             
-            _savePath = Application.persistentDataPath + "/savegame.json";
+            _savePath = Path.Combine(Application.persistentDataPath, "savegame.json");
             
             LoadGame();
         }
@@ -37,9 +42,32 @@ public class SaveManager : MonoBehaviour
         SceneManager.sceneLoaded -= AoCarregarCena;
     }
 
+    private bool EhCenaIgnorada(string nomeCena)
+    {
+        if (PanelManager.Instance != null && PanelManager.Instance._isMainMenu) return true;
+
+        // Ignora cenas de cutscene/créditos/menu que não possuem Player
+        if (FindFirstObjectByType<PlayerMovement>(FindObjectsInactive.Include) == null) return true;
+
+        if (_cenasIgnoradas != null)
+        {
+            foreach (string ignorada in _cenasIgnoradas)
+            {
+                if (!string.IsNullOrEmpty(ignorada) &&
+                    string.Equals(ignorada, nomeCena, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
     private void AoCarregarCena(Scene _cena, LoadSceneMode _modo)
     {
-        if (PanelManager.Instance != null && PanelManager.Instance._isMainMenu) return;
+        if (_currentData == null) _currentData = new PlayerData();
+        if (EhCenaIgnorada(_cena.name)) return;
 
         if (_currentData._currentLevelName != _cena.name)
         {
@@ -59,22 +87,40 @@ public class SaveManager : MonoBehaviour
 
     public void SaveGame()
     {
-        string _json = JsonUtility.ToJson(_currentData, true);
-        File.WriteAllText(_savePath, _json);
-        
-        Debug.Log("Jogo salvo com sucesso em: " + _savePath);
+        if (_currentData == null) _currentData = new PlayerData();
+
+        try
+        {
+            string _json = JsonUtility.ToJson(_currentData, true);
+            File.WriteAllText(_savePath, _json);
+        }
+        catch (Exception e)
+        {
+            Debug.LogWarning("[SaveManager] Falha ao salvar arquivo: " + e.Message);
+        }
     }
 
     public void LoadGame()
     {
-        if (File.Exists(_savePath))
+        try
         {
-            string _json = File.ReadAllText(_savePath);
-            _currentData = JsonUtility.FromJson<PlayerData>(_json);
+            if (File.Exists(_savePath))
+            {
+                string _json = File.ReadAllText(_savePath);
+                if (!string.IsNullOrWhiteSpace(_json))
+                {
+                    _currentData = JsonUtility.FromJson<PlayerData>(_json);
+                }
+            }
         }
-        else
+        catch (Exception e)
         {
-            Debug.Log("Nenhum save encontrado. Criando um novo...");
+            Debug.LogWarning("[SaveManager] Falha ao ler save existente, recriando: " + e.Message);
+            _currentData = null;
+        }
+
+        if (_currentData == null)
+        {
             ResetData();
         }
     }
@@ -87,6 +133,8 @@ public class SaveManager : MonoBehaviour
 
     public void SalvarCheckpoint(Vector3 _posicaoPlayer, Vector3 _posicaoCamera)
     {
+        if (_currentData == null) _currentData = new PlayerData();
+
         _currentData._hasCheckpoint = true;
         _currentData._checkpointSceneName = SceneManager.GetActiveScene().name;
         _currentData._checkpointPosition = _posicaoPlayer;
@@ -102,6 +150,8 @@ public class SaveManager : MonoBehaviour
 
     public void ContinuarJogoSalvo(string _primeiroLevelPadrao)
     {
+        if (_currentData == null) _currentData = new PlayerData();
+
         string _cenaDestino = string.IsNullOrEmpty(_currentData._currentLevelName) 
             ? _primeiroLevelPadrao 
             : _currentData._currentLevelName;

@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     public FixerPlatform _fixerPlatform;
 
     [Header("Agarrar Beirada (Ledge Grab)")]
+    [Tooltip("Layers específicas onde o personagem pode agarrar na beirada (separado das layers do chão).")]
+    public LayerMask _ledgeLayers;
     [Tooltip("Distância à frente do corpo para detectar a parede da plataforma.")]
     public float _ledgeReach = 0.4f;
     [Tooltip("Altura (a partir do centro do colisor) onde ficam as mãos do personagem.")]
@@ -43,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _input;
     private float _currentMagnitude;
     private bool _isJumpPressed;
+    private float _jumpCooldownTimer = 0f;
 
     private Rigidbody _currentPlatformRb;
     private Vector3 _lastPlatformPosition;
@@ -178,8 +181,9 @@ public class PlayerMovement : MonoBehaviour
                 return;
             }
 
-            if (IsGrounded())
+            if (_jumpCooldownTimer <= 0f && IsGrounded())
             {
+                _jumpCooldownTimer = 0.15f;
                 _rig.linearVelocity = new Vector3(_rig.linearVelocity.x, _jumpForce, _rig.linearVelocity.z);
                 OnPlayerJumped?.Invoke();
                 
@@ -278,6 +282,11 @@ public class PlayerMovement : MonoBehaviour
             _ledgeCooldownTimer -= Time.deltaTime;
         }
 
+        if (_jumpCooldownTimer > 0f)
+        {
+            _jumpCooldownTimer -= Time.deltaTime;
+        }
+
         _currentMagnitude = _moveInput.magnitude;
         AtualizarVisuais2D();
     }
@@ -342,6 +351,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void DetectarBeirada()
     {
+        if (_ledgeLayers == 0) return;
+
         Vector3 _forwardDir = ObterDirecaoVisual();
         float _radius = Mathf.Max(_col.bounds.extents.x, _col.bounds.extents.z);
         float _totalReach = _radius + _ledgeReach;
@@ -349,7 +360,8 @@ public class PlayerMovement : MonoBehaviour
         Vector3 _handOrigin = _col.bounds.center + Vector3.up * _handHeightOffset;
         Vector3 _headOrigin = _handOrigin + Vector3.up * _headClearance;
 
-        if (!Physics.Raycast(_handOrigin, _forwardDir, out RaycastHit _wallHit, _totalReach, _floorLayers, QueryTriggerInteraction.Ignore))
+        // Só detecta a parede se ela estiver na layer selecionada em _ledgeLayers
+        if (!Physics.Raycast(_handOrigin, _forwardDir, out RaycastHit _wallHit, _totalReach, _ledgeLayers, QueryTriggerInteraction.Ignore))
             return;
 
         if (TemObstaculoSolidoNoRaio(_headOrigin, _forwardDir, _totalReach + 0.25f))
@@ -357,7 +369,8 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 _topRayOrigin = new Vector3(_wallHit.point.x, _headOrigin.y, _wallHit.point.z) + _forwardDir * 0.25f;
 
-        if (Physics.Raycast(_topRayOrigin, Vector3.down, out RaycastHit _topHit, _headClearance + 0.5f, _floorLayers, QueryTriggerInteraction.Ignore))
+        // Aceita o topo da plataforma tanto em _ledgeLayers quanto em _floorLayers
+        if (Physics.Raycast(_topRayOrigin, Vector3.down, out RaycastHit _topHit, _headClearance + 0.5f, _ledgeLayers | _floorLayers, QueryTriggerInteraction.Ignore))
         {
             Vector3 _pivotToCenter = _col.bounds.center - transform.position;
             Vector3 _hangCenter = new Vector3(_wallHit.point.x, _topHit.point.y - _handHeightOffset, _wallHit.point.z) + _wallHit.normal * (_radius + 0.05f);
@@ -454,10 +467,25 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_col == null) return false;
 
-        float sphereRadius = Mathf.Max(0.2f, Mathf.Max(_col.bounds.extents.x, _col.bounds.extents.z) * 0.85f);
-        Vector3 sphereCenter = new Vector3(_col.bounds.center.x, _col.bounds.min.y + (sphereRadius * 0.6f), _col.bounds.center.z);
+        float sphereRadius = Mathf.Max(0.12f, Mathf.Min(_col.bounds.extents.x, _col.bounds.extents.z) * 0.65f);
+        sphereRadius = Mathf.Min(sphereRadius, _col.bounds.extents.y * 0.9f);
 
-        return Physics.CheckSphere(sphereCenter, sphereRadius, _floorLayers, QueryTriggerInteraction.Ignore);
+        Vector3 origin = _col.bounds.center;
+        float castDistance = (_col.bounds.extents.y - sphereRadius) + 0.08f;
+
+        RaycastHit[] hits = Physics.SphereCastAll(origin, sphereRadius, Vector3.down, castDistance, _floorLayers, QueryTriggerInteraction.Ignore);
+        foreach (RaycastHit hit in hits)
+        {
+            if (hit.collider == _col || hit.collider.transform.IsChildOf(transform)) continue;
+
+            // Aceita apenas superfícies horizontais ou rampas caminháveis (ignora paredes verticais)
+            if (hit.normal.y >= 0.6f)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void AtualizarVisuais2D()
@@ -541,10 +569,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_col == null) return;
 
-        float sphereRadius = Mathf.Max(0.2f, Mathf.Max(_col.bounds.extents.x, _col.bounds.extents.z) * 0.85f);
-        Vector3 sphereCenter = new Vector3(_col.bounds.center.x, _col.bounds.min.y + (sphereRadius * 0.6f), _col.bounds.center.z);
+        float sphereRadius = Mathf.Max(0.12f, Mathf.Min(_col.bounds.extents.x, _col.bounds.extents.z) * 0.65f);
+        sphereRadius = Mathf.Min(sphereRadius, _col.bounds.extents.y * 0.9f);
+        float castDistance = (_col.bounds.extents.y - sphereRadius) + 0.08f;
+        Vector3 sphereEnd = _col.bounds.center + Vector3.down * castDistance;
+
         Gizmos.color = Application.isPlaying && IsGrounded() ? Color.green : Color.red;
-        Gizmos.DrawWireSphere(sphereCenter, sphereRadius);
+        Gizmos.DrawWireSphere(sphereEnd, sphereRadius);
 
         Vector3 forwardDir = Application.isPlaying ? ObterDirecaoVisual() : Vector3.right;
         float radius = Mathf.Max(_col.bounds.extents.x, _col.bounds.extents.z);

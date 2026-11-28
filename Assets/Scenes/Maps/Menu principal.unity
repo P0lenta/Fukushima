@@ -2229,6 +2229,65 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &1964988312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1964988314}
+  - component: {fileID: 1964988313}
+  m_Layer: 0
+  m_Name: Save
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1964988313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964988312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe467bb120a481428b657c11c503a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveManager
+  _currentData:
+    _musicVolume: 0.5
+    _sfxVolume: 0.5
+    _playerLevel: 1
+    _currentLevelName: 
+    _hasCheckpoint: 0
+    _checkpointSceneName: 
+    _checkpointPosition: {x: 0, y: 0, z: 0}
+    _checkpointCameraPosition: {x: 0, y: 0, z: 0}
+    _isTutorialCompleted: 0
+    _unlockedConditions: []
+  _cenasIgnoradas:
+  - Menu principal
+  - Credits
+  - Creditos
+--- !u!4 &1964988314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964988312}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 64.02176, y: 0.00001, z: 3948.6309}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1975538934
 GameObject:
   m_ObjectHideFlags: 0
@@ -2554,3 +2613,4 @@ SceneRoots:
   - {fileID: 1975538937}
   - {fileID: 1618614485}
   - {fileID: 1036300264}
+  - {fileID: 1964988314}

@@ -18,6 +18,7 @@ public class MusicManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            transform.SetParent(null);
             DontDestroyOnLoad(gameObject);
             LoadAudioSettings();
         }
@@ -57,12 +58,14 @@ public class MusicManager : MonoBehaviour
 
     private void ApplyMusicVolume(float _linearVolume)
     {
+        if (_masterMixer == null) return;
         float dB = Mathf.Log10(Mathf.Max(_linearVolume, 0.0001f)) * 20f;
         _masterMixer.SetFloat("VolumeMusic", dB);
     }
 
     private void ApplySFXVolume(float _linearVolume)
     {
+        if (_masterMixer == null) return;
         float dB = Mathf.Log10(Mathf.Max(_linearVolume, 0.0001f)) * 20f;
         _masterMixer.SetFloat("VolumeSFX", dB);
     }

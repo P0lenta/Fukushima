@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -34,13 +35,22 @@ public class PanelManager : MonoBehaviour
 
     private void Awake()
     {
-        // Sempre assume o controle dos painéis da cena atual
-        Instance = this;
+        string cena = SceneManager.GetActiveScene().name;
+        string caminho = ObterCaminhoHierarquia(transform);
 
-        if (_canvasPause != null)
+        var todosManagers = FindObjectsByType<PanelManager>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        Debug.Log($"[PM-DEBUG] Awake | Cena: '{cena}' | Objeto: '{caminho}' | _isMainMenu: {_isMainMenu} | Total PanelManagers na cena: {todosManagers.Length}");
+
+        if (todosManagers.Length > 1)
         {
-            _canvasRectTransform = _canvasPause.GetComponent<RectTransform>();
+            foreach (var pm in todosManagers)
+            {
+                Debug.LogWarning($"[PM-DEBUG] AVISO DUPLICADO -> PanelManager encontrado em: '{ObterCaminhoHierarquia(pm.transform)}' (_isMainMenu={pm._isMainMenu})");
+            }
         }
+
+        Instance = this;
+        GarantirReferenciasEFecharTudo("Awake");
     }
 
     private void OnEnable()
@@ -53,6 +63,8 @@ public class PanelManager : MonoBehaviour
 
     private void OnDestroy()
     {
+        Debug.Log($"[PM-DEBUG] OnDestroy | Objeto: '{ObterCaminhoHierarquia(transform)}'");
+
         if (_canvasRectTransform != null)
         {
             _canvasRectTransform.DOKill();
@@ -66,26 +78,14 @@ public class PanelManager : MonoBehaviour
 
     private void Start()
     {
+        string cena = SceneManager.GetActiveScene().name;
+        Debug.Log($"[PM-DEBUG] Start | Cena: '{cena}' | _canvasPause: {(_canvasPause != null ? ObterCaminhoHierarquia(_canvasPause.transform) : "NULL")} | _initialPanel: {(_initialPanel != null ? _initialPanel.name : "NULL")} | Qtd _panels: {(_panels != null ? _panels.Length : 0)}");
+
         _menuOpen = false;
         _isFlipping = false;
         _currentPanelActive = null;
 
-        if (_canvasRectTransform != null)
-        {
-            _canvasRectTransform.DOKill();
-            _canvasRectTransform.anchoredPosition = Vector2.zero;
-            _canvasRectTransform.localRotation = Quaternion.identity;
-        }
-
-        foreach (GameObject _panel in _panels)
-        {
-            if (_panel != null) _panel.SetActive(false);
-        }
-
-        if (_canvasPause != null)
-        {
-            _canvasPause.SetActive(false);
-        }
+        GarantirReferenciasEFecharTudo("Start");
 
         if (!_isMainMenu)
         {
@@ -97,22 +97,123 @@ public class PanelManager : MonoBehaviour
             Cursor.visible = true;
             Time.timeScale = 1f;
         }
+
+        Debug.Log($"[PM-DEBUG] Fim do Start | Time.timeScale: {Time.timeScale} | Cursor.lockState: {Cursor.lockState} | EventSystem: {(EventSystem.current != null ? EventSystem.current.name : "NULL")}");
+    }
+
+    private void GarantirReferenciasEFecharTudo(string origem)
+    {
+        // Verifica todos os objetos chamados "Canvas Pause" ou "SurePanel" na cena inteira
+        Transform[] todosTransforms = FindObjectsByType<Transform>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        int qtdCanvasPause = 0;
+
+        foreach (Transform t in todosTransforms)
+        {
+            if (t.name == "Canvas Pause")
+            {
+                qtdCanvasPause++;
+                Debug.Log($"[PM-DEBUG:{origem}] Encontrado 'Canvas Pause' #{qtdCanvasPause} em: '{ObterCaminhoHierarquia(t)}' (ativo={t.gameObject.activeSelf})");
+
+                if (_canvasPause == null)
+                {
+                    _canvasPause = t.gameObject;
+                }
+            }
+            else if (t.name == "SurePanel" && t.gameObject.activeSelf)
+            {
+                Debug.LogWarning($"[PM-DEBUG:{origem}] 'SurePanel' estava ATIVO em '{ObterCaminhoHierarquia(t)}'. Desativando agora.");
+                t.gameObject.SetActive(false);
+            }
+        }
+
+        if (qtdCanvasPause > 1)
+        {
+            Debug.LogError($"[PM-DEBUG:{origem}] ERRO CRÍTICO: Existem {qtdCanvasPause} objetos 'Canvas Pause' na mesma cena! Isso causa UI sobreposta.");
+        }
+
+        if (_canvasPause != null)
+        {
+            _canvasRectTransform = _canvasPause.GetComponent<RectTransform>();
+            if (_canvasRectTransform != null)
+            {
+                _canvasRectTransform.DOKill();
+                _canvasRectTransform.anchoredPosition = Vector2.zero;
+                _canvasRectTransform.localRotation = Quaternion.identity;
+            }
+
+            if (_panels == null || _panels.Length == 0)
+            {
+                List<GameObject> listaPaineis = new List<GameObject>();
+                foreach (Transform child in _canvasPause.transform)
+                {
+                    listaPaineis.Add(child.gameObject);
+                }
+                _panels = listaPaineis.ToArray();
+                Debug.LogWarning($"[PM-DEBUG:{origem}] Array _panels estava vazio! Preenchido automaticamente com {_panels.Length} filhos.");
+            }
+
+            for (int i = 0; i < _panels.Length; i++)
+            {
+                if (_panels[i] != null)
+                {
+                    _panels[i].SetActive(false);
+                }
+                else
+                {
+                    Debug.LogWarning($"[PM-DEBUG:{origem}] _panels[{i}] está NULL no Inspector!");
+                }
+            }
+
+            foreach (Transform t in _canvasPause.GetComponentsInChildren<Transform>(true))
+            {
+                if (t.name == "SurePanel")
+                {
+                    t.gameObject.SetActive(false);
+                }
+            }
+
+            _canvasPause.SetActive(false);
+            Debug.Log($"[PM-DEBUG:{origem}] _canvasPause ('{ObterCaminhoHierarquia(_canvasPause.transform)}') fechado. activeInHierarchy={_canvasPause.activeInHierarchy}");
+        }
+        else
+        {
+            Debug.LogError($"[PM-DEBUG:{origem}] _canvasPause é NULL e nenhum 'Canvas Pause' foi encontrado na cena!");
+        }
     }
 
     private void Update()
     {
         if (!_isMainMenu && _pauseAction != null && _pauseAction.action.WasPressedThisFrame())
         {
+            Debug.Log("[PM-DEBUG] Tecla de Pause pressionada -> chamando ToggleMenu()");
             ToggleMenu();
         }
     }
 
     public void ToggleMenu()
     {
-        if (_canvasPause == null) return;
-        if (DialogueUIManager.Instance != null && DialogueUIManager.Instance._isDialogueActive) return;
-        if (PlayerDeath.Instance != null && PlayerDeath.Instance._isDead) return;
-        if (_isFlipping) return;
+        Debug.Log($"[PM-DEBUG] ToggleMenu() chamado | _menuOpen atual: {_menuOpen} -> novo: {!_menuOpen}");
+
+        if (_canvasPause == null)
+        {
+            Debug.LogError("[PM-DEBUG] ToggleMenu abortado: _canvasPause é NULL.");
+            return;
+        }
+        if (DialogueUIManager.Instance != null && DialogueUIManager.Instance._isDialogueActive)
+        {
+            Debug.Log("[PM-DEBUG] ToggleMenu bloqueado: diálogo ativo.");
+            return;
+        }
+        if (PlayerDeath.Instance != null && PlayerDeath.Instance._isDead)
+        {
+            Debug.Log("[PM-DEBUG] ToggleMenu bloqueado: jogador morto.");
+            return;
+        }
+        if (_isFlipping)
+        {
+            Debug.Log("[PM-DEBUG] ToggleMenu bloqueado: animação de flip em andamento.");
+            return;
+        }
 
         _menuOpen = !_menuOpen;
 
@@ -165,6 +266,8 @@ public class PanelManager : MonoBehaviour
 
     public void AbrirPainel(GameObject _desiredPanel)
     {
+        Debug.Log($"[PM-DEBUG] AbrirPainel('{(_desiredPanel != null ? _desiredPanel.name : "NULL")}')");
+
         if (_desiredPanel == null || _canvasPause == null || _isFlipping || _currentPanelActive == _desiredPanel) return;
 
         if (_canvasRectTransform == null)
@@ -219,7 +322,9 @@ public class PanelManager : MonoBehaviour
 
     public void IrParaCena(string _cena)
     {
+        Debug.Log($"[PM-DEBUG] IrParaCena('{_cena}') chamado.");
         if (_canvasRectTransform != null) _canvasRectTransform.DOKill();
+        DOTween.KillAll();
         Time.timeScale = 1f;
 
         if (SceneChanger.Instance != null)
@@ -256,5 +361,17 @@ public class PanelManager : MonoBehaviour
         {
             SaveManager.Instance.ContinuarJogoSalvo(_nomePrimeiroLevel);
         }
+    }
+
+    private string ObterCaminhoHierarquia(Transform alvo)
+    {
+        if (alvo == null) return "NULL";
+        string path = alvo.name;
+        while (alvo.parent != null)
+        {
+            alvo = alvo.parent;
+            path = alvo.name + "/" + path;
+        }
+        return path;
     }
 }

@@ -1804,7 +1804,6 @@ GameObject:
   - component: {fileID: 1532533455838905516}
   - component: {fileID: 17443267670123044}
   - component: {fileID: 5344293617038021628}
-  - component: {fileID: 2968080922787475896}
   m_Layer: 0
   m_Name: MenuConfig
   m_TagString: Untagged
@@ -2074,29 +2073,6 @@ MonoBehaviour:
   _uiFuseX: {fileID: 7119975039086903561}
   _uiFuseY: {fileID: 8772015854035740214}
   _uiFuseZ: {fileID: 3128912080619341754}
---- !u!114 &2968080922787475896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2395314856997411171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fe467bb120a481428b657c11c503a9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SaveManager
-  _currentData:
-    _musicVolume: 0.5
-    _sfxVolume: 0.5
-    _playerLevel: 1
-    _currentLevelName: 
-    _hasCheckpoint: 0
-    _checkpointSceneName: 
-    _checkpointPosition: {x: 0, y: 0, z: 0}
-    _checkpointCameraPosition: {x: 0, y: 0, z: 0}
-    _isTutorialCompleted: 0
-    _unlockedConditions: []
 --- !u!1 &2429639560855852227
 GameObject:
   m_ObjectHideFlags: 0
